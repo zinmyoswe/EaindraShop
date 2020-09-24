@@ -11,6 +11,6 @@
 
     mysqli_query($mysqli, $sql);  
 
-    echo "<script>window.open('cat-list.php','_self')</script>";
+    echo "<script>window.open('cat-list2.php','_self')</script>";
 
 ?>

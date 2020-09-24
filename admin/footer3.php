@@ -14,10 +14,13 @@
 </div>
 <!-- ./wrapper -->
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
 <!-- jQuery -->
-<script src="AdminLTE-3.0.2/plugins/jquery/jquery.min.js"></script>
+<!-- <script src="AdminLTE-3.0.2/plugins/jquery/jquery.min.js"></script> -->
 <!-- jQuery UI 1.11.4 -->
-<script src="AdminLTE-3.0.2/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- <script src="AdminLTE-3.0.2/plugins/jquery-ui/jquery-ui.min.js"></script> -->
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)

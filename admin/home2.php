@@ -7,6 +7,14 @@ require_once '../confs/config.php';
 
 <?php include('header3.php'); ?>
 
+<style type="text/css">
+  .btn-secondary {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+</style>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
