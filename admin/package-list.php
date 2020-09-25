@@ -13,7 +13,7 @@ include('header3.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manage Brand</h1>
+            <h1>Manage Packages</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -36,7 +36,7 @@ include('header3.php');
         <div class="col-md-9">
       <div class="card">
         <div class="card-header with-border">
-          <h3 class="card-title">New Brand Registration</h3>
+          <h3 class="card-title">New Package Registration</h3>
 
           <div class="card-tools pull-right">
             <button type="button" class="btn btn-card-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -47,7 +47,7 @@ include('header3.php');
         </div>
         <div class="card-body">
           <?php
-          if(isset($_POST['brand'])){
+          if(isset($_POST['package'])){
             $name = $_POST['name'];
             $cover = $_FILES['cover']['name'];
               $tmp = $_FILES['cover']['tmp_name'];
@@ -57,21 +57,21 @@ include('header3.php');
 
                 }
                 if($name == null){
-                  echo '  <div class="notice notice-danger">
-        <strong><i class="fa fa-exclamation-triangle"> </i> Brand Name Required!</strong>
+                  echo '  <div class="alert alert-danger">
+        <strong><i class="fa fa-exclamation-triangle"> </i> Package Name Required!</strong>
         </div>';
                 }else{
 
 
-            $query = $mysqli->query("INSERT INTO brand(brand_name,brand_cover,created_date)
+            $query = $mysqli->query("INSERT INTO package(package_name,package_image,created_date)
                 VALUES ('$name','$cover',NOW())");
 
              if($query){
 
                   echo '  <div class="notice notice-success">
-        <strong><i class="fa fa-check-circle-o"> </i> Brand Added Successfully</strong>
+        <strong><i class="fa fa-check-circle-o"> </i> Package Added Successfully</strong>
         </div>';
-            echo "<script>window.open('brand-list2.php','_self')</script>";
+            echo "<script>window.open('package-list2.php','_self')</script>";
                   }
                 }
                 }
@@ -83,9 +83,9 @@ include('header3.php');
           <form method="post" action="" enctype="multipart/form-data">
 <!-- FORM START -->
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">BrandName</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">PackageName</label>
                   <div class="col-sm-10">
-                  <input type="text" name="name"  class="form-control" id="inputEmail3" placeholder="Brandname"/> 
+                  <input type="text" name="name"  class="form-control" id="inputEmail3" placeholder="packagename"/> 
                   </div>
                 </div>
                 <!-- FORM ENDS -->
@@ -104,7 +104,7 @@ include('header3.php');
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-          <input type="submit" name="brand" value="Add Brand" class="btn btn-warning pull-right">
+          <input type="submit" name="package" value="Add Package" class="btn btn-dark pull-right">
 </form>
         </div>
         <!-- /.box-footer-->

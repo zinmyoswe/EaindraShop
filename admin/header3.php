@@ -316,6 +316,16 @@
           </li>
 
           <li class="nav-item has-treeview">
+            <a href="package-list2.php" class="nav-link">
+              <i class="nav-icon fas fa-cube"></i>
+              <p>
+                Manage Packages
+                <i class="fas fa-angle-left right"></i>             
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
             <a href="brand-list2.php" class="nav-link">
               <i class="nav-icon fas fa-wine-glass-alt"></i>
               <p>

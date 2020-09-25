@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 error_reporting(0);
 include('../confs/config.php');
 include('header3.php');
@@ -77,7 +78,7 @@ include('header3.php');
 	<div class="bin">
 		<td><img src="../image/s-logo.png" width="180" height="150"></td>
 		<td>	
-			<h3><b>SPORT STORE</b></h3><br>
+			<h3><b>EaindraShop</b></h3><br>
 	From Date : <?php echo "$fromdate"; ?><br>
 	To Date : <?php echo "$todate"; ?>
 		</td>

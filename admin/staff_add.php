@@ -1,5 +1,6 @@
 
 <?php
+    session_start();
    error_reporting( ~E_NOTICE ); // avoid notice
   
   include('../confs/config.php');

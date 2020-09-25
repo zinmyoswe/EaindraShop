@@ -1,5 +1,6 @@
 
 <?php
+   session_start();
    include('../confs/config.php');
 ?>
 
@@ -85,7 +86,7 @@
                                                 }
                                                 ?>
                                           </select>  
-                                           <img src="img/progress2.gif" id="loader" width="60" height="45"> 
+                                          
                   </div>
                 </div>
 

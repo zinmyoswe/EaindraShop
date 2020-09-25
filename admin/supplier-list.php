@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 include('supplier/config.php');
 include('header3.php');
 ?>

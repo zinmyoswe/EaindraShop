@@ -16,7 +16,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manage Brands
+        Manage Packages
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
@@ -34,7 +34,7 @@
       <div class="col-md-12">
       <div class="card">
         <div class="card-header with-border">
-          <h3 class="card-title">Brand List</h3>
+          <h3 class="card-title">Package List</h3>
 
           <div class="card-tools pull-right">
             <button type="button" class="btn btn-card-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -46,35 +46,35 @@
          
         <div class="card-body">
 
-            <a href="brand-list.php" class="btn btn-large btn bg-black margin"><i class="fa fa-plus-square"></i> &nbsp; Add New Brand</a>
+            <a href="package-list.php" class="btn btn-large btn bg-black margin"><i class="fa fa-plus-square"></i> &nbsp; Add New Package</a>
         <br><br>
 
             <table class='table' >
                
 
                 <?php 
-                $query = "SELECT * FROM brand order by brand_id desc";
+                $query = "SELECT * FROM package order by package_id desc";
                 $result = mysqli_query($mysqli,$query);
 
                 $count = 1;
                 while($row = mysqli_fetch_assoc($result) ){
-                    $id = $row['brand_id'];
-                    $brand_name = $row['brand_name'];
+                    $id = $row['package_id'];
+                    $package_name = $row['package_name'];
                     $created_date = $row['created_date'];
-                    $brand_cover = $row['brand_cover'];
+                    $package_image = $row['package_image'];
 
                 ?>
                 
                     <tr>
                         
-                        <td><img src="cover/<?php echo $row['brand_cover']?>" width="200" height="85"></td>
+                        <td><img src="cover/<?php echo $row['package_image']?>" width="190" height="250"></td>
 
-                        <td><b><?= $brand_name ?></b><br>
-                          <span class="fa fa-clock-o"></span><?= $created_date ?></td>
+                        <td><b><?= $package_name ?></b><br>
+                          <span class="far fa-clock"></span> <?= $created_date ?></td>
                         <td>
-                            <a href="brand-edit.php?id=<?php echo $row['brand_id']?>" class="btn btn-outline-primary">Edit</a>
+                            <a href="package-edit.php?id=<?php echo $row['package_id']?>" class="btn btn-outline-primary">Edit</a>
 
-                            <a class='delete btn btn-outline-dark' href="brand-del.php?id=<?php echo $row['brand_id']?>">Delete</a>
+                            <a class='delete btn btn-outline-dark' href="brand-del.php?id=<?php echo $row['package_id']?>">Delete</a>
 
                         </td>
                         

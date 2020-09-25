@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../confs/config.php');
 include('header3.php'); 
 ?>
@@ -85,7 +86,7 @@ include('header3.php');
           
     			</td>
     			<td><h5 style="font-family: arial; font-size: 16px;">$ <?php echo $row['total_amt'] ?></h5></td>
-    			<td><span class='label bg-red'><?php echo $row['total_qty'] ?></span></td>
+    			<td><span class='badge badge-dark'><?php echo $row['total_qty'] ?></span></td>
             <td>
             <!-- payemnt info -->
             <h5><?php echo $row['payment_type']; ?></h5>
@@ -120,7 +121,7 @@ include('header3.php');
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-dsafds
+
         </div>
         <!-- /.box-footer-->
       </div>
