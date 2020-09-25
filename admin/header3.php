@@ -356,7 +356,7 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="supplier-list.php" class="nav-link">
+            <a href="supplier-list2.php" class="nav-link">
               <i class="nav-icon fas fa-file-pdf"></i>
               <p>
                 Manage Supplier
@@ -430,5 +430,10 @@
 .btn-dark{
   color: #fff;
   background-color: #000;
+}
+
+.btn-outline-dark:hover{
+  background-color: #000;
+  color: #fff;
 }
 </style>

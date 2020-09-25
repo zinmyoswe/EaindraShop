@@ -1,22 +1,14 @@
 <?php
-
+	session_start();
 	error_reporting( ~E_NOTICE );
 	
 	include('../confs/config.php');
 	
-	if(isset($_GET['id']) && !empty($_GET['id']))
-	{
-		$id = $_GET['id'];
-		$sql = "SELECT * FROM admin WHERE admin_id = '$id'";
-		$run = mysqli_query($mysqli,$sql);
-		$row = mysqli_fetch_assoc($run);
-	}
-	else
-	{
-		header("Location: index.php");
-	}
 	
+		
+
 	
+	  
 	
 	if(isset($_POST['btn_save_updates']))
 	{
@@ -123,6 +115,15 @@
         <?php
 	}
 	?>
+
+	<?php 
+
+		$id = $_GET['id'];
+		$sql = "SELECT * FROM admin WHERE admin_id = '$id'";
+		$run = mysqli_query($mysqli,$sql);
+		$row = mysqli_fetch_assoc($run);
+
+		?>
 
 <form method="post" enctype="multipart/form-data" class="form-horizontal">
 	

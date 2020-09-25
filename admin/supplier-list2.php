@@ -26,7 +26,7 @@
             Swal.fire({
               position: 'top-end',
               icon: 'success',
-              title: 'Package has been saved',
+              title: 'Supplier has been saved',
               showConfirmButton: false,
               timer: 1800
             })            
@@ -40,12 +40,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manage Package</h1>
+            <h1>Manage Supplier</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Package Page</li>
+              <li class="breadcrumb-item active">Supplier Page</li>
             </ol>
           </div>
         </div>
@@ -60,7 +60,7 @@
       <div class="col-md-12">
       <div class="card">
         <div class="card-header with-border">
-          <h3 class="card-title">Package List</h3>
+          <h3 class="card-title">Supplier List</h3>
 
           <div class="card-tools pull-right">
             <button type="button" class="btn btn-card-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -72,33 +72,56 @@
          
         <div class="card-body">
 
-            <a href="package-list.php" class="btn btn-large btn bg-black margin"><i class="fa fa-plus-square"></i> &nbsp; Add New Package</a>
+            <a href="supplier-list.php" class="btn btn-large btn bg-black margin"><i class="fa fa-plus-square"></i> &nbsp; Add New Supplier</a>
         <br><br>
 
             <table class='table' >
+
+              <tr>
+<th>No</th>
+<th>Logo</th>
+<th>Name</th>
+<th>Email</th>
+<th>Address</th>
+<th>Phone</th>
+<th></th>
+</tr>
                
 
                 <?php 
-                $query = "SELECT * FROM package order by package_id desc";
+                $query = "SELECT * FROM supplier order by supplier_id desc";
                 $result = mysqli_query($mysqli,$query);
 
                 $count = 1;
                 while($row = mysqli_fetch_assoc($result) ){
-                    $id = $row['package_id'];
-                    $package_name = $row['package_name'];
+                    $id = $row['supplier_id'];
+                    $supplier_name = $row['supplier_name'];
+                    $email = $row['email'];
+                    $phone = $row['phone'];
+                    $address = $row['address'];
                     $created_date = $row['created_date'];
-                    $package_image = $row['package_image'];
+                    $supplier_cover = $row['supplier_cover'];
 
                 ?>
                 
                     <tr>
-                        
-                        <td><img src="cover/<?php echo $row['package_image']?>"  height="250"></td>
-
-                        <td><b><?= $package_name ?></b><br>
-                          <span class="far fa-clock"></span> <?= $created_date ?></td>
+                        <td align='center'><?= $count ?></td>
                         <td>
-                            <a href="package-edit.php?id=<?php echo $row['package_id']?>" class="btn btn-outline-primary">Edit</a>
+                          <?php if($row['supplier_cover'] == null){ ?>
+                <img src="cover/default.jpg"  height="130" >
+           <?php }else{ ?>
+                <img src="cover/<?php echo $row['supplier_cover']; ?>" height="130" >
+            <?php } ?></td>
+
+                        <td><b><?= $supplier_name ?></b><br>
+                          <span class="far fa-clock"></span> <?= $created_date ?>
+                        </td>
+                        
+                        <td><?= $email ?></td>
+                        <td><?= $address ?></td>
+                        <td><?= $phone ?></td>
+                        <td>
+                            <a href="package-edit.php?id=<?php echo $row['supplier_id']?>" class="btn btn-outline-primary">Edit</a>
 
 
                             <button class='delete btn btn-outline-dark' id='del_<?= $id ?>' data-id='<?= $id ?>'>Delete</button>
@@ -136,6 +159,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
-        <script src='script-package.js' type='text/javascript'></script>
+        <script src='script-supplier.js' type='text/javascript'></script>
 
 <?php include('footer3.php'); ?>

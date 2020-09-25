@@ -71,7 +71,7 @@ include('header3.php');
                   echo '  <div class="notice notice-success">
         <strong><i class="fa fa-check-circle-o"> </i> Package Added Successfully</strong>
         </div>';
-            echo "<script>window.open('package-list2.php','_self')</script>";
+            echo "<script>window.open('package-list2.php?w2=success','_self')</script>";
                   }
                 }
                 }
