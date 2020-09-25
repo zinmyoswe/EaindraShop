@@ -1,7 +1,10 @@
 <?php 
     session_start(); 
+    error_reporting(0);
     include('../confs/config.php');
     include "header3.php";
+
+    $w2 = $_GET['w2'];
 ?>
 
 
@@ -19,6 +22,21 @@
     border-color: black;
 }
 </style>
+
+<?php if($w2 == 'success'){ ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- <script type="text/javascript" src="https://adminlte.io/themes/dev/AdminLTE/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+             <script type="text/javascript">
+            
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Category has been saved',
+              showConfirmButton: false,
+              timer: 1800
+            })            
+          </script>
+<?php } ?>
 
 
 

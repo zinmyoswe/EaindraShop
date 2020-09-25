@@ -58,7 +58,10 @@ include('header3.php');
                 }else{
       $query = $mysqli->query("INSERT INTO categories(cat_name,created_date)
       VALUES ('$name',NOW())");
+          ?>
+      
 
+          <?php
                
                 
 
@@ -67,15 +70,16 @@ include('header3.php');
                   echo '  <div class="alert alert-success">
         <i class="fa fa-check-circle-o"> </i> Category Added Successfully
         </div>';
-        echo "<script>window.open('cat-list2.php','_self')</script>";
+  
+        echo "<script>window.open('cat-list2.php?w2=success','_self')</script>";
                   }
                 }
                 }
 
-               
-  
-  
+      
           ?>
+
+
           <form method="post" action="" enctype="multipart/form-data">
 <!-- FORM START -->
                 <div class="form-group">
@@ -105,6 +109,7 @@ include('header3.php');
   </div>
   <!-- /.content-wrapper -->
 
+    
 
     <?php include('footer3.php'); ?>
 

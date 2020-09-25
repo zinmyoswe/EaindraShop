@@ -67,7 +67,7 @@
                 
                     <tr>
                         
-                        <td><img src="cover/<?php echo $row['package_image']?>" width="190" height="250"></td>
+                        <td><img src="cover/<?php echo $row['package_image']?>"  height="250"></td>
 
                         <td><b><?= $package_name ?></b><br>
                           <span class="far fa-clock"></span> <?= $created_date ?></td>
