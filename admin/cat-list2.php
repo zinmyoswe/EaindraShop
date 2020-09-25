@@ -36,7 +36,19 @@
               timer: 1800
             })            
           </script>
+<?php } elseif($w2 == 'updated'){ ?>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Updated',
+              text: 'Category updated successfully'
+            })
+                     
+          </script>
 <?php } ?>
+
 
 
 
