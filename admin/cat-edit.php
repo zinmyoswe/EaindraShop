@@ -1,4 +1,5 @@
 <?php
+  session_start();
     include('../confs/config.php');
      include "header3.php";
 	$id = $_GET['id'];
@@ -54,6 +55,7 @@
 		<br><br>
 
 		<input type="submit" value="Update Category" class="btn btn-primary float-right">
+    <a href="cat-list2.php" class="btn btn-outline-dark float-right" style="margin-right: 2px;">Back</a>
 	</form>
 
 

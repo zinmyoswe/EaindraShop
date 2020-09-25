@@ -121,6 +121,30 @@
 
                  <!-- FORM START -->
                 <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Package</label>
+                  <div class="col-sm-10">
+                  <select class="form-control" name="package">
+                                                <option>Select a Package</option>
+                                               <?php
+
+                                                $get_package = "SELECT * FROM package";
+                                                $run_package = mysqli_query($mysqli,$get_package);
+                                                while($row_package= mysqli_fetch_array($run_package)){
+                                                  $package_id = $row_package['package_id'];
+                                                  $package_title = $row_package['package_name'];
+
+                                                  echo "
+                                                    <option value='$package_id'>$package_title</option>
+                                                  ";
+                                                }
+                                                ?>
+                                          </select> 
+                  </div>
+                </div>
+                <!-- FORM ENDS -->
+
+                 <!-- FORM START -->
+                <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Supplier</label>
                   <div class="col-sm-10">
                   <select class="form-control" name="supplier">
@@ -238,6 +262,7 @@
       $cat = $_POST['cat'];
       $sub_cat = $_POST['sub_cat'];
       $brand = $_POST['brand'];
+      $package = $_POST['package'];
       $supplier = $_POST['supplier'];
       $price = $_POST['price'];
       $qty = $_POST['qty'];
@@ -263,8 +288,8 @@
       }
       
     
-      $sql = "INSERT INTO product(product_name,categories,sub_cat,brand,supplier,description,price,cover,qty)
-                   VALUES('$name','$cat','$sub_cat','$brand','$supplier','$description','$price','$cover','$qty')";
+      $sql = "INSERT INTO product(product_name,categories,sub_cat,brand,package,supplier,description,price,cover,qty)
+                   VALUES('$name','$cat','$sub_cat','$brand','$package','$supplier','$description','$price','$cover','$qty')";
 
       $run=mysqli_query($mysqli,$sql);
       

@@ -14,12 +14,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>Product Registration Page</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
+              <li class="breadcrumb-item"><a href="home2.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="product_display2.php">Product</a></li>
+              <li class="breadcrumb-item active">Product Registration Page</li>
             </ol>
           </div>
         </div>
@@ -98,8 +99,8 @@
 
           <div class="alert alert-success">
         <strong>Dear ADMIN,</strong><br>
-        <p>The product specification needs to continue to register.</p>
-        <p>It is require help,<a href="help.php" style="color: black;"> CLICK HERE</a></p>
+        <p>The product specification needs to continue to register. if not, click <b>finish</b> button.</p>
+        
         </div>
   
           
@@ -116,8 +117,17 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          
+             <form method="post" action="">
+              <button type="submit" name="finish" class="btn btn-primary float-right" style="margin: 0 4px">Finish</button>
+              </form>
+          <?php
+
+          if(isset($_POST['finish'])){
+              echo "<script>window.open('product_display2.php?w2=success','_self')</script>";
+          } ?>
+           
         </div>
+        <br>
         <!-- /.box-footer-->
 
   
@@ -273,7 +283,7 @@
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-            <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-right">Continue</a>
+            <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-right">Next</a>
         </div>
         <!-- /.box-footer-->
         </form>

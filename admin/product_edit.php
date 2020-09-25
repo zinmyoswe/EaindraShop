@@ -1,16 +1,36 @@
 <?php
-   include('../confs/config.php');
-    $id = $_GET['id'];
-   $result = mysqli_query($mysqli,"SELECT * FROM product WHERE id=$id");
-   $row = mysqli_fetch_assoc($result);
+session_start();
+   include('confs/config.php');
+      $id = $_GET['id'];
+      $result = mysqli_query($mysqli,"SELECT * FROM product WHERE id=$id");
+      $row = mysqli_fetch_assoc($result);
 ?>
 
 <?php include('header3.php'); ?>
 <!-- =============================================== -->
 
-<script src="tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script>
+<script src="tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+  selector: 'textarea',
+  height: 400,
+  theme: 'modern',
+  plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help',
+  toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+  image_advtab: true,
+  templates: [
+    { title: 'Test template 1', content: 'Test 1' },
+    { title: 'Test template 2', content: 'Test 2' }
+  ],
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tinymce.com/css/codepen.min.css'
+  ]
+ });
+    </script>
   <script src="jquery.tinymce.min.js"></script>
+
+
 
    <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -23,8 +43,9 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
+              <li class="breadcrumb-item"><a href="home2.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="product_display2.php">Product</a></li>
+              <li class="breadcrumb-item active">Product Edit Page</li>
             </ol>
           </div>
         </div>
@@ -46,12 +67,18 @@
 
       <?php
 
+      include('confs/config.php');
+           $id = $_GET['id'];
+      $result = mysqli_query($mysqli,"SELECT * FROM product WHERE id=$id");
+      $row = mysqli_fetch_assoc($result);
+
       if(isset($_POST['update'])){
       $id = $_POST['id'];
       $name = $_POST['name'];
       $cat = $_POST['cat'];
       $sub_cat = $_POST['sub_cat'];
       $brand = $_POST['brand'];
+      $package = $_POST['package'];
       $supplier = $_POST['supplier'];
       $price = $_POST['price'];
       $qty = $_POST['qty'];
@@ -68,20 +95,25 @@
       }
       
     
-      $sql = "UPDATE product SET product_name='$name',categories='$cat',sub_cat='$sub_cat',brand='$brand',supplier='$supplier',description='$description',price='$price',cover='$cover',qty='$qty',modified_date=now() 
+      $sql = "UPDATE product SET product_name='$name',categories='$cat',sub_cat='$sub_cat',brand='$brand',package='$package',supplier='$supplier',description='$description',price='$price',cover='$cover',qty='$qty',modified_date=now() 
           WHERE id = $id ";
 
       mysqli_query($mysqli,$sql);
 
       ?>
         <script>
-        alert('Successfully Updated ...');
-        window.location.href='product_display2.php';
+        // alert('Successfully Updated ...');
+        window.location.href='product_display2.php?w2=updated';
         </script>
       <?php
     }
       ?>
+
+
+      <?php 
            
+        
+      ?>
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">ProductID</label>
                   <div class="col-sm-10">
@@ -163,6 +195,27 @@
                   		  <?php if($br['brand_id'] == $row['brand']) echo "selected" ?>>
                   		 <?php echo $br['brand_name'] ?>
                   		</option> 
+                      <?php endwhile; ?>        
+                                          </select>  
+                                           
+                  </div>
+                </div>
+                <!-- FORM ENDS -->
+
+                <!-- FORM START -->
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Package</label>
+                  <div class="col-sm-10">
+                  <select id="package" class="form-control" name="package">
+                     <option>Select a package</option>
+                      <?php 
+                        $package = mysqli_query($mysqli,"SELECT package_id,package_name FROM package");
+                        while($br = mysqli_fetch_assoc($package)):
+                      ?>    
+                      <option value="<?php echo $br['package_id'] ?>"
+                        <?php if($br['package_id'] == $row['package']) echo "selected" ?>>
+                       <?php echo $br['package_name'] ?>
+                      </option> 
                       <?php endwhile; ?>        
                                           </select>  
                                            

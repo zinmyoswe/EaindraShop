@@ -76,7 +76,7 @@ include('header3.php');
 	
 	<tr>
 	<div class="bin">
-		<td><img src="../image/s-logo.png" width="180" height="150"></td>
+		<td><img src="cover/default.jpg" width="180" height="150"></td>
 		<td>	
 			<h3><b>EaindraShop</b></h3><br>
 	From Date : <?php echo "$fromdate"; ?><br>

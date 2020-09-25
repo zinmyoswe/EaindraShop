@@ -416,10 +416,11 @@
 }
 
 .alert-success{
-  color: #fff;  
+  color: #000;  
   font-size: 14px;
-  background: #000;
+  background: #fff;
   border-color: #000;
+  border-radius: 2px;
 }
 
 .badge-dark {

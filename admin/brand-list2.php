@@ -67,7 +67,13 @@
                 
                     <tr>
                         
-                        <td><img src="cover/<?php echo $row['brand_cover']?>" width="200" height="85"></td>
+                        <td>
+                           <?php if($row['brand_cover'] == null){ ?>
+                <img src="cover/default.jpg"  height="130" >
+           <?php }else{ ?>
+                <img src="cover/<?php echo $row['brand_cover']; ?>" height="130" >
+            <?php } ?>
+                        </td>
 
                         <td><b><?= $brand_name ?></b><br>
                           <span class="fa fa-clock-o"></span><?= $created_date ?></td>
