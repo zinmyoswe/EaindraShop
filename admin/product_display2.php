@@ -169,9 +169,16 @@
                       </td>
 
                        
-                      <td><p><a href="image_attribute.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Image</a></p>
+                      <td>
+                        <p>
+                          <a href="image_attribute.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Image</a>
+
+                          <a href="color_product.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Color&Product</a>
+                      </p>
 
                       <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Color&Size</a>
+
+
 
                          <a href="discount.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-primary">Manage Discount</a>
 
