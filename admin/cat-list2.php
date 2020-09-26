@@ -1,7 +1,7 @@
 <?php 
     session_start(); 
     error_reporting(0);
-    include('../confs/config.php');
+    include('confs/config.php');
     include "header3.php";
 
     $w2 = $_GET['w2'];

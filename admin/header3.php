@@ -218,8 +218,15 @@
               <i class="nav-icon fas fa-cubes"></i>
               <p>
                 Manage Products
+
+                 <?php 
+                  include('../confs/config.php');
+                    $sql_p = "SELECT * FROM product";
+                    $run_p = mysqli_query($mysqli,$sql_p);
+                    $count_p = mysqli_num_rows($run_p);       
+                ?>
                 <i class="fas fa-angle-left right"></i>
-                
+                <span class="badge badge-info right"><?php echo $count_p ?></span>
               </p>
             </a>
             <ul class="nav nav-treeview">

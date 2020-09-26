@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../confs/config.php');
 include('header3.php');
 ?>
@@ -141,7 +142,7 @@ h4{
                <br><br>
                 <!-- FORM START -->
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">CategoryName</label>
+                  <label for="inputEmail3" class="col-sm-3 control-label">CategoryName</label>
                   <div class="col-sm-10">
                   <select name="category_id" class="form-control" id="inputEmail3" >
                     <option value="0">Choose Category</option>

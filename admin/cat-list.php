@@ -1,7 +1,7 @@
 <?php 
 
 session_start(); 
-include('../confs/config.php');
+include('confs/config.php');
 include('header3.php');
 ?>
 

@@ -2,7 +2,12 @@
 	session_start();
 	error_reporting( ~E_NOTICE );
 	
-	include('../confs/config.php');
+	include('confs/config.php');
+
+  $id = $_GET['id'];
+    $sql = "SELECT * FROM admin WHERE admin_id = '$id'";
+    $run = mysqli_query($mysqli,$sql);
+    $row = mysqli_fetch_assoc($run);
 	
 	
 		
@@ -59,8 +64,8 @@
 			if($run2){
 				?>
                 <script>
-				alert('Successfully Updated ...');
-				window.location.href='manage_staff.php';
+				// alert('Successfully Updated ...');
+				window.location.href='manage_staff.php?w2=updated';
 				</script>
                 <?php
 			}
@@ -117,7 +122,7 @@
 	?>
 
 	<?php 
-
+    include('confs/config.php');
 		$id = $_GET['id'];
 		$sql = "SELECT * FROM admin WHERE admin_id = '$id'";
 		$run = mysqli_query($mysqli,$sql);

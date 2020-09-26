@@ -78,7 +78,7 @@
       if($run)
       {
         $successMSG = "new record succesfully inserted ...";
-        header("location:manage_staff.php"); // redirects image view page after 5 seconds.
+        header("location:manage_staff.php?w2=success"); // redirects image view page after 5 seconds.
       }
       else
       {
