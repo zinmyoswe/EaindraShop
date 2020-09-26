@@ -156,7 +156,10 @@ h4{
 
 @media (max-width: 768px) {
  
-
+   .toy img{
+    width: 100%;
+    height: 100%;
+  }
   /*.carousel-item img {
     height: 470px;
     width: 100%;
@@ -167,6 +170,10 @@ h4{
 
 @media (max-width: 576px) {
 
+  .toy img{
+    width: 100%;
+    height: 100%;
+  }
   .carousel-item  {
     font-size: 40px;
   }
@@ -250,6 +257,8 @@ h4{
   .foot_con{
     display: none;
   }
+
+
 }
     </style>
     <!-- Custom styles for this template -->
@@ -265,25 +274,30 @@ h4{
     <div class="carousel-inner">
        <div class="carousel-item active">
 
-        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/running-fw19-rfto-educate-hp-lf-mh-medium-d_tcm221-356981.jpg" alt="" width="100%" height="100%" fill="#777">
+        <img src="https://surprisesgiftshop.com/files/2020/03/bride.jpg?&a=t" alt="" width="100%" height="100%" fill="#777">
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1 style="color: #000; font-weight: 600;" cl>RUN FOR THE OCEANS</h1>
-            <p style="color: #000;">It's time to take action against marine plastic pollution. Rally your <br>friends to join the movement.</p>
-            <p><a class="btn btn-lg btn-dark" href="product.php" role="button" style="margin-bottom: 160px">LEARN MORE <i class="fa fa-arrow-right"></i></a></p>
+            <h1 style="color: #fff; font-weight: 600;" cl>Show Your Loved Ones How Much You Care</h1>
+            <p style="color: #fff;">Shop for a special occasion at Surprises Gift Shop.<br></p>
+            <p><a class="btn btn-lg btn-dark" href="product.php" role="button" style="margin-bottom: 160px">SHOPPING NOW<i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
 
-        <img src="https://image.adidas.co.kr/upload/banner/bbf2598bfc7c4a2ba1f8aad25b494123_0429163854.jpg" alt="" width="100%" height="100%" fill="#777">
+        <div class="toy" style="background-color: whitesmoke;">
+        <img src="https://ae01.alicdn.com/kf/H078158aba57d4ed2afff01d6868841d88/Brown-Bear-and-Cony-rabbit-Plush-toys-Wearing-Sweatshirt-Stuffed-toy-cute-animals-School-bag-pendant.jpg" alt="" width="50%" height="100%" fill="#777">
+
+        </div>
+
+
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1 style="color: #000; font-weight: 600;">For Women,<br>Give Love & Thanks</h1>
+            <h1 style="color: #fff; font-weight: 600;">For Your Loved One,<br>Give Love & Gifts</h1>
                 
-            <p style="color: #000;">Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
-            <p><a class="btn btn-lg btn-dark" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
-            <p><a class="btn btn-lg btn-dark" href="product.php" role="button" style="margin-bottom: 120px">VIEW MEMBER BENEFITS <i class="fa fa-arrow-right"></i></a></p>
+            <p style="color: #fff;">Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 120px">CONTACT US NOW <i class="fa fa-arrow-right"></i></a></p>
         
           </div>
         </div>
