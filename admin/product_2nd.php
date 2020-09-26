@@ -93,11 +93,9 @@
         
       </table>
       <hr>
-      <div class="alert alert-success">
-        <i class="fa fa-check-square-o"> </i> Product Successfully Added
-        </div>
+      
 
-          <div class="alert alert-success">
+          <div class="alert alert-warning">
         <strong>Dear ADMIN,</strong><br>
         <p>The product specification needs to continue to register. if not, click <b>finish</b> button.</p>
         
@@ -117,14 +115,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-             <form method="post" action="">
-              <button type="submit" name="finish" class="btn btn-primary float-right" style="margin: 0 4px">Finish</button>
-              </form>
-          <?php
-
-          if(isset($_POST['finish'])){
-              echo "<script>window.open('product_display2.php?w2=success','_self')</script>";
-          } ?>
+             
            
         </div>
         <br>
@@ -283,7 +274,16 @@
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-            <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary float-right">Next</a>
+            <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark float-right">Next</a>
+
+            <form method="post" action="">
+              <button type="submit" name="finish" class="btn btn-outline-primary float-right" style="margin: 0 4px">Finish</button>
+              </form>
+          <?php
+
+          if(isset($_POST['finish'])){
+              echo "<script>window.open('product_display2.php?w2=success','_self')</script>";
+          } ?>
         </div>
         <!-- /.box-footer-->
         </form>

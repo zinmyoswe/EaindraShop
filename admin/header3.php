@@ -416,9 +416,9 @@
 }
 
 .alert-success{
-  color: #000;  
+  color: #fff;  
   font-size: 14px;
-  background: #fff;
+  background: #000;
   border-color: #000;
   border-radius: 2px;
 }

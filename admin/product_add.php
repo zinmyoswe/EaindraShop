@@ -90,9 +90,14 @@
                   </div>
                 </div>
 
-                 <div class="form-group" id="cities-container">
-                                 
+                 <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-2 control-label">Sub Category</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="sub_cat">
+                        <option id="cities-container"></option>
                                   </div>
+                      </select>
+                  </div>
                 <!-- FORM ENDS -->
 
                    <!-- FORM START -->
