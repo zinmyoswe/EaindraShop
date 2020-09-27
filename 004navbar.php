@@ -189,6 +189,7 @@
 
         <?php
       //get user
+        include('confs/config.php');
     $email = $_SESSION['email'];
     $sql_customer = mysqli_query($mysqli,"SELECT * FROM customer WHERE email = '$email'");
     $row_customer = mysqli_fetch_assoc($sql_customer);
@@ -196,7 +197,8 @@
 ?>
           <li class="nav-item">
 
-        <a class="nav-link" href="myorder.php" style="text-transform: uppercase;"> <i class="far fa-user"></i> <?php echo $row_customer['name'] ?> </a>
+        <a class="nav-link" href="myorder.php" style="text-transform: uppercase;"> 
+          <?php echo $row_customer['name'] ?> </a>
       </li>
    
              <li class="nav-item dropdown">

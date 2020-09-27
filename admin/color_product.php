@@ -1,5 +1,5 @@
 <?php
-  session_start();
+   session_start();
     include('confs/config.php');
      include "header3.php";
 	    $id = $_GET['id'];

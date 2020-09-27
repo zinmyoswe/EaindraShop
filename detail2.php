@@ -408,7 +408,7 @@ include('confs/config.php');
    $row = mysqli_fetch_assoc($result);
    
    ?>
-     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['id']; ?>" id="getUser" style="clear:both; background: #48c9b0; border: none; color: #fff; font-size: 14px; padding: 10px;cursor: pointer;">Add To Cart</button>
+     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['id']; ?>" id="getUser" style="clear:both; background: #000 ; border: none; color: #fff; font-size: 14px; padding: 10px;cursor: pointer;">ADD TO BAG</button>
      <?php } ?>
 
        <div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -484,14 +484,15 @@ $(document).ready(function(){
 
           <?php  if($fav == 0){ ?>
          
-            <a href="add_fav.php?id=<?php echo $row_r['id']; ?>"  style="margin-bottom: 3px;"> <span class="fa fa-heart" style="color: #fff; background-color: #000; width: 25px; height: 25px; padding: 5px; border-radius: 2px;"></span> add to whilist</a>
+            <a href="add_fav.php?id=<?php echo $row_r['id']; ?>"  style="margin-bottom: 3px;" class="btn btn-outline-dark btn-lg btn-block">  ADD TO FAVOURITE</a>
 
         <?php }else{ ?>
             <a href="dashboard.php" class="btn btn-light btn-lg btn-block"><span class="fa fa-heart"></span> In whilist</a>
         
         <?php } ?>
-    
-       
+
+
+
          
      
       </div>
@@ -514,30 +515,89 @@ $(document).ready(function(){
 
 
 
+
+
    
 </main>
-<style type="text/css">
-  .cat_cat{
-    
-  }
-  .cat_cat img{
-    width: auto;
-    height: 350px;
-    margin: 30px 100px;
-  }
-</style>
-<?php if($cat_id == 17){ ?>
-<div class="container cat_cat">
+
+
+<div class="container ">
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
-      <img src="image/addias.PNG">
+        <?php
+include('confs/config.php');
+
+   $id = $_GET['id'];
+   $result = mysqli_query($mysqli,"SELECT * FROM product p WHERE p.id=$id");
+   $row3 = mysqli_fetch_assoc($result);
+
+?>
+<style type="text/css">
+  .deto{
+    font-size: 18px;
+  }
+  .deto .btn{
+    background-color: #fff;
+  }
+  .btn-link{
+    color :black;
+  }
+  .btn-link:hover{
+    color: black;
+  }
+  .card{
+    border: 1px solid #fff;
+  }
+
+  .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+</style>
+<!-- =========================product description start ============================== -->
+        <div class="accordion deto" id="accordionExample" style="width: 600px;">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <h5>Product Description  <i class="fas fa-caret-down" style="margin-left: 20px"></i></h5>
+        </button>
+
+
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <?php echo $row3['description'] ?>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Product Detail  <i class="fas fa-caret-down"></i>
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div> -->
+ 
+</div>
+    <!-- =========================product description end ============================== -->
+       
     </div><!--  col-md-6 end -->
 
   </div> <!-- row end -->
 </div><!--  container end -->
-<?php }else{?>
 
-<?php } ?>
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script >var Chef = {
     init: function() {
