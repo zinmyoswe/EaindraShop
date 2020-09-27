@@ -3,7 +3,7 @@
 	 $dbhost = "localhost";
 	 $dbuser = "root";
 	 $dbpass = "";
-	 $dbname = "sport-store";
+	 $dbname = "eaindrashop";
 
 	  $mysqli = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
 	

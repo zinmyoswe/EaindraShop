@@ -160,6 +160,8 @@ h4{
     width: 100%;
     height: 100%;
   }
+
+ 
   /*.carousel-item img {
     height: 470px;
     width: 100%;
@@ -174,6 +176,7 @@ h4{
     width: 100%;
     height: 100%;
   }
+
   .carousel-item  {
     font-size: 40px;
   }
@@ -269,7 +272,7 @@ h4{
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
     </ol>
     <div class="carousel-inner">
        <div class="carousel-item active">
@@ -277,9 +280,9 @@ h4{
         <img src="https://surprisesgiftshop.com/files/2020/03/bride.jpg?&a=t" alt="" width="100%" height="100%" fill="#777">
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1 style="color: #fff; font-weight: 600;" cl>Show Your Loved Ones How Much You Care</h1>
+            <h1 style="color: #fff; font-weight: 600;" >Show Your Loved Ones How Much You Care</h1>
             <p style="color: #fff;">Shop for a special occasion at Surprises Gift Shop.<br></p>
-            <p><a class="btn btn-lg btn-dark" href="product.php" role="button" style="margin-bottom: 160px">SHOPPING NOW<i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 160px">SHOPPING NOW<i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
@@ -305,15 +308,18 @@ h4{
 
 
       <div class="carousel-item">
-        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/training-aSMC-ss20-mh-earthday-image2-d_tcm221-485018.jpg" alt="" width="100%" height="100%" fill="#777">
+      
+        <img src="image/eain_caro.png" alt="" width="100%" height="100%" fill="#777">
+      
 
       <div class="carousel-caption text-left">
             <h1>HEY WORLD!</h1>
             <p>Earth Day is Every Day, the new collection that respects and celebrates our planet.</p>
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button">SHOP COLLECTION <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 160px">SHOP COLLECTION <i class="fa fa-arrow-right"></i></a></p>
           </div>
       </div>
-      <div class="carousel-item">
+
+ <!--      <div class="carousel-item">
         <img src="https://content.nike.com/content/dam/one-nike/en_lu/SU19/Mens/W_20190516_EMEA_NSW_MLP_P3A_SHOX/W_20190516_EMEA_NSW_MLP_P3A_SHOX_DT_1600x600_visual.jpg.transform/full-screen/W_20190516_EMEA_NSW_MLP_P3A_SHOX_DT_1600x600_visual.jpg" alt="" width="100%" height="100%" fill="#777">
 
         <div class="container">
@@ -324,7 +330,8 @@ waves in clean monochrome colourways.</p>
             <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 130px">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
-      </div>
+      </div> -->
+
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
