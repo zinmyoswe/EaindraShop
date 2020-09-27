@@ -126,7 +126,29 @@ label img {
 		<input type="text" name="name" id="name" value="<?php echo $row['product_name']?>" class="form-control" disabled>
 
     <label for="name">Image</label><br>
-    <img src="cover/<?php echo $row['cover']?>"  height="200">
+
+    <div class="row">
+      <div class="col-md-4">
+        <img src="cover/<?php echo $row['cover']?>"  height="200">
+      </div>
+      <div class="col-md-4">
+        <h6>Available Colors : </h6>
+         <?php 
+              $sql = "select cp.*, p.cover 
+              from color_product cp 
+              LEFT JOIN product p
+              ON cp.color_id = p.id
+              WHERE cp.product_id = '$id'
+              ";
+              $result =mysqli_query($mysqli,$sql);
+              while($row = mysqli_fetch_assoc($result)):
+            ?>
+              <img src="cover/<?php echo $row['cover'] ?>" style="width: 50px;">
+           <?php endwhile ?>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    
 
     <hr>
  

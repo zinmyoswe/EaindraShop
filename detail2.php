@@ -266,33 +266,21 @@ include('confs/config.php');
        <form method="post" action="detail_add.php" enctype="multipart/form-data">
        
        <input type="hidden" name="id" value="<?php echo $id?>">
-         <?php
+            <?php 
 
-            $sql ="SELECT distinct a.*,p.color,p.product_id FROM product_attribute p
-                   LEFT JOIN attribute a
-                   ON p.color = a.attr_id
-                   WHERE p.product_id = '$id'";
-                   $ret = mysqli_query($mysqli,$sql);
-                  $num_results=mysqli_num_rows($ret);
-                  for($i=0;$i<$num_results;$i++)
-  {
-    $row=mysqli_fetch_array($ret);
+              $sql = "select cp.*, p.cover, p.id
+              from color_product cp 
+              LEFT JOIN product p
+              ON cp.color_id = p.id
+              WHERE cp.product_id = '$id'
+              ";
+              $result =mysqli_query($mysqli,$sql);
+              while($row = mysqli_fetch_assoc($result)):
+                
+            ?>
 
-    echo"<input type=\"radio\" name=\"rdocolor\" value=\"".$row['value']."\"
-  id=\"happy_".$row['attr_id']."\" class=\"custom-control-input\"/>";
-    echo "<label for=\"happy_".$row['attr_id']."\">";
-    ?>
-     
-     <img 
-    src="admin/images/<?php echo $row['attr_img'] ?>" 
-    alt="<?php echo $row['value'] ?>" />
-    <?php
-
-    echo "<label>";
-  
-  }
- ?>
-           
+             <a href="detail2.php?id=<?php echo $row['id']; ?>"><img src="admin/cover/<?php echo $row['cover'] ?>" style="width: 60px;"></a> 
+           <?php endwhile ?>
                           </div>
                             </div>
                           </div>  
