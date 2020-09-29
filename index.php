@@ -385,73 +385,73 @@ waves in clean monochrome colourways.</p>
                 <h2 class="feature_cat">FEATURED CATEGORIES</h2><br>
                 <div class="row">
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_pg_m_05?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://typo.com/dw/image/v2/BBDS_PRD/on/demandware.static/-/Sites-catalog-master-typo/default/dwd0014fe2/1683683/1683683-31-2.jpg?sw=566&sh=849&sm=fit" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Casual Shirts</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">CUP&Drinking</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j09_polo?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://www.loveourshopsuk.com/wp-content/uploads/2018/12/Joanne-Hawker-courage-pin.jpg" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Polo Shirts</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">ACCESSORIES</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j10_shirt_m?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://ae01.alicdn.com/kf/He9d8b7bd80274e4bb4898335c504bd25o.jpg_640x640Q90.jpg_.webp" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">T-Shirts</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">TOYS</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j11_Chino?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://i.pinimg.com/originals/b1/e3/13/b1e313eaa2a6a18c8a065bf5e56b8921.jpg" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Pants</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">FLOWERS</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j12_ezy?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://typo.com/on/demandware.static/-/Sites/default/dw7a2478b9/typo/FY21/Week%2013/Cat%20Tiles/03_BP_CAT-TILES_STATIONERY.jpg" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Jeans</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">STATIONERY</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j13_active?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://typo.com/dw/image/v2/BBDS_PRD/on/demandware.static/-/Sites-catalog-master-typo/default/dweeced7ca/1683623/1683623-03-2.jpg?sw=566&sh=849&sm=fit" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Activewear</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">TECH</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_cat_042419_j14_shorts_m?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://typo.com/dw/image/v2/BBDS_PRD/on/demandware.static/-/Sites-catalog-master-typo/default/dw713c2c16/1683715/1683715-10-2.jpg?sw=566&sh=849&sm=fit" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">Shorts</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">GIFTS</a></h2>
 
                           </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-xs-6 col-sm-6">
-                        <img src="https://uniqlo.scene7.com/is/image/UNIQLO/us_sp_ar_030719_v2_01?$jpgMQ$&wid=319" width="280" height="380" class="img_feature">
+                        <img src="https://typo.com/dw/image/v2/BBDS_PRD/on/demandware.static/-/Sites-catalog-master-typo/default/dwc9cee56c/1683702/1683702-02-2.jpg?sw=566&sh=849&sm=fit" width="280" height="380" class="img_feature">
                           <div class="container">
                           <div class="carousel-caption">
-                            <h2 style="margin-bottom: 130px;"><a href="product.php">AIRism Innerwear</a></h2>
+                            <h2 style="margin-bottom: 130px;"><a href="product.php">BAGS</a></h2>
 
                           </div>
                         </div>
