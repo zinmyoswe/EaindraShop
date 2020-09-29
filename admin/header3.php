@@ -362,6 +362,18 @@
             </a>
           </li>
 
+           <li class="nav-item has-treeview">
+            <a href="customer-list2.php" class="nav-link">
+              <i class="nav-icon fas fa-user-friends"></i>
+              <p>
+                Manage Customer
+                <i class="fas fa-angle-left right"></i>             
+              </p>
+            </a>
+          </li>
+
+          
+
           <li class="nav-item has-treeview">
             <a href="supplier-list2.php" class="nav-link">
               <i class="nav-icon fas fa-file-pdf"></i>

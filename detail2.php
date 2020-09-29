@@ -285,7 +285,7 @@ include('confs/config.php');
                             </div>
                           </div>  
                           <!-- Image check box start -->
-
+              <br><br><br><br><br>
      <!-- size option start -->
       <div class="row">
 
@@ -296,33 +296,10 @@ include('confs/config.php');
           ?>
 
            <div class="col-md-6 mb-3">
-            <p class="ava_color">AVAILABLE SIZES</p>
          
-                <select name="size" class="custom-select d-block w-100" id="size" required>
-                  <option value="">Choose...</option>
-                           <?php
-
-                                    $sql ="SELECT distinct a.*,p.size,p.product_id FROM product_attribute p
-                                     LEFT JOIN attribute a
-                                     ON p.size = a.attr_id
-                                     WHERE p.product_id = '$id'";
-
-                               $result = mysqli_query($mysqli,$sql);
-
-                               while($row = mysqli_fetch_assoc($result)){
-                                    $size = $row['size'];
-                                                  ?>
-
-                                    <?php if($size == 0){ ?>
-                                      <option value='ONE SIZE'>ONE SIZE</option>
-                                   <?php  }else{ ?>                                               
-                                  <option value='<?php echo $row['value']; ?>'><?php echo $row['value']; ?></option>
-                                        <?php } ?>          
-                                              <?php  } ?>
-                </select>
-                <div class="invalid-feedback">
-                  Please provide a valid state.
-                </div>
+         
+                
+                
               </div>
 
                
@@ -330,15 +307,13 @@ include('confs/config.php');
 
                           <div class="col-md-8">
 
-                     <style type="text/css">
-                          
-                          </style>
+                     
 <!--      ----------------------------------- In stock & sold out ------------------------ -->
                           <?php if($qty == 0){
                             echo "<span class='badge badge-light'>SOLD OUT</span>";
                           }
                           else{
-                            echo "In Stock";
+                            echo "<b>In Stock</b>";
                           }
 
                           ?>

@@ -130,10 +130,10 @@
                       <i style="color: #aeb6bf">by <?php echo $row['brand_name']; ?> 
                          <small> (in <?php echo $row['cat_name']; ?>)</small></i><br>
                        <p><i>from</i> <?php echo $row['supplier_name']; ?></p>
-                       <b style="font-size: 16px;">ITEM LEFT : <?php echo $row['qty']; ?></span></b>
+                       <b style="font-size: 16px;">ITEM LEFT : <?php echo $row['qty']; ?></span></b><br>
 
                         <?php
-                          include('../confs/config.php');
+                          include('confs/config.php');
                           $sql_dis = mysqli_query($mysqli,"SELECT * FROM discount 
                             LEFT JOIN product ON discount.product_id = product.id
                             WHERE product.id = '$id'");
@@ -141,9 +141,9 @@
                            $percentage = $result_dis['percentage'];
                            $discount_id = $result_dis['discount_id'];
                           ?>
-                          <?php if( $discount_id == 0){
-
-                          }else{?>
+                          <?php if( $discount_id == 0){ ?>
+                               <h style="font-family: Arial; font-size: 15px; color: ;">US$ <?php echo $price ?></h>
+                          <?php }else{?>
                           <?php
                             $selling_price = $price-($price*($percentage/100))
                           ?>
@@ -176,7 +176,7 @@
                           <a href="color_product.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark">Color&Product</a>
                       </p>
 
-                      <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Color&Size</a>
+                    <!--   <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Color&Size</a> -->
 
 
 
