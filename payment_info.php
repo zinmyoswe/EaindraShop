@@ -140,11 +140,56 @@ a:hover{
 
 }
 
+/*Badge*/
+.badge-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 50%;
+}
+
+.badge-dark {
+    color: #fff;
+    background-color: black;
+}
+
+.tag-eain{
+   margin-right: 20px;
+}
+
+.card-img img{
+  width: 49px;
+}
+
+.card-img3{
+  margin-left: 450px;
+}
+
+.card-img3 img{
+  width: 49px;
+}
+
+.wave{
+ border-radius: 5px;
+}
+
+
+
+.tive{
+
+   border-bottom: 2px solid black;
+}
+
     </style>
 <!-- ---------------------------------Payment Page end -------------------------- -->
 
 <div class="container">
 
+   <span class="badge badge-pill badge-dark">1</span> <b class="tag-eain">BAG</b>
+   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain">DELIVERY</b>
+   <span class="badge badge-pill badge-dark ">3</span> <b class="tag-eain tive">PAYMENT</b>
+   <span class="badge badge-pill badge-secondary">4</span> 
+   <b class="tag-eain text-secondary ">ORDER COMPLETE</b>
+   <hr>
   <br><br>
     <h2>PAYMENT METHOD</h2>
     
@@ -158,14 +203,16 @@ a:hover{
 <!-- 26 form start -->
 
 
+
+
 <div class="custom-control custom-radio mb-3">
   <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio1"><span class="fa fa-credit-card"></span>  CREDIT CARD</label>
+  <label class="custom-control-label" for="customRadio1"><span class="fa fa-credit-card"></span>  CREDIT / DEBIT CARD</label>
   <div class="card-img">
-<img src="https://www.adidas.com/static/on/demandware.static/-/Sites/en_US/dw0ea1ad9f/visa_card_icon_new.png">
-<img src="https://www.adidas.com/static/on/demandware.static/-/Sites/en_US/dwe5aabfdc/amex_card_icon.png">
-<img src="https://www.adidas.com/static/on/demandware.static/-/Sites/en_US/dw8dd2a717/master_card_icon_new.png">
-<img src="https://www.adidas.com/static/on/demandware.static/-/Sites/en_US/dw37610a52/discover_card_icon.png">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-visa.svg">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-american-express.svg">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-master-card.svg">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-discover.svg">
 </div>
 </div>
 <hr>
@@ -173,11 +220,13 @@ a:hover{
 
 <div class="custom-control custom-radio mb-3">
   <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio4"><span class="fa fa-credit-card"></span>  DEBIT CARD</label>
-  <div class="card-img2">
-<img src="image/bank (1).png" style="width: 100px;">
-<img src="image/bank (2).png" style="width: 100px;">
-<img src="image/bank (4).png" style="width: 100px;">
+  <label class="custom-control-label" for="customRadio4"><span class="fa fa-credit-card"></span>  WAVE MONEY / KBZ PAY</label>
+  <div class="card-img3">
+<img src="https://cdn.jobnet.com.mm/images/can/200/200/20190613033207-wave-money.png" class="wave">
+<img src="https://www.kbzpay.com/wp-content/uploads/sites/9/2020/04/blue-L.png" class="wave2">
+
+
+
 </div>
 </div>
 
@@ -192,7 +241,7 @@ a:hover{
    
   }
   .card-img2 img{
-    border: 1px solid whitesmoke;
+
     margin-left: 10px;
     padding: 5px;
     border-radius: 2px;
@@ -205,10 +254,12 @@ a:hover{
 
   
 </div>
+
+
 <hr>
 <div class="custom-control custom-radio mb-3">
   <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio3"><img src="https://www.adidas.com/static/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw65738826/paypal-payment-image.png" class="pay-lo"></label>
+  <label class="custom-control-label" for="customRadio3">PAYPAL</label>
   
       <div class="pay-container">
                   <!--   AJAX PAY HERE  -->    
