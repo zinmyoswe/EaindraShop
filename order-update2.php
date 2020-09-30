@@ -5,9 +5,9 @@ session_start();
   $shipping = $_SESSION['shipping'];
   include('confs/config.php');
 
-  $name = $_POST['name'];
-  $card = $_POST['card'];
-  $sc = $_POST['sc'];
+  // $name = $_POST['name'];
+  // $card = $_POST['card'];
+  // $sc = $_POST['sc'];
 
 if(isset($_SESSION['cart'])) {
 
@@ -15,7 +15,7 @@ if(isset($_SESSION['cart'])) {
   $itemqty = 0;
 
   $query = $mysqli->query("INSERT INTO orders(customer,shipping_id,status,total_amt,total_qty,payment_type,created_date,modified_date) 
-                           VALUES('$user','$shipping',2,0,0,'ATM',NOW(),NOW())");
+                           VALUES('$user','$shipping',2,0,0,'WaveKBZ',NOW(),NOW())");
 
   $order_id = mysqli_insert_id($mysqli);
 
@@ -99,7 +99,7 @@ $sql = "INSERT INTO payment(order_id,payment_type,amount,payamount,payment_date)
 
     $payment_id = mysqli_insert_id($mysqli);
     $sql2 = "INSERT INTO payment_detail(payment_id,name,card_no,exp_month,exp_year,security_code,created_date)
-                   VALUES('$payment_id','$name','$card','','','$sc',NOW())";
+                   VALUES('$payment_id','','','','','',NOW())";
 
     $run2=mysqli_query($mysqli,$sql2);
 

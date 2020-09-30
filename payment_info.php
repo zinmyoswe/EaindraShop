@@ -156,6 +156,13 @@ a:hover{
    margin-right: 20px;
 }
 
+/*card image*/
+
+.card-img{
+    margin-left: 450px;  
+  }
+
+
 .card-img img{
   width: 49px;
 }
@@ -166,6 +173,15 @@ a:hover{
 
 .card-img3 img{
   width: 49px;
+}
+
+.card-img4{
+  margin-left: 450px;
+}
+
+.card-img4 img{
+  width: 80px;
+  margin-right: 8px;
 }
 
 .wave{
@@ -231,21 +247,7 @@ a:hover{
 </div>
 
 <style type="text/css">
-  .card-img{
-    margin-left: 450px;
-   
-  }
-  .card-img2{
-    margin-left: 366px;
-    margin-top: 0;
-   
-  }
-  .card-img2 img{
-
-    margin-left: 10px;
-    padding: 5px;
-    border-radius: 2px;
-  }
+  
 </style>
 <hr>
 <div class="custom-control custom-radio mb-3">
@@ -260,6 +262,11 @@ a:hover{
 <div class="custom-control custom-radio mb-3">
   <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
   <label class="custom-control-label" for="customRadio3">PAYPAL</label>
+
+  <div class="card-img4">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-paypal.svg">
+<img src="https://www.adidas.com/glass/react/129ec05/assets/img/icon-adidas-paypal-credit.svg">
+</div>
   
       <div class="pay-container">
                   <!--   AJAX PAY HERE  -->    
@@ -349,7 +356,7 @@ a:hover{
         $.ajax({
           type:'post',
           data:{country_id:getCountryID},
-          url: 'ajax_request_debit.php',
+          url: 'ajax_request_waveKBZ.php',
           success:function(returnData){
             $("#loader").hide();  
             $(".pay-container").html(returnData);

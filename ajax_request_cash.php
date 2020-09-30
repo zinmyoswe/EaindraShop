@@ -19,7 +19,7 @@
                     
                   <div class="notice notice-warning">
         <strong><p>Dear <?php echo $row['full_name'] ?>,</p></strong> 
-        <p>Thank you from buying our <a href="" style="color: black; text-decoration: underline;">Sport Store</a></p>
+        <p>Thank you from buying our <a href="index.php" style="color: black; text-decoration: underline;">Eaindra Store</a></p>
     </div>
       
                       
