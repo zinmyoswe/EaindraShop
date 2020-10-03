@@ -37,6 +37,10 @@
   padding: 0;
 }
 
+a{
+  color: black;
+}
+
 </style>
 <br>
  <div class="container">

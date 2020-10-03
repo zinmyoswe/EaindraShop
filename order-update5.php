@@ -15,7 +15,7 @@ if(isset($_SESSION['cart'])) {
   $itemqty = 0;
 
   $query = $mysqli->query("INSERT INTO orders(customer,shipping_id,status,total_amt,total_qty,payment_type,created_date,modified_date) 
-                           VALUES('$user','$shipping',3,0,0,'KBZPay',NOW(),NOW())");
+                           VALUES('$user','$shipping',3,0,0,'WavePay',NOW(),NOW())");
 
   $order_id = mysqli_insert_id($mysqli);
 
@@ -93,7 +93,7 @@ if(isset($_SESSION['cart'])) {
   }
 }
 $sql = "INSERT INTO payment(order_id,payment_type,amount,payamount,payment_date)
-                   VALUES('$order_id','KBZPay','$finaltotal','$finaltotal',NOW())";
+                   VALUES('$order_id','WavePay','$finaltotal','$finaltotal',NOW())";
 
     $run=mysqli_query($mysqli,$sql);
 
