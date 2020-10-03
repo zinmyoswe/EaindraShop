@@ -15,6 +15,6 @@
 
      $run2 = mysqli_query($mysqli,$sql2);
 
-     header("location: all_order.php");
+     echo "<script>window.open('all_order.php?w2=success2','_self')</script>";
 
 ?>

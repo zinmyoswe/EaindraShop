@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	include('../confs/config.php');
 	include('header3.php'); 
 	$id = $_GET['id'];
@@ -54,15 +54,8 @@
 
                   $run2 = mysqli_query($mysqli,$sql2);
                   
-                  if($run){
-
-                    echo '<div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-check"></i> Success</h4>
-                Successfully Shipping- Orders is still shipping to customer
-              </div>';
-                  }
-
+                 
+                  echo "<script>window.open('all_order.php?w2=success','_self')</script>";
                  
 
                 }

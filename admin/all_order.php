@@ -1,8 +1,49 @@
 <?php 
 session_start();
+error_reporting(0);
 include('../confs/config.php');
 include('header3.php'); 
+
+$w2 = $_GET['w2'];
 ?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    </head>
+
+<style type="text/css">
+     .modal-dialog{
+            margin-top: 250px;
+        }
+        .btn-secondary {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+</style>
+
+<?php if($w2 == 'success'){ ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- <script type="text/javascript" src="https://adminlte.io/themes/dev/AdminLTE/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+             <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Confirm Shipping',
+              text: 'Confirm Shipping Successfully'
+            })            
+          </script>
+<?php } elseif($w2 == 'success2'){ ?>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Confirm Delivered',
+              text: 'Confirm Delivered to Customer Successfully!'
+            })
+                     
+          </script>
+<?php } ?>
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -70,7 +111,7 @@ include('header3.php');
     			<td><?php echo $row['order_id'] ?></td>
     			<td>
     			<?php if($status == 2) { ?>
-    				<span class='badge badge-warning'>Waiting Payment</span>
+    				<span class='badge badge-warning'>Paywith cash</span>
     			 
           <?php } else if($status == 3){ ?>
             <span class='badge badge-primary'>Received Payment</span>
@@ -101,11 +142,11 @@ include('header3.php');
             <td><?php echo $row['customer']; ?></td>
         
 
-          <?php if($status == 3) { ?>
+          <?php if($status == 3 or $status == 2) { ?>
     			<td><a class="btn btn-block btn-danger btn-flat" href="shipping_confirm.php?id=<?php echo $row['order_id'] ?>" 
           >Confirm Shipping <span class="fa fa-angle-double-right"></span></a></td>
 
-          <?php } else if($status == 2){ ?>
+          <?php } else if($status == 6){ ?>
             <td><a class="btn btn-block btn-primary btn-flat" href="order_pending_detail.php?id=<?php echo $row['order_id'] ?>">Confirm Receive Payment <span class="fa fa-angle-double-right"></span></a></td>
 
           <?php } else if($status == 4){ ?>
