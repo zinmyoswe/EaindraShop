@@ -17,8 +17,8 @@
 
 
 
-
-  $sql = "SELECT * FROM orders WHERE customer = '$customer' ORDER BY order_id DESC";
+  $order_id = $_GET['id'];
+  $sql = "SELECT * FROM orders WHERE customer = '$customer' and order_id ='$order_id'";
   $run = mysqli_query($mysqli,$sql);
   $count = mysqli_num_rows($run);
 
@@ -47,28 +47,18 @@ a{
    <div class="row">
   
      <div class="col-md-9">
-      <h4 style="text-align: center;">All Order Detail</h4>
-      Total Orders : <?php echo $count ?>
-       <table class="table">
-        <tr>
-          <th>OrderID</th>
-          <th>Total Amount</th>
-          <th>Total Qty</th>
-          <th>Payment Type</th>
-          <th>Status</th>
-          <th>Order Time</th>
-          <th></th>
-        </tr>
-        <?php while($row = mysqli_fetch_assoc($run)): 
+      <h4 style="text-align: center;"><b><?php echo $row_c['name'] ?>'s</b> Order Detail</h4>
+      <br>
+       <?php while($row = mysqli_fetch_assoc($run)): 
           $status = $row['status'];
         ?>
+      
+       <table class="table">
         <tr>
-          <td>ORD_<?php echo $row['order_id'] ?></td>
-          <td>US$<?php echo $row['total_amt'] ?></td>
-          <td><?php echo $row['total_qty'] ?></td>
-          <td><?php echo $row['payment_type'] ?></td>
-          <td>
-            <?php if($status == 2) { ?>
+          <th>
+            <b>ORDER_ID </b> : ORD_<?php echo $row['order_id'] ?><br>
+            <b>Payment Type </b> : <?php echo $row['payment_type'] ?><br>
+            <b>Status </b> :<?php if($status == 2) { ?>
             <span class="badge badge-pill badge-warning">UnPaid</span>
            
                 <?php } else if($status == 3){ ?>
@@ -79,14 +69,58 @@ a{
                
                 <?php }else{  ?>
                  <span class="badge badge-pill badge-dark"> Delivered</span>
-                <?php  }?>
-          </td>
-          <td><span class="far fa-clock"></span> <?php echo $row['created_date'] ?></td>
-          <td>
-            <a href="myorder_detail.php?id=<?php echo $row['order_id'] ?>" class="btn btn-outline-dark">Detail</a>
-          </td>
+                <?php  }?><br>
+          </th>
+          <th></th>
+          <th></th>
+         
+          <th colspan="2">
+            <span class="far fa-clock"></span> <?php echo $row['created_date'] ?>
+          </th>
+        <tr>
+        <tr>
+          <th>Product</th>
+          <th>Product Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>
+     
+                 <?php
+            include('confs/config.php');
+            $order_id = $_GET['id'];
+            $items = mysqli_query($mysqli,"Select oi.*, p.product_name, p.cover 
+              from order_items oi
+              left join product p 
+              on oi.product_id = p.id
+              where oi.order_id = $order_id");
+
+            while($item=mysqli_fetch_assoc($items)):
+        ?>  
+        <tr>
+          <td><img src="admin/cover/<?php echo $item['cover']; ?>" width="110" height="135"/></td>
+            <td><b><?php echo $item['product_name'] ?></b></td>
+          <td><?php echo $item['units'] ?></td>
+          <td>US$<?php echo $item['price'] ?></td>
+          <td><b>US$<?php echo $item['total'] ?></b></td>
+             </tr>
+      <?php endwhile ?>
+         
+      
+     
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Total </b> : US$<?php echo $row['total_amt'] ?><br>
+          <b>Total Quantity</b> :<?php echo $row['total_qty'] ?><br></td>
+          
         </tr>
       <?php endwhile ; ?>
+
+     
       </table>
      </div> <!-- col-md-8 end-->
         <div class="col-md-3">
