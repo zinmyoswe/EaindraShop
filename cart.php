@@ -8,13 +8,42 @@
   include('004navbar.php');
 
 ?>
+<style type="text/css">
+  /*Badge*/
+.badge-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 50%;
+}
 
+.badge-dark {
+    color: #fff;
+    background-color: black;
+}
+
+.tag-eain{
+   margin-right: 40px;
+}
+
+.tive{
+
+   border-bottom: 2px solid black;
+}
+</style>
 
 
 <script src="js/vendor/modernizr.js"></script>
 
 <br><br>
   <div class="container">
+
+    <span class="badge badge-pill badge-dark">1</span> <b class="tag-eain tive">BAG</b>
+   <span class="badge badge-pill badge-secondary">2</span> <b class="tag-eain text-secondary">DELIVERY</b>
+   <span class="badge badge-pill badge-secondary ">3</span> <b class="tag-eain text-secondary">PAYMENT</b>
+   <span class="badge badge-pill badge-secondary">4</span> 
+   <b class="tag-eain text-secondary ">ORDER COMPLETE</b>
+   <hr>
+   <br><br>
 
 <!-- {{-- ----------------------------- ROW CART START ----------------------------- --}} -->
 <div class="row">

@@ -114,11 +114,37 @@ a:hover{
     color: black;
 }
 
+  /*Badge*/
+.badge-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 50%;
+}
+
+.badge-dark {
+    color: #fff;
+    background-color: black;
+}
+
+.tag-eain{
+   margin-right: 40px;
+}
+
+.tive{
+
+   border-bottom: 2px solid black;
+}
+
     </style>
 <!-- ---------------------------------Shipping Page end -------------------------- -->
 <br>
  <div class="container">
-
+<span class="badge badge-pill badge-dark">1</span> <b class="tag-eain"><a href="cart.php">BAG</a></b>
+   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain tive"><a href="shipping_info.php">DELIVERY</a></b>
+   <span class="badge badge-pill badge-secondary ">3</span> <b class="tag-eain text-secondary">PAYMENT</b>
+   <span class="badge badge-pill badge-secondary">4</span> 
+   <b class="tag-eain text-secondary ">ORDER COMPLETE</b>
+   <hr>
         <br><br>
     <h2>DELIVERY METHOD</h2>
     <p class="lead">Free Shipping and Free Returns</p>

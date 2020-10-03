@@ -15,7 +15,7 @@ if(isset($_SESSION['cart'])) {
   $itemqty = 0;
 
   $query = $mysqli->query("INSERT INTO orders(customer,shipping_id,status,total_amt,total_qty,payment_type,created_date,modified_date) 
-                           VALUES('$user','$shipping',2,0,0,'WaveKBZ',NOW(),NOW())");
+                           VALUES('$user','$shipping',2,0,0,'KBZ',NOW(),NOW())");
 
   $order_id = mysqli_insert_id($mysqli);
 
@@ -110,6 +110,7 @@ $run_cart = mysqli_query($mysqli,$del_cart);
 $run_cart2 = mysqli_query($mysqli,$del_cart2);
 unset($_SESSION['shipping']);
 unset($_SESSION['cart']);
-header("location:success2.php");
+
+echo "<script>window.open('success2.php','_self')</script>";
 
 ?>

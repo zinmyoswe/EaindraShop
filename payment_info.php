@@ -156,6 +156,11 @@ a:hover{
    margin-right: 20px;
 }
 
+.tive{
+
+   border-bottom: 2px solid black;
+}
+
 /*card image*/
 
 .card-img{
@@ -190,18 +195,15 @@ a:hover{
 
 
 
-.tive{
 
-   border-bottom: 2px solid black;
-}
 
     </style>
 <!-- ---------------------------------Payment Page end -------------------------- -->
 
 <div class="container">
 
-   <span class="badge badge-pill badge-dark">1</span> <b class="tag-eain">BAG</b>
-   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain">DELIVERY</b>
+   <span class="badge badge-pill badge-dark">1</span> <b class="tag-eain"><a href="cart.php">BAG</a></b>
+   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain"><a href="shipping_info.php">DELIVERY</a></b>
    <span class="badge badge-pill badge-dark ">3</span> <b class="tag-eain tive">PAYMENT</b>
    <span class="badge badge-pill badge-secondary">4</span> 
    <b class="tag-eain text-secondary ">ORDER COMPLETE</b>

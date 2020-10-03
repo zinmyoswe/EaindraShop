@@ -1,3 +1,8 @@
+
+<?php 
+  session_start(); 
+  include('confs/config.php');
+?>
 <?php include('001header.php'); ?>
 <?php include('004navbar.php'); ?>
         <div class="container">
@@ -12,6 +17,7 @@
 </div><!--  container end -->
 
 <?php
+
 include('confs/config.php');
 
  $del = "DELETE FROM cart";
