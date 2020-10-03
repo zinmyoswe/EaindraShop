@@ -58,7 +58,7 @@ include('../001header.php');
     <div class="row">
         <div class="col-lg-4 col-sm-12 col-xs-12 offset-4">
           <div class="card">
-            <h2 style="text-align: center"> SPORT STORE</h2>
+            <h2 style="text-align: center"> Eaindra STORE</h2>
             <br>
 
             

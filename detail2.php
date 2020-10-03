@@ -221,7 +221,7 @@ include('confs/config.php');
             <div class="product-details">
                 <ul class="product-images">
                   
-                    <li class="preview"><img src="admin/cover/<?php echo $row2['cover'] ?> " alt="" ></li>
+                    <li class="preview"><img src="admin/cover/<?php echo $row2['cover'] ?> " alt=""></li>
                     <li class="javascript:void(0)"><img src="admin/cover/<?php echo $row2['cover'] ?> " alt="" ></li>
                     <!-- Don't show small pictures if there's only 1 -->
                     <?php
@@ -627,14 +627,14 @@ $(function() {
 </script>
 
     <div class="comment-form-container">
-      <?php if($customer == null){ ?>
-
-      
-      <?php }else{ ?>
-        <div class="container">
+      <?php 
+      $customer = $_SESSION['email'];
+      if($customer == null){ ?>
+      <div class="container">
+          <div class="container">
           <div class="row">
             <div class="col-md-6">
-        <form id="frm-comment" class="">
+        <form method="post">
             <div class="form-group">
                 <input type="hidden" name="comment_id" id="commentId"
                     placeholder="Name" class="form-control"/> 
@@ -653,7 +653,40 @@ $(function() {
             <div class="form-group mb-8">
              
 
-                <button class="btn btn-primary pull-right" type="submit" class="btn btn-primary pull-right" id="submitButton" style="margin-left: 2px; border-radius: 50%;"><span class="fa fa-paper-plane fa-1x"></span></button>
+                <a href="checkout.php" class="btn btn-dark">Write a review <span class="fa fa-paper-plane fa-1x"></span></a>
+            </div>
+
+        </form>
+        </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+
+           
+      <?php }else{ ?>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+        <form id="frm-comment" class="" method="post">
+            <div class="form-group">
+                <input type="hidden" name="comment_id" id="commentId"
+                    placeholder="Name" class="form-control"/> 
+
+                    <input class="input-field"
+                    type="hidden" name="name" id="name" value="<?php echo $customer_name ?>" class="form-control"/>
+
+                    <input class="input-field"
+                    type="hidden" name="product_id" id="product_id" value="<?php echo $product_id ?>" class="form-control"/>
+            </div>
+            <div class="form-group mb-8">
+                <input type="text" name="comment" placeholder="Write a message..." class="form-control">
+            </div>
+
+            
+            <div class="form-group mb-8">
+             
+
+                <button class="btn btn-dark pull-right" type="submit" class="btn btn-primary pull-right" id="submitButton" >Write a review <span class="fa fa-paper-plane fa-1x"></span></button>
             </div>
 
         </form>
@@ -707,10 +740,10 @@ $(function() {
          </div>
          </div>
           </div> <!-- col-sm-4 end -->
-          <div class="col-sm-3">
+          <div class="col-sm-4">
                  
           <?php
-          
+            include('confs/config.php');
              $list = "SELECT * FROM comment WHERE product_id = '$product_id' 
              ORDER BY comment_id desc";
              $run_l = mysqli_query($mysqli,$list);
@@ -722,18 +755,18 @@ $(function() {
               <!-- Nested media object -->    
     <div class="media">
       <div class="media-left">
-        <img src="image/default.png" class="rounded-circle" style="width:45px">
+        <img src="image/default2.png" class="rounded-circle" style="width:45px">
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><?php echo $row_l['sender_name'] ?> <small><i>Posted on <span class="fa fa-clock-o"></span> <?php echo $myFormatForView ?></i></small></h4>
+        <h4 class="media-heading"> <?php echo $row_l['sender_name'] ?>  <small><i> Posted on <span class="fas fa-clock"></span> <?php echo $myFormatForView ?></i></small></h4>
         <p><?php echo $row_l['comment'] ?></p>
       </div>
     </div>
     <a href="" style="margin-left: 43px; color: #007BFF;">Reply</a>
         <?php endwhile ?>
        
-
-         <a href="" style="text-align: center; color: #007BFF;">Load More &raquo;</a>
+          <br><br>
+         <a href="" style="text-align: center; color: #000;">Load More &raquo;</a>
           <hr>
           </div> <!-- col-sm-4 end -->
           <style type="text/css">
@@ -754,8 +787,8 @@ $(function() {
     transition: width 0.6s ease 0s;
 }
           </style>
-          <div class="col-sm-5">
-            <a href="" class="btn btn-light">Write a Review</a>
+          <div class="col-sm-4">
+          
              <h3>RATING BREAKDOWN</h3>
              <table class="table">
               <tr>
@@ -816,6 +849,7 @@ $(function() {
    
       </div>
       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script>
             function postReply(commentId) {
                 $('#commentId').val(commentId);

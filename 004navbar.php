@@ -221,7 +221,7 @@
             <ul id='searchResult' >
                 <li ng-click='setValue($index,$event)' ng-repeat="result in searchResult" >
                   <a href="detail2.php?id={{result.id}}">
-                  <img ng-src="admin/cover/{{ result.cover }}" width="30px" height="40px"> {{ result.name }}</a>
+                  <img ng-src="admin/cover/{{ result.cover }}" width="60px" height="60px"> {{ result.name }}</a>
                 </li>
             </ul>  
         </div>

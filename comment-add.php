@@ -14,4 +14,5 @@ if (! $result) {
     $result = mysqli_error($mysqli);
 }
 echo $result;
+
 ?>
