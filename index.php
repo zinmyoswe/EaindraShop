@@ -351,25 +351,25 @@ waves in clean monochrome colourways.</p>
  <section id="sport_store_add_1">
 <div class="row">
         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <img src="https://www.loveourshopsuk.com/wp-content/uploads/2018/04/Dee-Dee-Boo-personalised-love-print.jpg" width="700px" height="500px" style="margin-left: 50px">
+            <img src="https://media.gettingpersonal.co.uk/387688/images/products/12/45512/rwf/multi-photo-upload-framed-print---photos-with-message_a.jpg?width=700" width="700px" height="500px" style="margin-left: 50px">
 
               <div class="container">
           <div class="carousel-caption">
-            <h2>ULTRABOOST 19</h2>
-            <p>Reboosted</p>
+            <h2>GIVE GIFTS FOR SOMEONE IMPORTANT</h2>
+            <p>Multi Photo Upload Framed Print</p>
             <p><a class="btn btn-lg btn-light" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
 
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/originals-fw19-hoc-drop1-tease-hp-teaser-large-2up-ee5790-m-t_v2_tcm221-364940.jpg" width="700px" height="500px">
+            <img src="https://ae01.alicdn.com/kf/H1eb9dd9eb15a47c8a65ba6e984c1471f1/Brown-bear-bunny-rabbit-plush-toy-kawaii-bear-bunny-plush-doll-cute-soft-animal-toy-gift.jpg_Q90.jpg_.webp" width="700px" height="500px">
 
               <div class="container">
           <div class="carousel-caption"">
-            <h2>HOME OF CLASSICS</h2>
-
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button">PREVIEW NOW <i class="fa fa-arrow-right"></i></a></p>
+            <h2>lovely Teddy bear plush toy anime panda</h2>
+  <p>Cute Birthday Age Range Gift Surprise Gift for Girls Filling</p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
         </div>
@@ -469,21 +469,21 @@ waves in clean monochrome colourways.</p>
     <section id="sport_store_add_2">
     <div class="row">
         <div class="col-md-6 col-xs-12 col-sm-12">
-            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/teaser-c-Adidas_Swim_Amphi-mobile_background_image_tcm143-341615.jpg" width="700px" height="500px" style="margin-left: 50px">
+            <img src="https://ae01.alicdn.com/kf/H01d1dbd61f9f46268cf66d81519defb8h/15cm-Brown-Bear-Cony-Rabbit-plush-Keychain-Toys-Sweater-bear-Gift-Doll-Bag-Pendant-stuffed-cute.jpg_Q90.jpg_.webp" width="700px" height="500px" style="margin-left: 50px">
               <div class="container">
           <div class="carousel-caption">
-            <h2>MAXIMUM VERSATILITY</h2>
+            <h2>BROWN BEAR CONY RABBIT</h2>
             <p>Three support levels, for any activity in and around the water.</p>
             <p><a class="btn btn-lg btn-dark" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
         </div>
         <div class="col-md-6 col-xs-12 col-sm-12">
-            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/HP_Teaser_Tights_Small_tcm143-315446.jpg" width="700px" height="500px">
+            <img src="https://media.gettingpersonal.co.uk/348439/images/products/04/50104/rwf/personalised-large-white-wooden-keepsake-box---bunny-_a.jpg?width=700" width="700px" height="500px">
               <div class="container">
           <div class="carousel-caption"">
-            <h2>WORK IT OUTSIDE</h2>
-            <p>Get inspired to bootcamp equipment-free in high support tights.</p>
+            <h2 style="color: black">PERSONALIZED GIFT BOX</h2>
+            <p style="color: black">Get inspired to bootcamp equipment-free in high support tights.</p>
 
             <p><a class="btn btn-lg btn-dark" href="product.php" role="button">PREVIEW NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
@@ -496,7 +496,7 @@ waves in clean monochrome colourways.</p>
     <!-- {{-- ======================= end of addias 2 ==================== --}} -->
 
     <!-- {{-- ======================= start of caro ==================== --}} -->
-    <div class="carousel-inner">
+   <!--  <div class="carousel-inner">
       <div class="carousel-item active">
 
         <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/ptBR/Images/HEADER2-GLP_Nemeziz_Desktop_Masthead-Small_tcm194-347942.jpg" alt="" width="100%" height="100%" fill="#777">
@@ -511,11 +511,11 @@ waves in clean monochrome colourways.</p>
       </div>
 
     </div>
-    <br><br>
+    <br><br> -->
   <!-- {{-- ======================= end of caro ==================== --}} -->
 
   <!-- {{-- ======================= start of caro2 ==================== --}} -->
-    <div class="carousel-inner">
+    <!-- <div class="carousel-inner">
       <div class="carousel-item active">
 
         <img src="https://content.nike.com/content/dam/one-nike/en_lu/SU19/Mens/W_20190606_EMEA_RUN_MLP_P3A_PEG36/MLP_P3_desktop.png.transform/full-screen/MLP_P3_desktop.png" alt="" width="100%" height="100%" fill="#777">
@@ -531,7 +531,7 @@ Lace up some all new innovations for everyday speed.</p>
       </div>
 
     </div>
-    <br><br>
+    <br><br> -->
  <!--  {{-- ======================= end of caro2 ==================== --}} -->
 
  <!--  {{-- ======================= start of caro3 ==================== --}} -->
@@ -540,11 +540,11 @@ Lace up some all new innovations for everyday speed.</p>
     <div class="row">
       <div class="col-lg-4 col-sm-12 col-xs-12 mb-3">
          <div class="caro3">
-           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/ebni4cssccl4rvr0fgeb/homepage-apla-xa.jpg" class="caro3_img">
+           <img src="https:////media.gettingpersonal.co.uk/386144/images/products/51/58151/rwf/gift-for-him-hamper_a.jpg?width=700" class="caro3_img">
            <div class="container">
           <div class="carousel-caption">
 
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Men's </a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">GIVE FOR HIM </a></p>
           </div>
         </div>
          </div>
@@ -552,11 +552,11 @@ Lace up some all new innovations for everyday speed.</p>
 
        <div class="col-lg-4 col-sm-12 col-xs-12 mb-3">
          <div class="caro3">
-           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/xkh1zz53gxufllifu6yd/homepage-apla-xa.jpg" class="caro3_img">
+           <img src="https://media.gettingpersonal.co.uk/394872/images/products/83/55283/rwf/multi-photo-upload-cushion---heart-shape_a.jpg?width=700" class="caro3_img">
              <div class="container">
           <div class="carousel-caption">
 
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Women's </a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">GIVE FOR HER </a></p>
           </div>
         </div>
          </div>
@@ -564,11 +564,11 @@ Lace up some all new innovations for everyday speed.</p>
 
        <div class="col-lg-4 col-sm-12 col-xs-12 mb-3">
          <div class="caro3">
-           <img src="https://c.static-nike.com/a/images/f_auto/w_1536,c_limit/rl9h6expvyvrv6gwbzr2/homepage-apla-xa.jpg" class="caro3_img">
+           <img src="https://media.gettingpersonal.co.uk/388070/images/products/47/55347/rwf/personalised-comic---me-comic-_a.jpg?width=700" class="caro3_img">
              <div class="container">
           <div class="carousel-caption">
 
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">Kids' </a></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="border-radius: 20px; margin-right: 40px; margin-bottom: 25px;">GIVE FOR Kids' </a></p>
           </div>
         </div>
          </div>
