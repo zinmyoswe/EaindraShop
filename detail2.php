@@ -383,7 +383,7 @@ include('confs/config.php');
    $row = mysqli_fetch_assoc($result);
    
    ?>
-     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['id']; ?>" id="getUser" style="clear:both; background: #000 ; border: none; color: #fff; font-size: 14px; padding: 10px;cursor: pointer;">ADD TO BAG</button>
+     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['id']; ?>" id="getUser" class="btn btn-dark btn-lg btn-block">ADD TO BAG</button>
      <?php } ?>
 
        <div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

@@ -39,9 +39,9 @@
   
     <div class="col-md-12 col-sm-12 col-xs-12">
 
-              <img src="image/ACTIVE.png" width="35" height="40">
+              <!-- <img src="image/ACTIVE.png" width="35" height="40"> -->
               <br>
-              <strong style="color: #FFC107; font-size: 14px;">ACTIVE FASHION</strong><br>
+              <strong style="color: #000; font-size: 18px;">EaindraShop</strong><br><br><br>
               <h2>SOLD OUT, Email will sent when product is in stock.</h2>
 
       

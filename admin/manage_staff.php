@@ -7,6 +7,18 @@ include('header3.php');
 $w2 = $_GET['w2']; 
 ?>
 
+<?php 
+
+                  include('confs/config.php');
+                     $admin = $_SESSION['email'];
+                   $c = "SELECT * FROM admin WHERE admin_email = '$admin'";
+                    $r = mysqli_query($mysqli,$c);
+                    $row_ad=mysqli_fetch_assoc($r);
+                    $admin_id = $row_ad['admin_id'];
+                    $role2 = $row_ad['role'];
+                                       
+                ?>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     </head>
 
@@ -93,6 +105,7 @@ $w2 = $_GET['w2'];
                     <div class="col-7">
                       <h2 class="lead"><b><?php echo $row['admin_name'] ?></b></h2>
                       <p class="text-muted text-sm"><b>Position: </b> <?php echo $row['role'] ?> </p>
+                       <p class="text-muted text-sm"><b>Email: </b> <?php echo $row['admin_email'] ?> </p>
                       <ul class="ml-4 mb-0 fa-ul text-muted">
                         
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
@@ -114,10 +127,12 @@ $w2 = $_GET['w2'];
                     <a href="#" class="btn btn-sm bg-primary">
                       <i class="fas fa-comments"></i>
                     </a>
+                    <?php  if($role2 == "Founder & CEO" || $role2 == "Admin" || $role2 == "Manager"){?>
                     <a href="" class="btn btn-outline-dark">Deactivate</a>
                     <a href="staff_update.php?id=<?php echo $row['admin_id'] ?>" class="btn btn-primary" class="btn btn-sm btn-primary">
                       <i class="fas fa-user"></i> Edit Profile
                     </a>
+                    <?php }else {} ?>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,21 @@
     include "header3.php";
 
     $w2 = $_GET['w2'];
+
+
 ?>
+
+   <?php 
+
+                  include('confs/config.php');
+                     $admin = $_SESSION['email'];
+                   $c = "SELECT * FROM admin WHERE admin_email = '$admin'";
+                    $r = mysqli_query($mysqli,$c);
+                    $row_ad=mysqli_fetch_assoc($r);
+                    $admin_id = $row_ad['admin_id'];
+                    $role = $row_ad['role'];
+                                       
+                ?>
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
@@ -90,6 +104,8 @@
         <div class="card-body">
       
           <table class="table">
+
+          
                     
 
                 <?php 
@@ -162,14 +178,18 @@
                       <?php }else{} ?>
 
                       <br><br>
+
+                      <?php  if($role == "Founder & CEO" || $role == "Admin" || $role == "Manager"){?>
                        <a href="product_edit.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-info" >Edit</a>
 
               
                       <a class='delete btn btn-outline-dark' href="product_del.php?id=<?php echo $row['id'] ?>">Delete</a>
                       </td>
+                      <?php }else{} ?>
 
                        
                       <td>
+                        <?php  if($role == "Founder & CEO" || $role == "Admin" || $role == "Manager"){?>
                         <p>
                           <a href="image_attribute.php?id=<?php echo $row['id'] ?>" class="btn btn-dark">Image</a>
 
@@ -181,8 +201,9 @@
 
 
                          <a href="discount.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-primary">Manage Discount</a>
-
+                         <?php }else{} ?>
                       </td>
+
                     <td><img src="cover/<?php echo $row['cover']; ?>" width="110" height="135"/></td> 
                       </div>
                     </tr>

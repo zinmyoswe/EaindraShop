@@ -3,7 +3,7 @@
         <div class="container">
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-6">
-      <div class="alert alert-success"><span class="fa fa-check"></span> Thank You For Your Patient! <a href="help.php" class="alert-link">
+      <div class="alert alert-success"><span class="fa fa-check"></span> Thank You For Your Patient! <a href="index.php" class="alert-link">
         We will send email when product is in stock.
       </a> </div>
     </div><!--  col-md-6 end -->

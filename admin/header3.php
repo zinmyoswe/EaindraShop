@@ -171,12 +171,13 @@
 
          <?php 
 
-                  include('../confs/config.php');
+                  include('confs/config.php');
                      $admin = $_SESSION['email'];
                    $c = "SELECT * FROM admin WHERE admin_email = '$admin'";
                     $r = mysqli_query($mysqli,$c);
                     $row =mysqli_fetch_assoc($r);
                     $admin_id = $row['admin_id'];
+                    $role = $row['role'];
                     
                       
                 ?>
@@ -212,6 +213,8 @@
             
             </ul>
           </li>
+
+          <?php  if($role == "Founder & CEO" || $role == "Admin" || $role == "Manager"){?>
        
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -251,10 +254,10 @@
               <p>
                 Manage Order
                 <?php 
-                  include('../confs/config.php');
-                    $sql = "SELECT * FROM orders WHERE status = 2 ORDER BY order_id DESC";
-                    $run = mysqli_query($mysqli,$sql);
-                    $count = mysqli_num_rows($run);       
+                  include('confs/config.php');
+                    $sql = "SELECT * FROM orders WHERE status = 2 or status= 3 or status=4 ORDER BY order_id DESC";
+                    $run_o = mysqli_query($mysqli,$sql);
+                    $count = mysqli_num_rows($run_o);       
                 ?>
                 <i class="right fas fa-angle-left"></i>
                 <span class="badge badge-info right"><?php echo $count ?></span>
@@ -300,6 +303,18 @@
                 </a>
               </li>    
             </ul>
+          </li>
+
+
+
+          <li class="nav-item has-treeview">
+            <a href="soldout_product.php" class="nav-link">
+              <i class="nav-icon fas fa-box-open"></i>
+              <p>
+                Manage Sold Out
+                <i class="fas fa-angle-left right"></i>             
+              </p>
+            </a>
           </li>
 
            <li class="nav-item has-treeview">
@@ -383,6 +398,70 @@
               </p>
             </a>
           </li>
+
+          <?php } ?>
+
+      
+
+  
+          <?php if($role == "Supervisor") {?>
+              <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>
+                Manage Products
+
+                 <?php 
+                  include('confs/config.php');
+                    $sql_p = "SELECT * FROM product";
+                    $run_p = mysqli_query($mysqli,$sql_p);
+                    $count_p = mysqli_num_rows($run_p);       
+                ?>
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right"><?php echo $count_p ?></span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+             
+              <li class="nav-item">
+                <a href="product_display2.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Product</p>
+                </a>
+              </li>    
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Manage Staffs
+                <i class="fas fa-angle-left right"></i>
+                
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="manage_staff.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Staff</p>
+                </a>
+              </li>  
+            </ul>
+          </li>
+
+           <li class="nav-item has-treeview">
+            <a href="soldout_product.php" class="nav-link">
+              <i class="nav-icon fas fa-box-open"></i>
+              <p>
+                Manage Sold Out
+                <i class="fas fa-angle-left right"></i>             
+              </p>
+            </a>
+          </li>
+
+          <?php } ?>
 
             <li class="nav-item has-treeview">
             <a href="ad-logout.php" class="nav-link">

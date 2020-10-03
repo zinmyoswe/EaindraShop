@@ -169,6 +169,8 @@
                                                 <option>Founder & CEO</option>
                                                 <option>Manager</option>
                                                 <option>Admin</option>
+                                                <option>Supervisor</option>
+                                                <option>Delivery Staff</option>
                                           </select>  
                                         
                   </div>
