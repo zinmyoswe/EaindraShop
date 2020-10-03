@@ -1,0 +1,175 @@
+<?php 
+    session_start(); 
+    error_reporting(0);
+    include('confs/config.php');
+    include "header3.php";
+
+  
+   $order_id = $_GET['id'];
+   $sql = "SELECT * FROM orders WHERE  order_id ='$order_id'";
+   $run = mysqli_query($mysqli,$sql);
+   $count = mysqli_num_rows($run);  
+    
+?>
+
+
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+   
+    </head>
+
+
+
+
+
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Customer Order</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="home2.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="customer-list2.php">Customer Page</a></li>
+              <li class="breadcrumb-item active">Customer Order</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="row">
+      <div class="col-md-11">
+      <div class="card">
+        <div class="card-header with-border">
+          <h3 class="card-title">Customer List</h3>
+
+          <div class="card-tools pull-right">
+            <button type="button" class="btn btn-card-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-card-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button>
+          </div>
+        </div>
+         
+        <div class="card-body">
+
+          
+         <br><br>
+
+         <h4 style="text-align: center;">All Order Detail</h4>
+      <br>
+      <?php while($row = mysqli_fetch_assoc($run)): 
+          $status = $row['status'];
+        ?>
+      
+       <table class="table">
+        <tr>
+          <th>
+            <b>ORDER_ID </b> : ORD_<?php echo $row['order_id'] ?><br>
+            <b>Payment Type </b> : <?php echo $row['payment_type'] ?><br>
+            <b>Status </b> :<?php if($status == 2) { ?>
+            <span class="badge badge-pill badge-warning">UnPaid</span>
+           
+                <?php } else if($status == 3){ ?>
+                  <span class="badge badge-pill badge-info">Paid</span>
+
+                    <?php } else if($status == 4){ ?>
+                  <span class="badge badge-pill badge-light">Shipping</span>
+               
+                <?php }else{  ?>
+                 <span class="badge badge-pill badge-dark"> Delivered</span>
+                <?php  }?><br>
+          </th>
+          <th></th>
+          <th></th>
+         
+          <th colspan="2">
+            <span class="far fa-clock"></span> <?php echo $row['created_date'] ?>
+          </th>
+        <tr>
+        <tr>
+          <th>Product</th>
+          <th>Product Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>
+     
+                 <?php
+            include('confs/config.php');
+            $order_id = $_GET['id'];
+            $items = mysqli_query($mysqli,"Select oi.*, p.product_name, p.cover 
+              from order_items oi
+              left join product p 
+              on oi.product_id = p.id
+              where oi.order_id = $order_id");
+
+            while($item=mysqli_fetch_assoc($items)):
+        ?>  
+        <tr>
+          <td><img src="cover/<?php echo $item['cover']; ?>" width="110" height="135"/></td>
+            <td><b><?php echo $item['product_name'] ?></b></td>
+          <td><?php echo $item['units'] ?></td>
+          <td>US$<?php echo $item['price'] ?></td>
+          <td><b>US$<?php echo $item['total'] ?></b></td>
+             </tr>
+      <?php endwhile ?>
+         
+      
+     
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Total </b> : US$<?php echo $row['total_amt'] ?><br>
+          <b>Total Quantity</b> :<?php echo $row['total_qty'] ?><br></td>
+          
+        </tr>
+      <?php endwhile ; ?>
+
+     
+      </table>
+
+        </div>
+        <!-- /.box-body -->
+       
+        <div class="card-footer">
+         
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+       </div> <!--  col-md-5 end -->
+
+        
+    </div> <!-- row ends -->
+    </section>
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+
+           <!-- JS dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+        <script src='script-customer.js' type='text/javascript'></script>
+   
+
+   <?php include('footer3.php'); ?>

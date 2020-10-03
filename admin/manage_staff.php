@@ -94,12 +94,18 @@ $w2 = $_GET['w2'];
                       <h2 class="lead"><b><?php echo $row['admin_name'] ?></b></h2>
                       <p class="text-muted text-sm"><b>Position: </b> <?php echo $row['role'] ?> </p>
                       <ul class="ml-4 mb-0 fa-ul text-muted">
+                        
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
                       </ul>
                     </div>
                     <div class="col-5 text-center">
-                      <img src="user_images/<?php echo $row['admin_img'] ?>" alt="" class="img-circle img-fluid">
+                          <?php if($row['admin_img'] == null){ ?>
+                <img src="cover/default.jpg"  alt="" class="img-circle img-fluid" >
+                  <?php }else{ ?>
+                <img src="user_images/<?php echo $row['admin_img'] ?>" alt="" class="img-circle img-fluid">
+                  <?php } ?>
+                 
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 <?php 
     session_start();
 error_reporting(0);
-include('../confs/config.php');
+include('confs/config.php');
 include('header3.php');
 ?>
 <?php
@@ -72,6 +72,7 @@ include('header3.php');
 			<td><input type="submit" name="search" value="Filter" class="btn btn-warning"></td>
 		</tr>
 	</form>
+
 
 	
 	<tr>
