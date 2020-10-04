@@ -1,6 +1,7 @@
 
 <?php
-   include('../confs/config.php');
+   session_start();
+   include('confs/config.php');
    include('header3.php');
 
      $id = $_GET['id'];
@@ -14,12 +15,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Discount Page</h1>
+            <h1>Manage Discount </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
+              <li class="breadcrumb-item active">Discount Page</li>
             </ol>
           </div>
         </div>
@@ -32,7 +33,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Title</h3>
+          <h3 class="card-title">Add Discount</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -86,18 +87,40 @@
                         
 
                             
-                <div class="form-group">
-                <label>From : </label>
-                  <input type="text" class="form-control" name="str_date" id="dob"  data-provide="datepicker" placeholder="dd/mm/yy" required/>
-                </div>
-                <div class="form-group">
-                <label>To : </label>
-                  <input type="text" class="form-control" name="end_date" id="dob"  data-provide="datepicker" placeholder="dd/mm/yy" required/>
-                </div>
-                <div class="form-group">
-                <label>Reduce Percentage  : </label>
-                    <input type="text" class="form-control" name="percentage" id="dob" required/>
-                </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+          <script type="text/javascript">
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+});
+</script>
+             
+
+     
+
+
+      <div class="row">
+          <div class="col-md-5 mb-3">
+             <label>From Date: </label>
+                  <input type="text" class="form-control" name="str_date" id="datepicker"  data-provide="datepicker" placeholder="dd/mm/yy" required/>
+                  <script>
+                  
+    </script>
+          </div>
+          <div class="col-md-4 mb-3">
+                     <label>To Date : </label>
+                  <input type="text" class="form-control" name="end_date" id="datepicker2"  data-provide="datepicker" placeholder="dd/mm/yy" required/>
+          </div>
+
+          <div class="col-md-3 mb-3">
+           <label>Reduce %  : </label>
+                    <input type="text" class="form-control" name="percentage" id="datepicker" required/>
+          </div>
+        </div> <!-- row end -->
                 
 
                         
@@ -124,7 +147,7 @@
    </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          
         </div>
         <!-- /.card-footer-->
       </div>
@@ -165,7 +188,7 @@
       if($run){
 
         echo "<script>alert('Discount has been inserted')</script>";
-        echo "<script>window.open('product_display2.php','_self')</script>";
+        echo "<script>window.open('product_display2.php?w2=discount','_self')</script>";
       }
       else{
         echo "error";

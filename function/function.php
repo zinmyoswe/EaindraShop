@@ -123,7 +123,7 @@ include('config.php');
                         
                             $selling_price = $obj->price-($obj->price*($percentage/100));
                           
-                          echo '<p style="color: #DC3545">$ '.$selling_price.' <strong class="price_dis"> $'.$obj->price.'</strong>';
+                          echo '<p style="color: #e32b2b">$ '.$selling_price.' <c class="prodis"> $'.$obj->price.'</c>';
                         //       echo '<a href="" style="font-size: 9px;"><span class="ha fa fa-star" style="margin-left: 30px; color: #000; font-size: 9px;"></span>
                         //     <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
                         //     <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
@@ -175,6 +175,164 @@ include('config.php');
        
 
             include("pagination.php");
+          
+          }
+
+          $_SESSION['id'] = $product_id;
+  }
+}
+}
+
+
+ function getsale(){
+    if(!isset($_GET['cat'])){
+      if(!isset($_GET['brand'])){
+      global $mysqli;
+        $i=0;
+
+        $per_page = 12;
+
+      if(isset($_GET['page'])){
+        $page = $_GET['page'];
+      }
+
+      else{
+        $page = 1;
+      }
+
+      $start_from = ($page-1) * $per_page;
+        
+          $product_id = array();
+          $product_quantity = array();
+
+          $result = mysqli_query($mysqli,"SELECT * FROM product  ORDER BY 1 DESC LIMIT $start_from, $per_page");
+          // if($result === FALSE){
+          //   die(mysql_error());
+          // }
+
+
+          if($result){
+
+            while($obj = mysqli_fetch_object($result)) {
+
+
+                          $sql_dis = mysqli_query($mysqli,"SELECT * FROM discount 
+                            LEFT JOIN product ON discount.product_id = product.id
+                            WHERE product.id = '$obj->id'
+                            ");
+                          $result_dis = mysqli_fetch_assoc($sql_dis);
+                           $percentage = $result_dis['percentage'];
+                           $discount_id = $result_dis['discount_id'];
+                           $product_id = $result_dis['product_id'];
+                          
+                       
+              
+              if($discount_id == 0){
+
+              }else{
+
+
+              echo '<div class="col-md-3 col-sm-6 col-xs-12">';
+              echo '<div class="display">';
+             
+            
+              echo '<a href="detail2.php?id='.$obj->id.'"><img src="admin/cover/'.$obj->cover.'" width="270" height="270"/></a><br>';
+              // echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
+              // echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
+               if($obj->qty < 7){
+                echo "<span class='badge badge-dark pull-left' style='margin-top: 6px;'>Low In Stock</span>";
+              }
+
+
+
+
+              if($obj->qty < 3){
+                  echo '<img src="image/bestseller.png" width="90" height="20" style="margin-left: 75px; margin-bottom:5px;">';
+              }
+              echo "<br>";
+
+              ?>
+           <?php
+   
+              echo '<div class="box"><p><a href="detail2.php?id='.$obj->id.'">'.$obj->product_name.'</a></p>';
+
+   
+            
+
+                 if( $discount_id == 0){
+               
+               echo '<p>$ '.$obj->price.'</p>';
+            
+                 // echo '<a href="" style="font-size: 9px;"><span class="ha fa fa-star" style="margin-left: 48px; color: #000; font-size: 9px;"></span>
+                 //            <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                 //            <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                 //            <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                 //            <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                 //            192 reviews</a> 
+
+                 //        ';
+                     }else{
+                        
+                            $selling_price = $obj->price-($obj->price*($percentage/100));
+                          
+                          echo '<p style="color: #e32b2b">$ '.$selling_price.' <c class="prodis"> $'.$obj->price.'</c>';
+                        //       echo '<a href="" style="font-size: 9px;"><span class="ha fa fa-star" style="margin-left: 30px; color: #000; font-size: 9px;"></span>
+                        //     <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                        //     <span class="ha fa fa-star" style="color: #000; font-size: 9px;"></span>
+                        //     <span class="ha fa fa-star" style="color: grey; font-size: 9px;"></span>
+                        //     <span class="ha fa fa-star" style="color: grey; font-size: 9px;"></span>
+                        //     321</a> 
+                        // ';
+                          } 
+                       
+                               echo '</p></div>';
+
+                               echo'<div class="box2">';
+
+
+     
+              
+              $sql ="SELECT distinct a.*,p.color,p.product_id FROM product_attribute p
+                   LEFT JOIN attribute a
+                   ON p.color = a.attr_id
+                   WHERE p.product_id = '$obj->id'";
+                   $ret = mysqli_query($mysqli,$sql);
+                  $num_results=mysqli_num_rows($ret);
+                  for($i=0;$i<$num_results;$i++)
+
+  {
+
+    $row=mysqli_fetch_array($ret);
+
+
+    echo"<input type=\"radio\" name=\"rdocolor\" value=\"".$row['value']."\"
+  id=\"happy_".$row['attr_id']."\" class=\"custom-control-input\"/>";
+    echo "<label for=\"happy_".$row['attr_id']."\">";
+    ?>
+  
+
+<!--  <img 
+    src="admin/images/<?php echo $row['attr_img'] ?>" 
+    alt="<?php echo $row['value'] ?>" /> -->
+    <?php
+
+    echo "<label>";
+  
+  } 
+
+              echo '</div>';
+
+              echo '</div>';
+
+              echo '</div> ';
+             
+              }
+              $i++;
+            }
+            
+       
+            
+            // include("pagination.php");
           
           }
 

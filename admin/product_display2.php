@@ -65,6 +65,17 @@
             })
                      
           </script>
+<?php } elseif($w2 == 'discount'){ ?>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Discount Created',
+              text: 'Discount Created successfully'
+            })
+                     
+          </script>
 <?php } ?>
 
 <!-- Content Wrapper. Contains page content -->

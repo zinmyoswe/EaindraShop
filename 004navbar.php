@@ -83,7 +83,7 @@
         <a class="nav-link" href="product.php">Shop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="product.php">Sale</a>
+        <a class="nav-link" href="sale.php">Sale</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="best-seller.php">Best Seller</a>

@@ -317,7 +317,7 @@
             </a>
           </li>
 
-           <li class="nav-item has-treeview">
+          <!--  <li class="nav-item has-treeview">
             <a href="color_size.php" class="nav-link">
               <i class="nav-icon fas fa-tools"></i>
               <p>
@@ -325,7 +325,7 @@
                 <i class="fas fa-angle-left right"></i>             
               </p>
             </a>
-          </li>
+          </li> -->
 
            <li class="nav-item has-treeview">
             <a href="saleview.php" class="nav-link">

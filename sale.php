@@ -142,7 +142,7 @@ box-sizing: border-box;
      </div> <!-- col-md-4 end-->
      <div class="col-md-10">
       <div class="row">
-        <?php getpro(); ?>
+        <?php getsale(); ?>
        <?php getcatpro(); ?>
        <?php getbrandpro(); ?>
        </div>

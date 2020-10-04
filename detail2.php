@@ -285,6 +285,7 @@ include('confs/config.php');
                             </div>
                           </div>  
                           <!-- Image check box start -->
+
               <br><br><br><br><br>
      <!-- size option start -->
       <div class="row">
@@ -634,7 +635,7 @@ $(function() {
           <div class="container">
           <div class="row">
             <div class="col-md-6">
-        <form method="post">
+        <form>
             <div class="form-group">
                 <input type="hidden" name="comment_id" id="commentId"
                     placeholder="Name" class="form-control"/> 
@@ -664,10 +665,10 @@ $(function() {
 
            
       <?php }else{ ?>
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
             <div class="col-md-6">
-        <form id="frm-comment" class="" method="post">
+        <form id="frm-comment" class="">
             <div class="form-group">
                 <input type="hidden" name="comment_id" id="commentId"
                     placeholder="Name" class="form-control"/> 
@@ -693,7 +694,7 @@ $(function() {
         </div>
             <div class="col-md-6"></div>
           </div>
-        </div>
+        </div> -->
         <?php } ?>
     </div>
     <style type="text/css">
