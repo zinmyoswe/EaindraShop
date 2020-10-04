@@ -9,11 +9,12 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
-<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
-<script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script>
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script> 
+<!-- <script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script> -->
 <script type="text/javascript" src="validation.min.js"></script>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen">
-<script type="text/javascript" src="loginscript.js"></script>
+<script type="text/javascript" src="loginscript2.js"></script>
 <!--  ==================login form ======================== -->
 
 <style type="text/css">
@@ -99,7 +100,7 @@
 
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="user_email" class="form-control" >
+                    <input type="email" name="email" id="email" class="form-control" >
                     <span id="check-e"></span>
                   </div>
                   <div class="form-group">
@@ -141,9 +142,9 @@
 
                
 
-                <div class="btn btn-outline-dark">FACEBOOK <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" width="25" height="25"></div><br><br>
+                <a href="https://www.facebook.com/" class="btn btn-outline-dark">FACEBOOK <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" width="25" height="25"></a><br><br>
 
-                <div class="btn btn-outline-dark">GOOGLE <img src="https://img.icons8.com/color/480/google-logo.png" width="25" height="25"></div>
+                <a href="https://myaccount.google.com/" class="btn btn-outline-dark">GOOGLE <img src="https://img.icons8.com/color/480/google-logo.png" width="25" height="25"></a>
 
                 
           
@@ -154,7 +155,7 @@
             <div class="col-lg-6 col-sm-4 col-xs-12">
                 
                 <h1>JOIN THE CLUB. GET REWARDED.</h1>
-                    Join the adidas Creators Club membership program:
+                    Join the Eaindra Shop Creators Club membership program:
                   <ul >
                       <li ><i class="fas fa-check"></i> Get immediate access to all Challenger level rewards</li>
                       <li><i class="fas fa-check"></i> Earn access to shop limited edition products</li>
@@ -169,7 +170,9 @@
 
                 <br><br>
 
-                <img src="https://www.adidas.com/glass/react/850e7b4/assets/img/CC2.0_my_account_register.jpg" width="450px" height="200px">
+                <img src="https://media.gettingpersonal.co.uk/387241/images/products/47/55547/rwf/create-your-own---personalised-stainless-steel-luggage-tags_a.jpg?width=700" height="200px">
+                <img src="https://media.gettingpersonal.co.uk/397211/images/products/79/51679/rwf/luxury-gift-bundle---chocolates-white-wine--rose-bouquet-_a.jpg?width=700" height="200px">
+
             
                 
             </div>

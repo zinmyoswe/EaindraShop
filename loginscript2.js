@@ -13,7 +13,7 @@ $('document').ready(function()
 			required: true,
 			minlength: 8
 			},
-			user_email: {
+			email: {
             required: true,
             email: true
             },
@@ -24,7 +24,7 @@ $('document').ready(function()
                       required: "please enter your password",
                       minlength: "Minimum 8 characters are required."
                      },
-            user_email: "please enter your email address",
+            email: "please enter your email address",
        },
 	   submitHandler: submitForm	
        });  

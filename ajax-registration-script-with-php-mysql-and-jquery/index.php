@@ -92,9 +92,9 @@ include('../001header.php');
             </form>
            <br>
 
-<div class="btn btn-outline-dark">FACEBOOK <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" width="25" height="25"></div><br>
+<a href="https://www.facebook.com/" class="btn btn-outline-dark">FACEBOOK <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" width="25" height="25"></a><br>
 
-                <div class="btn btn-outline-dark">GOOGLE <img src="https://img.icons8.com/color/480/google-logo.png" width="25" height="25"></div>
+                <a href="https://myaccount.google.com/" class="btn btn-outline-dark">GOOGLE <img src="https://img.icons8.com/color/480/google-logo.png" width="25" height="25"></a>
                <br>
             <p style="text-align: center; color: grey;">
                 Already a member?

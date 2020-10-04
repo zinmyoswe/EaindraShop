@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include('../confs/config.php');
+  include('confs/config.php');
   
 
 ?>
@@ -36,7 +36,7 @@
 
     label {
       margin-top: 50px;
-}
+    }
 
  label .error{
       display: block;
@@ -49,8 +49,8 @@
 
   <!-- <script type="text/javascript" src="jquery-2.2.3.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="text/javascript" src="validation.min.js"></script>
-<script type="text/javascript" src="ad-loginscript.js"></script>
+
+
 
 
 <div class="login-box">
@@ -189,9 +189,13 @@
 });
 </script>
 
-<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap 4 -->
+<!-- <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="https://adminlte.io/themes/v3/plugins/jquery-validation/jquery.validate.min.js"></script> -->
+<script type="text/javascript" src="ad-loginscript.js"></script>
 <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
 
