@@ -88,13 +88,14 @@ $w2 = $_GET['w2'];
           <div class="row d-flex align-items-stretch">
 
             <?php
-          $sql = "SELECT * FROM admin";
+          $sql = "SELECT * FROM admin order by admin_id desc";
           $run = mysqli_query($mysqli,$sql);
           while($row = mysqli_fetch_assoc($run)):
             $role = $row['role'];
+            $id = $row['admin_id'];
         ?>
         
-
+         
             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
               <div class="card bg-light">
                 <div class="card-header text-muted border-bottom-0">
@@ -102,6 +103,7 @@ $w2 = $_GET['w2'];
                 </div>
                 <div class="card-body pt-0">
                   <div class="row">
+
                     <div class="col-7">
                       <h2 class="lead"><b><?php echo $row['admin_name'] ?></b></h2>
                       <p class="text-muted text-sm"><b>Position: </b> <?php echo $row['role'] ?> </p>
@@ -128,7 +130,8 @@ $w2 = $_GET['w2'];
                       <i class="fas fa-comments"></i>
                     </a>
                     <?php  if($role2 == "Founder & CEO" || $role2 == "Admin" || $role2 == "Manager"){?>
-                    <a href="" class="btn btn-outline-dark">Deactivate</a>
+                   
+                    <button class='delete btn btn-outline-dark' id='del_<?= $id ?>' data-id='<?= $id ?>'>Deactivate</button>
                     <a href="staff_update.php?id=<?php echo $row['admin_id'] ?>" class="btn btn-primary" class="btn btn-sm btn-primary">
                       <i class="fas fa-user"></i> Edit Profile
                     </a>
@@ -137,6 +140,7 @@ $w2 = $_GET['w2'];
                 </div>
               </div>
             </div>
+        
            <!--  col-12 col-sm-6 col-md-4 d-flex align-items-stretch end -->
          <?php endwhile; ?>
          </div>
@@ -153,5 +157,5 @@ $w2 = $_GET['w2'];
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
-        <script src='script-staff.js' type='text/javascript'></script>
+        <script src='script-staff3.js' type='text/javascript'></script>
 <?php include('footer3.php'); ?>
