@@ -43,6 +43,12 @@ include('header3.php');
           </div>
         </div>
         <div class="card-body">
+               <?php 
+          $sql = "SELECT * FROM orders WHERE status = 2 ORDER BY order_id DESC";
+          $run = mysqli_query($mysqli,$sql);
+          $count = mysqli_num_rows($run);       
+        ?>
+        <h4 style="color: red;">Important!<span class="badge badge-warning"><?php echo $count ?></span></h4>
         	<table class="table  table-bordered">
     		<tr>
     			<th>OrderID</th>

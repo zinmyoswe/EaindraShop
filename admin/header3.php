@@ -312,7 +312,14 @@
               <i class="nav-icon fas fa-box-open"></i>
               <p>
                 Manage Sold Out
-                <i class="fas fa-angle-left right"></i>             
+                 <?php 
+                  include('confs/config.php');
+                    $sql = "SELECT * FROM sold_out ORDER BY sold_out_id DESC";
+                    $run_o = mysqli_query($mysqli,$sql);
+                    $count = mysqli_num_rows($run_o);       
+                ?>
+                <i class="fas fa-angle-left right"></i>  
+                <span class="badge badge-info right"><?php echo $count ?></span>           
               </p>
             </a>
           </li>
@@ -394,6 +401,16 @@
               <i class="nav-icon fas fa-file-pdf"></i>
               <p>
                 Manage Supplier
+                <i class="fas fa-angle-left right"></i>             
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item has-treeview">
+            <a href="discount_list2.php" class="nav-link">
+              <i class="nav-icon fas fa-tools"></i>
+              <p>
+                Manage Discount
                 <i class="fas fa-angle-left right"></i>             
               </p>
             </a>

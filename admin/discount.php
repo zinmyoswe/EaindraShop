@@ -187,7 +187,7 @@ $(document).ready(function(){
       
       if($run){
 
-        echo "<script>alert('Discount has been inserted')</script>";
+        // echo "<script>alert('Discount has been inserted')</script>";
         echo "<script>window.open('product_display2.php?w2=discount','_self')</script>";
       }
       else{

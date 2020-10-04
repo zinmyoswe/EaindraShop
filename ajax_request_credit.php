@@ -82,7 +82,7 @@
                           <div class="row">
          <div class="col-md-6 mb-3">
                <label for="lastName">Security Code</label>
-            <input type="text" name="sc" class="form-control" id="lastName" placeholder="" value="" required>
+            <input type="password" name="sc" class="form-control" id="lastName" placeholder="" value="" required>
             <div class="invalid-feedback">
             Valid last name is required.
             </div> 
