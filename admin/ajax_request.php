@@ -1,5 +1,5 @@
 <?php 
-	include('../confs/config.php');
+	include('confs/config.php');
 	
 	if(isset($_POST['category_id']) && $_POST['category_id'] !='')
 	{
@@ -10,7 +10,7 @@
 		
 		if($numRows == 0)
 		{
-			echo 'No Sub Category found';
+			echo '<option>No Sub Category found</option>';
 		}
 		else
 		{
