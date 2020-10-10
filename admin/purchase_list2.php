@@ -31,7 +31,7 @@
             Swal.fire({
               position: 'top-end',
               icon: 'success',
-              title: 'Category has been saved',
+              title: 'Purchase has been saved',
               showConfirmButton: false,
               timer: 1800
             })            
@@ -43,7 +43,7 @@
             Swal.fire({
               icon: 'success',
               title: 'Updated',
-              text: 'Category updated successfully'
+              text: 'Purchase updated successfully'
             })
                      
           </script>
@@ -59,7 +59,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manage Category</h1>
+            <h1>Manage Purchase</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
