@@ -69,7 +69,7 @@ include('header3.php');
 
 			<td align="right">To Date</td>
 			<td><input type="text" name="tDate" value="<?php echo date("Y-m-j") ?>" class="form-control"></td>
-			<td><input type="submit" name="search" value="Filter" class="btn btn-warning"></td>
+			<td><input type="submit" name="search" value="Filter" class="btn btn-primary"></td>
 		</tr>
 	</form>
 
@@ -110,9 +110,7 @@ include('header3.php');
 		</tr>
 	<?php endwhile; ?>
 	<td colspan="4">
-		<form action="excelExporter.php" method="post">
-			
-		</form>
+		
 	</td>
 </table>
 
@@ -125,7 +123,9 @@ include('header3.php');
         <!-- /.card-body -->
         <div class="card-footer">
           	<form action="excelExporter.php" method="post">
-			  <button type="submit" class="btn btn-primary">Print</button>
+          		<input type="hidden" name="fromdate" value="<?php echo "$fromdate"; ?>">
+          		<input type="hidden" name="todate" value="<?php echo "$todate"; ?>">
+			  <button type="submit" class="btn btn-dark float-right" id="export_data" name='export_data'>Export with Excel</button>
 		</form>
         </div>
         <!-- /.card-footer-->
