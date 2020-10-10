@@ -112,7 +112,7 @@
               </div>
               <hr><br>
             <!-- Post end-->
-            <h3 ng-show="showLoadmore" ng-click='getPosts()' style="text-align: center;color:#000; font-size: 20px; cursor: pointer;">{{ buttonText }} &raquo;</h3>
+            <h3 ng-show="showLoadmore" ng-click='getPosts()' style="text-align: center;color:#fff; font-size: 20px; cursor: pointer;" class="btn btn-dark btn-lg btn-block">{{ buttonText }} &raquo;</h3>
             <input type="hidden" id="row" ng-model='row'>
 
         </div>
@@ -127,7 +127,7 @@
             // Variables
             $scope.showLoadmore = true;
             $scope.row = 0;
-            $scope.rowperpage = 12;
+            $scope.rowperpage = 8;
             $scope.buttonText = "Load More";
            
             // Fetch data
