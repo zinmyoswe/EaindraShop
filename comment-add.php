@@ -13,6 +13,7 @@ $result = mysqli_query($mysqli, $sql);
 if (! $result) {
     $result = mysqli_error($mysqli);
 }
-echo $result;
+echo 1;
+exit;
 
 ?>

@@ -869,8 +869,9 @@ $(function() {
                     success: function (response)
                     {
                         var result = eval('(' + response + ')');
-                        if (response)
+                        if (response == 1)
                         {
+                          location.reload();
                           $("#comment-message").css('display', 'inline-block');
                             $("#name").val("");
                             $("#comment").val("");
