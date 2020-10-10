@@ -30,8 +30,15 @@
 
 .haha p strong{
   font-size: 14px;
+  color: black;
 }
 .haha a{
+  font-size: 14px;
+  color: black;
+
+}
+a{
+  color: black;
   font-size: 14px;
 }
 .dash{
@@ -64,7 +71,7 @@
             $row_c =mysqli_fetch_assoc($r);
              $customer_id = $row_c['id'];
 
-          $result = mysqli_query($mysqli,"SELECT distinct product.*,add_to_favourite.product_id,add_to_favourite.customer_id FROM product LEFT JOIN add_to_favourite
+          $result = mysqli_query($mysqli,"SELECT distinct product.*,add_to_favourite.product_id,add_to_favourite.customer_id,add_to_favourite.fav_id FROM product LEFT JOIN add_to_favourite
           ON product.id = add_to_favourite.product_id
           WHERE add_to_favourite.customer_id = '$customer_id'");
           // if($result === FALSE){
@@ -74,6 +81,7 @@
           if($result){
 
             while($obj = mysqli_fetch_object($result)) {
+             $fav_id = $obj->fav_id;
              $id = $obj->id;
 
             ?>
@@ -86,11 +94,12 @@
                 <td>
                 <p><strong><a href="detail.php?id=<?php echo  $obj->id ?>"><?php echo $obj->product_name ?></a></strong></p>
                 <p><strong>US$ <?php echo  $obj->price ?></strong></p>
-                <a href="">Remove</a>
+                <a href="fav_delete.php?id=<?php echo $obj->fav_id ?>">Remove</a>
 
                 </td>
                 <td></td>
                 <td></td>
+                
                 <td>
                 <?php if($obj->qty < 7 && $obj->qty > 0 ){ ?>
                 <span class='badge badge-warning' style='margin-top: 2px;'>Low In Stock</span>
