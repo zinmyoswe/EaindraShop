@@ -1,6 +1,6 @@
 <?php
   session_start();
-    include('../confs/config.php');
+    include('confs/config.php');
      include "header3.php";
 	$id = $_GET['id'];
 	$result = mysqli_query($mysqli,"SELECT * FROM categories WHERE cat_id=$id ");

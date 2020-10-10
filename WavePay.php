@@ -50,7 +50,7 @@
            
        </div>
        <div class="col-md-4">
-           <img src="image/WavePay.jpg" class="WavePAY" >
+           <img src="image/WavePay2.jpg" class="WavePAY" >
 
            <?php
               include('confs/config.php');

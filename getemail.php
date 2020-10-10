@@ -40,11 +40,12 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
 
               <!-- <img src="image/ACTIVE.png" width="35" height="40"> -->
+              <img src="image/e.jpg" width="90" >
               <br>
               <strong style="color: #000; font-size: 18px;">EaindraShop</strong><br><br><br>
               <h2>SOLD OUT, Email will sent when product is in stock.</h2>
 
-      
+        <br><br>
 
                        <form method="post" action="sold_out_email.php" enctype="multipart/form-data">
   <input type="hidden" name="id" value="<?php echo $id ?>">

@@ -59,14 +59,41 @@
             <!-- form start -->
             <form class="form-horizontal" method="post" action="product_add.php" enctype="multipart/form-data">
               <div class="card-body">
+
                 <!-- FORM START -->
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Product Title</label>
+                  <label for="inputEmail3" class="col-sm-2 control-label">Purchase</label>
                   <div class="col-sm-10">
-                  <input type="text" name="name"  class="form-control" id="inputEmail3" placeholder="Product Name"/> 
+                  <select id="purchase" class="form-control" name="purchase">
+                                                <option>Select a Purchase</option>
+                                               <?php 
+                                                $get_purchase = "SELECT * FROM purchase ORDER BY purchase_id DESC LIMIT 10";
+                                                $run_purchase = mysqli_query($mysqli,$get_purchase);
+                                                while($row_purchase= mysqli_fetch_array($run_purchase)){
+                                                  $id = $row_purchase['purchase_id'];
+                                                  $name = $row_purchase['product_name'];
+
+                                                  echo "
+                                                    <option value='$id'>$name</option>
+                                                  ";
+                                                }
+                                                ?>
+                                          </select>  
+                                          
                   </div>
                 </div>
+
+                <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-2 control-label">Product Name</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="name" id="purchase-container">
+                        <!-- <option id="cities-container"></option> -->
+                                  </div>
+                      </select>
+                  </div>
                 <!-- FORM ENDS -->
+
+             
                 <!-- FORM START -->
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Category</label>
@@ -256,6 +283,33 @@
     })
   });
 </script>
+
+<script src="jquery.min.js" integrity "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#purchase").change(function(){
+      var getCountryID = $(this).val();
+      
+      if(getCountryID !='')
+      {
+        $("#loader").show();
+        $("#purchase-container").html("");
+        
+        $.ajax({
+          type:'post',
+          data:{purchase_id:getCountryID},
+          url: 'ajax_request_purchase.php',
+          success:function(returnData){
+            $("#loader").hide();  
+            $("#purchase-container").html(returnData);
+          }
+        }); 
+      }
+      
+    })
+  });
+</script>
   </div>
   <?php include('footer3.php') ?>
 
@@ -293,8 +347,8 @@
       }
       
     
-      $sql = "INSERT INTO product(product_name,categories,sub_cat,brand,package,supplier,description,price,cover,qty)
-                   VALUES('$name','$cat','$sub_cat','$brand','$package','$supplier','$description','$price','$cover','$qty')";
+      $sql = "INSERT INTO product(product_name,categories,sub_cat,brand,package,supplier,description,price,cover,qty,created_date,modified_date)
+                   VALUES('$name','$cat','$sub_cat','$brand','$package','$supplier','$description','$price','$cover','$qty',now(),now())";
 
       $run=mysqli_query($mysqli,$sql);
       

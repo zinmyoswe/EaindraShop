@@ -13,6 +13,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" href="../image/e.jpg"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <!-- Ionicons -->
@@ -61,6 +62,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
+      
 
       <form method="post" id="login-form" action="ad-loginprocess.php">
         <div class="input-group mb-3">

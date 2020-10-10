@@ -118,7 +118,7 @@ include('header3.php');
                 </div>
                 <!-- FORM ENDS -->
 
-                <?php 
+                <!-- <?php 
                   include('confs/config.php');
                      $admin = $_SESSION['email'];
                    $c = "SELECT * FROM admin WHERE admin_email = '$admin'";
@@ -127,7 +127,7 @@ include('header3.php');
                     $admin_id = $row['admin_id'];
                     $role = $row['role'];        
                 ?>
-                <input type="hidden" name="supplier" value="<?php echo $admin_id ?>">
+                <input type="hidden" name="admin_id" value="<?php echo $admin_id ?>"> -->
 
                 <input type="hidden" name="product" value="0">
 

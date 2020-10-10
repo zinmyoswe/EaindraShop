@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>EaindraShop | Dashboard</title>
 
-  <link rel="icon" type="image/png" href="../image/s-logo.png"/>
+  <link rel="icon" type="image/png" href="../image/e.jpg"/>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -161,6 +161,7 @@
     <a href="home2.php" class="brand-link">
    <!--    <img src="../image/s-logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8"> -->
+           
       <span class="brand-text font-weight-light" style="margin-left: 5px;"><b>Eaindra</b>Shop</span>
     </a>
 

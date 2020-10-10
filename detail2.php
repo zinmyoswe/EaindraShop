@@ -371,8 +371,9 @@ include('confs/config.php');
 <!--      ----------------------------------- Add To cart Button------------------------ -->
       <?php if($qty > 0){ ?>
               <input type="submit" name="submit" value="ADD TO BAG" class="btn btn-dark btn-lg btn-block" /> 
+              </form>
       <?php }else{ ?>
-     </form>
+     
 <!--      ----------------------------------- Add To cart Button end ------------------------ -->
 
 <!--      ----------------------------------- SOLD OUT MODAL DIALOG ------------------------ -->
@@ -665,10 +666,10 @@ $(function() {
 
            
       <?php }else{ ?>
-        <!-- <div class="container">
+        <div class="container">
           <div class="row">
-            <div class="col-md-6">
-        <form id="frm-comment" class="">
+            <div class="col-md-12">
+        <form id="frm-comment" class="" method="post">
             <div class="form-group">
                 <input type="hidden" name="comment_id" id="commentId"
                     placeholder="Name" class="form-control"/> 
@@ -694,7 +695,7 @@ $(function() {
         </div>
             <div class="col-md-6"></div>
           </div>
-        </div> -->
+        </div>
         <?php } ?>
     </div>
     <style type="text/css">

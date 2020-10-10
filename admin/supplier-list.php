@@ -95,7 +95,7 @@ include('header3.php');
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Supplier Name</label>
                   <div class="col-sm-10">
-                  <input type="text" name="name"  class="form-control" id="inputEmail3" placeholder="packagename"/> 
+                  <input type="text" name="name"  class="form-control" id="inputEmail3" placeholder="supplier name"/> 
                   </div>
                 </div>
                 <!-- FORM ENDS -->

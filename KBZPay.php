@@ -50,7 +50,7 @@
            
        </div>
        <div class="col-md-4">
-           <img src="image/KBZPay.jpg" class="KBZPAY" >
+           <img src="image/KBZPay2.jpg" class="KBZPAY" >
 
            <?php
               include('confs/config.php');

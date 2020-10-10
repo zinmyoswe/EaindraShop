@@ -119,7 +119,7 @@
                         <td align='center'><?= $count ?></td>
                         <td><a href='<?= $created_date ?>' target='_blank'><?= $product_name ?></a></td>
                         <td align='center'>
-                            <a href="purchase-edit.php?id=<?php echo $row['cat_id']?>" class="btn btn-outline-primary">Edit</a>
+                            <a href="purchase-edit.php?id=<?php echo $row['purchase_id']?>" class="btn btn-outline-primary">Edit</a>
 
                        
 
