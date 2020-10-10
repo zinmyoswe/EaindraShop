@@ -181,6 +181,7 @@
                     
                       
                 ?>
+
         <div class="image">
           <img src="user_images/<?php echo $row['admin_img']; ?>" alt="User Image" style="border-radius: 50%">
         </div>
@@ -304,6 +305,36 @@
               </li>    
             </ul>
           </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
+            
+              <p>
+                Manage Purchase
+                <i class="fas fa-angle-left right"></i>
+                
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="purchase_list2.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Purchase</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="purchase_list.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Staff</p>
+                </a>
+              </li>    
+            </ul>
+          </li>
+
+          
+
+         
 
 
 

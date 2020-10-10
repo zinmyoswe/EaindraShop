@@ -279,7 +279,7 @@ include('confs/config.php');
                 
             ?>
 
-             <a href="detail2.php?id=<?php echo $row['id']; ?>"><img src="admin/cover/<?php echo $row['cover'] ?>" style="width: 60px;"></a> 
+             <a href="detail2.php?id=<?php echo $row['id']; ?>"><img src="admin/cover/<?php echo $row['cover'] ?>" style="width: 60px; height: 70px"></a> 
            <?php endwhile ?>
                           </div>
                             </div>

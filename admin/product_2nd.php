@@ -274,7 +274,7 @@
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-            <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark float-right">Next</a>
+            <!-- <a href="generate.php?id=<?php echo $row['id'] ?>" class="btn btn-outline-dark float-right">Next</a> -->
 
             <form method="post" action="">
               <button type="submit" name="finish" class="btn btn-outline-primary float-right" style="margin: 0 4px">Finish</button>
