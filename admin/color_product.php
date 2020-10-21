@@ -205,6 +205,7 @@ label img {
   <?php
 
 include('confs/config.php');
+
 if(isset($_POST['save2']))
 {
    $checkbox = $_POST['check'];         
@@ -222,10 +223,18 @@ if(isset($_POST['save2']))
             })
                      
           </script>
+
+         
            <?php
        }
+       
 }
+
+
+
 ?>
+
+
 
 <?php include('footer3.php'); ?>
 

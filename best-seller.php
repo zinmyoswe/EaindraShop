@@ -21,6 +21,10 @@
     vertical-align: baseline;
     border-radius: 0.25rem;
 }
+.badge-dark {
+    color: #fff;
+    background-color: #000;
+}
 .display{
   width: 330px;
   height: 480px;
@@ -98,10 +102,13 @@
               <div ng-if="product.qty <'5'">
            
                 <span class='badge badge-dark pull-left' style='margin-top: 6px;'>Low In Stock</span>
+
+                <img src="image/bestseller.png" width="70"  style="margin-left: 90px;">
              </div>
                 <!--   angular if else statement end -->
-                <img src="image/bestseller.png" width="90" height="20" style="margin-left: 65px;">
-  
+                <div ng-if="product.qty >'5'">
+                <img src="image/bestseller.png" width="70"  style="margin-left: 150px;">
+                </div>
               <br><br>
 
               <div class="box"><p><strong><i><a href="detail2.php?id={{ product.id }}">{{ product.product_name }}</a></i></strong></p>
