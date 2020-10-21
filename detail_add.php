@@ -1,5 +1,8 @@
 <?php
+    
+   error_reporting(0);
    session_start();
+
    include('confs/config.php');
 
 
@@ -38,23 +41,8 @@
                      VALUES ('$id','$color','$size')";
      mysqli_query($mysqli,$insert_cart);
 
- 
-
-             
-
-
-
-
-
-
-
-// print_r($_SESSION);
-// echo "<pre>$id <br>$color <br>Color : <b>$attr</b>, $attr_img <br> SIZE : $attr2
-// <br> product_attribute : $product_attribute</pre>";
-
 
 echo "<script>window.location='update-cart.php?action=add&id=$id'</script>";
 
 
-
-// header("location: cart.php");
+?>

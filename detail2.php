@@ -279,7 +279,7 @@ include('confs/config.php');
                 
             ?>
 
-             <a href="detail2.php?id=<?php echo $row['id']; ?>"><img src="admin/cover/<?php echo $row['cover'] ?>" style="width: 60px; height: 70px"></a> 
+             <a href="detail2.php?id=<?php echo $row['id']; ?>"><img src="admin/cover/<?php echo $row['cover'] ?>" style="width: 60px; height: 70px;"></a> 
            <?php endwhile ?>
                           </div>
                             </div>
@@ -635,7 +635,7 @@ $(function() {
       <div class="container">
           <div class="container">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
         <form>
             <div class="form-group">
                 <input type="hidden" name="comment_id" id="commentId"
@@ -660,7 +660,7 @@ $(function() {
 
         </form>
         </div>
-            <div class="col-md-6"></div>
+          
           </div>
         </div>
 
