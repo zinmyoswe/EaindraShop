@@ -107,6 +107,21 @@ box-sizing: border-box;
     text-decoration: line-through;
 }
 
+@media (max-width: 768px) {
+ 
+  .display{
+    margin-left: 50px;
+  }
+}
+
+/*@media (max-width: 576px) {
+ 
+  .display{
+    margin-left: 100px;
+  }
+}*/
+
+
 </style>
 
 
@@ -117,7 +132,7 @@ box-sizing: border-box;
 
  <div class="container">
    <div class="row">
-     <div class="col-md-2">
+     <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 
         
        <ul class="cats">
@@ -140,7 +155,7 @@ box-sizing: border-box;
 
 
      </div> <!-- col-md-4 end-->
-     <div class="col-md-10">
+     <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10">
       <div class="row">
         <?php getpro(); ?>
        <?php getcatpro(); ?>

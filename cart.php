@@ -165,7 +165,7 @@
 
                 echo '<p>';
                 echo '<a href="" class="btn btn-link">Edit</a>';
-                echo '<a href="delete-cart-detail.php?id='.$product_id.'" 
+                echo '<a href="update-cart.php?action=remove&id='.$product_id.'" 
                 class="btn btn-link">Delete</a>';
                  echo '<a href="" class="btn btn-link">Move To Wishlist</a>';
                 echo '</p>';

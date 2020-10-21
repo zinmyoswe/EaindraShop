@@ -95,7 +95,7 @@ include('config.php');
 
 
               if($obj->qty < 3){
-                  echo '<img src="image/bestseller.png" width="90" height="20" style="margin-left: 75px; margin-bottom:5px;">';
+                  echo '<img src="image/bestseller.png" width="70"  style="margin-left: 75px; margin-bottom:5px;">';
               }
               echo "<br>";
 
