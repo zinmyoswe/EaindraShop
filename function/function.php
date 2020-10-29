@@ -80,7 +80,7 @@ include('config.php');
                        
               
 
-              echo '<div class="col-md-3 col-sm-6 col-xs-12">';
+              echo '<div class="col-md-3 col-sm-4 col-xs-12">';
               echo '<div class="display">';
              
             
@@ -362,6 +362,7 @@ include('config.php');
             while($obj = mysqli_fetch_object($result)) {
 
 
+              
 
        echo '<div class="col-md-3 col-sm-6 col-xs-12">';
               echo '<div class="display">';

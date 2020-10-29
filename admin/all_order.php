@@ -70,8 +70,8 @@ $w2 = $_GET['w2'];
       <div class="row">
      
 
-        <!-- Default box -->
-        <div class="col-md-12">
+        <!-- Default box --> 
+        <div class="col-md-12 col-lg-12">
       <div class="card">
         <div class="card-header with-border">
           <h3 class="card-title">View All Orders</h3>

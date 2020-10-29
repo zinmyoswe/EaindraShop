@@ -107,6 +107,14 @@ box-sizing: border-box;
     text-decoration: line-through;
 }
 
+@media (max-width: 768px) {
+ 
+  .display{
+    margin-left: 30px;
+  }
+ 
+}
+
 </style>
 
 

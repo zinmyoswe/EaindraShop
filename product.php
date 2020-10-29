@@ -110,9 +110,19 @@ box-sizing: border-box;
 @media (max-width: 768px) {
  
   .display{
-    margin-left: 50px;
+    margin-left: 30px;
   }
+ 
 }
+
+/*@media (max-width: 1024px) {
+  .display a img{
+    width: 250px !important;
+    height: 250px;
+  }
+  }*/
+
+
 
 /*@media (max-width: 576px) {
  

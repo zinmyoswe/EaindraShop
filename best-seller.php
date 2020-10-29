@@ -53,6 +53,18 @@
 
 
   }
+  @media (max-width: 768px) {
+ 
+  .display{
+    margin-left: 100px;
+  }
+
+  .display a img{
+    width: 270px;
+    /*height: 250px;*/
+  }
+ 
+}
 </style>
 
 

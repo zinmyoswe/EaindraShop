@@ -214,7 +214,7 @@ a:hover{
     <hr>
 
   <div class="row">
-    <div class="col-md-8 order-md-1">
+    <div class="col-md-8 order-md-1 col-sm-12 col-xs-12">
 
      
 
@@ -380,7 +380,7 @@ a:hover{
     </div>
      <!-- --------------col-md-8 order-md-1 end ------------------ -->
      
-     <div class="col-md-4 order-md-2 mb-4">
+     <div class="col-md-4 order-md-2 mb-4 col-sm-12 col-xs-12">
             <div class="cart_sidebar">
                 <br>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2020 at 11:01 AM
+-- Generation Time: Oct 29, 2020 at 03:31 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -40,7 +40,10 @@ CREATE TABLE `add_to_favourite` (
 --
 
 INSERT INTO `add_to_favourite` (`fav_id`, `product_id`, `customer_id`, `fav_date`) VALUES
-(1, 74, 30, '2020-10-03 23:22:44');
+(3, 84, 28, '2020-10-10 09:55:17'),
+(4, 85, 30, '2020-10-19 13:30:56'),
+(5, 76, 30, '2020-10-19 13:31:12'),
+(6, 76, 0, '2020-10-21 17:04:13');
 
 -- --------------------------------------------------------
 
@@ -192,11 +195,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `product_id`, `color`, `size`) VALUES
-(2, 75, '', ''),
-(3, 75, '', ''),
-(4, 75, '', ''),
-(5, 85, '', ''),
-(6, 84, '', '');
+(1, 87, '', '');
 
 -- --------------------------------------------------------
 
@@ -261,7 +260,16 @@ INSERT INTO `color_product` (`color_product_id`, `product_id`, `color_id`) VALUE
 (42, 83, 79),
 (43, 83, 75),
 (44, 79, 83),
-(45, 75, 83);
+(45, 75, 83),
+(46, 86, 86),
+(47, 85, 85),
+(48, 84, 84),
+(49, 76, 76),
+(161, 74, 74),
+(163, 72, 72),
+(164, 87, 87),
+(165, 87, 76),
+(166, 76, 87);
 
 -- --------------------------------------------------------
 
@@ -290,7 +298,10 @@ INSERT INTO `comment` (`comment_id`, `parent_comment_id`, `comment`, `sender_nam
 (24, 0, '', '', 0, '2020-10-10 10:51:36'),
 (25, 0, 'yes', 'weishuo', 79, '2020-10-10 10:52:17'),
 (26, 0, 'test', 'weishuo', 85, '2020-10-10 10:55:56'),
-(27, 0, 'good', 'zayarmyat', 85, '2020-10-10 10:57:03');
+(27, 0, 'good', 'zayarmyat', 85, '2020-10-10 10:57:03'),
+(28, 0, 'ajax', 'zayarmyat', 85, '2020-10-10 11:11:22'),
+(29, 0, 'pillow is good', 'zayarmyat', 85, '2020-10-10 11:13:22'),
+(30, 0, 'cotton bag', 'zayarmyat', 78, '2020-10-10 19:00:59');
 
 -- --------------------------------------------------------
 
@@ -313,7 +324,8 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`id`, `name`, `email`, `pass`, `customer_img`) VALUES
 (28, 'zayarmyat', 'zayarmyat@gmail.com', '12345678', 'default.png'),
 (30, 'weishuo', 'weishuo@gmail.com', '12345678', 'default.png'),
-(31, 'susu', 'susu@gmail.com', '12345678', 'default.png');
+(31, 'susu', 'susu@gmail.com', '12345678', 'default.png'),
+(32, 'phwe', 'phwe@gmail.com', '12345678', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -395,7 +407,11 @@ INSERT INTO `orders` (`order_id`, `customer`, `shipping_id`, `status`, `total_am
 (69, 'susu@gmail.com', 50, 3, 22.05, 2, 'WavePay', '2020-10-03 00:10:16', '2020-10-03 00:10:16'),
 (70, 'weishuo@gmail.com', 49, 5, 15.75, 3, 'Cash', '2020-10-03 05:44:53', '2020-10-03 09:19:33'),
 (71, 'weishuo@gmail.com', 49, 3, 11.55, 1, 'Credit', '2020-10-04 00:19:53', '2020-10-04 00:19:53'),
-(72, 'weishuo@gmail.com', 49, 3, 23.1, 1, 'KBZPay', '2020-10-10 01:41:51', '2020-10-10 01:41:51');
+(72, 'weishuo@gmail.com', 49, 3, 23.1, 1, 'KBZPay', '2020-10-10 01:41:51', '2020-10-10 01:41:51'),
+(73, 'zayarmyat@gmail.com', 41, 4, 23.1, 3, 'Cash', '2020-10-10 09:59:54', '2020-10-10 10:10:11'),
+(74, 'phwe@gmail.com', 51, 3, 17.85, 2, 'KBZPay', '2020-10-15 03:18:36', '2020-10-15 03:18:36'),
+(75, 'weishuo@gmail.com', 49, 2, 15.75, 3, 'Cash', '2020-10-19 13:29:34', '2020-10-19 13:29:34'),
+(76, 'weishuo@gmail.com', 49, 3, 23.1, 1, 'KBZPay', '2020-10-21 17:21:48', '2020-10-21 17:21:48');
 
 -- --------------------------------------------------------
 
@@ -428,7 +444,15 @@ INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `product_n
 (113, 69, 78, 'Book Tote Bag', '10', 1, '10', 'susu@gmail.com'),
 (114, 70, 79, 'A5 Fashion Activity Journal', '5', 3, '15', 'weishuo@gmail.com'),
 (115, 71, 74, 'Coke Cup 22', '11', 1, '11', 'weishuo@gmail.com'),
-(116, 72, 86, 'Wireless Earbuds', '22', 1, '22', 'weishuo@gmail.com');
+(116, 72, 86, 'Wireless Earbuds', '22', 1, '22', 'weishuo@gmail.com'),
+(117, 73, 81, 'Daily Mug', '5', 1, '5', 'zayarmyat@gmail.com'),
+(118, 73, 83, 'A5 Fashion Activity Journal', '5', 1, '5', 'zayarmyat@gmail.com'),
+(119, 73, 84, 'The Traveller Drink Bottle', '12', 1, '12', 'zayarmyat@gmail.com'),
+(120, 74, 85, 'Convertible Cushion Throw', '12', 1, '12', 'phwe@gmail.com'),
+(121, 74, 82, 'Daily Mug', '5', 1, '5', 'phwe@gmail.com'),
+(122, 75, 80, 'Daily Mug', '5', 2, '10', 'weishuo@gmail.com'),
+(123, 75, 83, 'A5 Fashion Activity Journal', '5', 1, '5', 'weishuo@gmail.com'),
+(124, 76, 86, 'Wireless Earbuds', '22', 1, '22', 'weishuo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -475,7 +499,9 @@ INSERT INTO `payment` (`payment_id`, `order_id`, `payment_type`, `amount`, `paya
 (30, 68, 'KBZPay', 11.55, 11.55, '2020-10-02 23:35:49'),
 (31, 69, 'WavePay', 22.05, 22.05, '2020-10-03 00:10:17'),
 (32, 71, 'Credit', 11.55, 11.55, '2020-10-04 00:19:54'),
-(33, 72, 'KBZPay', 23.1, 23.1, '2020-10-10 01:41:51');
+(33, 72, 'KBZPay', 23.1, 23.1, '2020-10-10 01:41:51'),
+(34, 74, 'KBZPay', 17.85, 17.85, '2020-10-15 03:18:37'),
+(35, 76, 'KBZPay', 23.1, 23.1, '2020-10-21 17:21:49');
 
 -- --------------------------------------------------------
 
@@ -502,7 +528,9 @@ INSERT INTO `payment_detail` (`payment_detail_id`, `payment_id`, `name`, `card_n
 (1, 30, '', 0, '', '', '', '2020-10-02 23:35:49'),
 (2, 31, '', 0, '', '', '', '2020-10-03 00:10:17'),
 (3, 32, 'WeiShuo', 2147483647, 'August', '2027', '213434', '2020-10-04 00:19:54'),
-(4, 33, '', 0, '', '', '', '2020-10-10 01:41:51');
+(4, 33, '', 0, '', '', '', '2020-10-10 01:41:51'),
+(5, 34, '', 0, '', '', '', '2020-10-15 03:18:37'),
+(6, 35, '', 0, '', '', '', '2020-10-21 17:21:49');
 
 -- --------------------------------------------------------
 
@@ -538,13 +566,14 @@ INSERT INTO `product` (`id`, `product_name`, `categories`, `sub_cat`, `brand`, `
 (77, 'Book Tote Bag', '53', '-- Choose --', '14', 'Select a package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '10', 'f2.PNG', 16, '0000-00-00 00:00:00', '2020-10-06 00:24:11'),
 (78, 'Book Tote Bag', '53', 'Bags & Luggage', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '10', '145819-14-2.jpg', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (79, 'A5 Fashion Activity Journal 22', '75', '-- Choose --', '14', 'Select a package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'b2.PNG', 0, '0000-00-00 00:00:00', '2020-10-05 23:47:06'),
-(80, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a.PNG', 12, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(81, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a1.PNG', 8, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(82, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a2.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(83, 'A5 Fashion Activity Journal', '75', '39', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'b1.PNG', 8, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(84, 'The Traveller Drink Bottle', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'd1.PNG', 8, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(85, 'Convertible Cushion Throw', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'c1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(86, 'Wireless Earbuds', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '22', 'e1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(80, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a.PNG', 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(81, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(82, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a2.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(83, 'A5 Fashion Activity Journal', '75', '39', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'b1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(84, 'The Traveller Drink Bottle', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'd1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(85, 'Convertible Cushion Throw', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'c1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(86, 'Wireless Earbuds', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '22', 'e1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(87, 'Noodle Bowl', '52', '40', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '6', 'f4.PNG', 7, '2020-10-21 16:18:44', '2020-10-21 16:18:44');
 
 -- --------------------------------------------------------
 
@@ -585,8 +614,7 @@ CREATE TABLE `purchase` (
 
 INSERT INTO `purchase` (`purchase_id`, `product_name`, `supplier_id`, `admin_id`, `product_id`, `price`, `qty`, `created_date`, `modified_date`) VALUES
 (6, 'The Studio Tote Bag', 10, 10, 0, 10, 12, '2020-10-09 23:40:00', '2020-10-09 23:40:00'),
-(7, 'test', 9, 10, 0, 10, 16, '2020-10-10 00:01:04', '2020-10-10 00:01:04'),
-(8, 'just test', 15, 10, 0, 45, 15, '2020-10-10 00:01:41', '2020-10-10 00:18:50');
+(9, 'Noodle Bowl', 9, 8, 0, 6, 7, '2020-10-21 16:17:12', '2020-10-21 16:17:12');
 
 -- --------------------------------------------------------
 
@@ -645,14 +673,15 @@ INSERT INTO `shipping` (`shipping_id`, `full_name`, `email`, `store_id`, `phone`
 (26, 'hninoohlaing', 'saunghninoo@gmail.com', 0, '095057545', 'register', 'home', '12/BPS Building, Hlaing Township', 'Myanmar', 'Yangon', 'Yangon', 15332, '2018-08-18 14:09:57', '2018-08-18 14:09:57', '2018-08-18 14:09:57'),
 (27, 'zinzintun', 'overmidnight12@gmail.com', 0, '09772843040', 'register', 'home', '22,B, Latha Street', 'Myanmar', 'Yangon', 'Latha', 32421, '2018-09-05 21:16:10', '2018-09-05 21:16:10', '2018-09-05 21:16:10'),
 (40, 'PAN ASTHESTIC', 'overmidnight12@gmail.com', 0, '09772843040', 'register', 'home', 'No 8 , ground floor, Coner of Kannar Street and Sin min Street', 'Myanmar', 'Yangon', 'Alone Township', 90001, '2018-09-17 13:05:16', '2018-09-17 13:05:16', '2018-09-17 13:05:16'),
-(41, 'Zayar Myat', 'zayarmyat@gmail.com', 0, '09772919500', 'register', 'home', 'InnYa Street', 'Myanmar', 'Yangon', 'Yangon', 11241, '2019-11-05 07:05:08', '2019-11-05 07:05:08', '2019-11-05 07:05:08'),
+(41, 'Zayar Myat', 'zayarmyat@gmail.com', 0, '09772919500', 'Shipping', 'home', 'InnYa Street', 'Myanmar', 'Yangon', 'Yangon', 11241, '2019-11-05 07:05:08', '2020-10-10 10:10:11', '2019-11-05 07:05:08'),
 (42, 'Myanmar Plaza Condo', 'yinmin@gmail.com', 0, '09771224100', 'Deliver', 'home', 'Myanmar Plaza Condo', 'Myanmar', 'Yangon', 'Yankin', 11424, '2019-11-06 02:19:15', '2019-11-06 02:25:55', '2019-11-06 02:19:15'),
 (43, 'InnYa Street', 'zayar@gmail.com', 0, '09772919500', 'Deliver', 'home', 'InnYa Street', 'Myanmar', 'Yangon', 'Yangon', 11241, '2019-11-12 22:48:09', '2019-11-12 23:06:43', '2019-11-12 22:48:09'),
 (44, 'Myanmar Plaza Condo', 'zayar@gmail.com', 0, '09772919500', 'Deliver', 'home', 'mict', 'Myanmar', 'Yangon', 'Yankin', 2147483647, '2019-11-13 21:47:14', '2019-11-13 21:51:28', '2019-11-13 21:47:14'),
 (47, 'hanthit', 'hanthit@gmail.com', 0, '09772919500', 'Deliver', 'home', 'no(10) Kamarkyi street', 'Myanmar', 'Yangon', 'yangon', 90001, '2020-05-02 19:29:04', '2020-05-03 08:19:15', '2020-05-02 19:29:04'),
 (48, 'zayarmyat', 'zayarmyat@gmail.com', 0, '09772919500', 'Deliver', 'home', 'Pearl Condo', 'Myanmar', 'Yangon', 'Yankin', 9001, '2020-05-03 13:57:32', '2020-10-03 05:35:48', '2020-05-03 13:57:32'),
 (49, 'WeiShuo', 'weishuo@gmail.com', 0, '09772919500', 'Deliver', 'home', 'Myanmar Plaza Office Tower 1', 'Myanmar', 'Yangon', 'Yangon', 11201, '2020-09-29 15:17:06', '2020-10-03 09:19:33', '2020-09-29 15:17:06'),
-(50, 'su su lay', 'susu@gmail.com', 0, '09772919500', 'register', 'home', 'Myanmar Plaza Office Tower 1', 'Myanmar', 'Yangon', 'Yankin', 90001, '2020-10-02 22:24:18', '2020-10-02 22:24:18', '2020-10-02 22:24:18');
+(50, 'su su lay', 'susu@gmail.com', 0, '09772919500', 'register', 'home', 'Myanmar Plaza Office Tower 1', 'Myanmar', 'Yangon', 'Yankin', 90001, '2020-10-02 22:24:18', '2020-10-02 22:24:18', '2020-10-02 22:24:18'),
+(51, 'phwe', 'phwe@gmail.com', 0, '09772919500', 'register', 'home', 'Shwe taung Office', 'Myanmar', 'Yangon', 'Yangon', 90001, '2020-10-15 03:18:08', '2020-10-15 03:18:08', '2020-10-15 03:18:08');
 
 -- --------------------------------------------------------
 
@@ -905,7 +934,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `add_to_favourite`
 --
 ALTER TABLE `add_to_favourite`
-  MODIFY `fav_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `fav_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -929,7 +958,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -941,19 +970,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `color_product`
 --
 ALTER TABLE `color_product`
-  MODIFY `color_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `color_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `discount`
@@ -971,13 +1000,13 @@ ALTER TABLE `image_attributes`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `package`
@@ -989,19 +1018,19 @@ ALTER TABLE `package`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `payment_detail`
 --
 ALTER TABLE `payment_detail`
-  MODIFY `payment_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `payment_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `product_attribute`
@@ -1013,7 +1042,7 @@ ALTER TABLE `product_attribute`
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rating`
@@ -1025,7 +1054,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
-  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `sold_out`
