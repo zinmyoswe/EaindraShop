@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -366,14 +368,32 @@
             </a>
           </li> -->
 
-           <li class="nav-item has-treeview">
-            <a href="saleview.php" class="nav-link">
+        
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file-pdf"></i>
+            
               <p>
-                Manage Sale Report
-                <i class="fas fa-angle-left right"></i>             
+                Manage Report
+                <i class="fas fa-angle-left right"></i>
+                
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="saleview.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sale Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="purchaseview.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Purchase Report</p>
+                </a>
+              </li>    
+            </ul>
           </li>
 
           <li class="nav-item has-treeview">
