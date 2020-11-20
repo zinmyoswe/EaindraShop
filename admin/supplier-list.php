@@ -140,7 +140,7 @@ include('header3.php');
         </div>
         <!-- /.box-body -->
         <div class="card-footer">
-          <input type="submit" name="supplier" value="Add Package" class="btn btn-dark float-right">
+          <input type="submit" name="supplier" value="Add Supplier" class="btn btn-dark float-right">
 </form>
         </div>
         <!-- /.box-footer-->

@@ -59,7 +59,7 @@ include('header3.php');
   
             if($name == null){
                   echo '  <div class="alert alert-danger">
-        <i class="fa fa-exclamation-triangle"> </i> Categories Name Required!
+        <i class="fa fa-exclamation-triangle"> </i> Purchase Name Required!
         </div>';
                 }else{
       $query = $mysqli->query("INSERT INTO purchase(product_name,supplier_id,admin_id,product_id,price,qty,created_date,modified_date)

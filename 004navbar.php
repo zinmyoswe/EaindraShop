@@ -1,3 +1,6 @@
+<?php 
+error_reporting(0); 
+?>
 <style type="text/css">
   .form-inline .form-control {
     display: inline-block;

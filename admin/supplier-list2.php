@@ -78,14 +78,14 @@
             <table class='table' >
 
               <tr>
-<th>No</th>
-<th>Logo</th>
-<th>Name</th>
-<th>Email</th>
-<th>Address</th>
-<th>Phone</th>
-<th></th>
-</tr>
+              <th>No</th>
+              <th>Logo</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th></th>
+              </tr>
                
 
                 <?php 
