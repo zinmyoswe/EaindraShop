@@ -71,7 +71,7 @@ include('header3.php');
                   echo '  <div class="notice notice-success">
         <strong><i class="fa fa-check-circle-o"> </i> Brand Added Successfully</strong>
         </div>';
-            echo "<script>window.open('brand-list2.php','_self')</script>";
+            echo "<script>window.open('brand-list2.php?w2=success','_self')</script>";
                   }
                 }
                 }

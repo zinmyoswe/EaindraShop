@@ -76,7 +76,7 @@
 
       <!-- Default box -->
       <div class="row">
-      <div class="col-md-11">
+      <div class="col-md-12">
       <div class="card">
         <div class="card-header with-border">
           <h3 class="card-title">Purchase List</h3>
@@ -96,15 +96,28 @@
 
             <table class='table' >
                 <tr style='background: whitesmoke;'>
-                    <th>No</th>
-                    <th>Title</th>
-                    <th>Operation</th>
+                    <th>PurchaseID</th>
+    <th>ProductName</th>
+    <th>SupplierID</th>
+    <th>AdminID</th>
+    
+    <th>Qty</th>
+    <th>Total</th>
+    <th>Date</th>
+    <th></th>
                 </tr>
 
 
 
                 <?php 
-                $query = "SELECT * FROM purchase order by purchase_id desc";
+                $query = "SELECT  p.*,s.supplier_id, s.supplier_name,a.admin_id, a.admin_name 
+    FROM purchase p
+    LEFT JOIN supplier s
+    ON s.supplier_id = p.supplier_id
+    LEFT JOIN admin a
+    ON p.admin_id = a.admin_id
+
+    order by p.purchase_id desc";
                 $result = mysqli_query($mysqli,$query);
 
                 $count = 1;
@@ -116,17 +129,33 @@
                 ?>
                 
                     <tr>
-                        <td align='center'><?= $count ?></td>
-                        <td><a href='<?= $created_date ?>' target='_blank'><?= $product_name ?></a></td>
+                        <td><?php echo $row['purchase_id'] ?></td>
+      
+      <td><?php echo $row['product_name'] ?></td>
+      <td><?php echo $row['supplier_name'] ?></td>
+      <td><?php echo $row['admin_name'] ?></td>
+      
+      <td><?php echo $row['qty'] ?></td>
+      <td><p style="font-family: Arial;">$ <?php echo $row['total'] ?></p></td>
+      <td>
+           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-alarm" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
+</svg>
+        <?php echo $row['created_date'] ?></td>
                         <td align='center'>
 
-                          <a href="purchase_add2.php?id=<?php echo $row['purchase_id']?>" class="btn btn-primary">Purchase Detail Add</a>
+                 
 
                             <a href="purchase-edit.php?id=<?php echo $row['purchase_id']?>" class="btn btn-outline-primary">Edit</a>
 
                        
 
                             <button class='delete btn btn-outline-dark' id='del_<?= $id ?>' data-id='<?= $id ?>'>Delete</button>
+                              <br><br>
+                                     <a href="purchase_add3.php?id=<?php echo $row['purchase_id']?>" class="btn btn-dark">Purchase Detail Add</a>
+
+                                     <br><br>
+                                     <a href="purchase_detail_view.php?id=<?php echo $row['purchase_id']?>" class="btn btn-outline-dark">Purchase Detail View</a>
 
                         </td>
                         

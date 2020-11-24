@@ -26,7 +26,7 @@ if(isset($_POST['save_mul']))
 		$sql = $mysqli->query($sql);		
 	}
 
-	$pu_sql = "UPDATE purchase SET price = '$total_price', qty ='$itemqty' WHERE purchase_id = '$purchaseid'";
+	$pu_sql = "UPDATE purchase SET total = '$total_price', qty ='$itemqty' WHERE purchase_id = '$purchaseid'";
     $pu_run = $mysqli->query($pu_sql);
 	
 	if($sql)
@@ -34,7 +34,7 @@ if(isset($_POST['save_mul']))
 		?>
         <script>
 		alert('<?php echo $total." records was inserted !!!"; ?>');
-		window.location.href='purchase_list2.php';
+		window.location.href='purchase_list2.php?w2=success';
 		</script>
         <?php
 	}

@@ -6,11 +6,11 @@
     $name = $_POST['name'];
     $supplier = $_POST['supplier'];
     $admin_id = $_POST['admin_id'];
-    $price = $_POST['price'];
+    $total = $_POST['total'];
     $qty = $_POST['qty'];
    
 
-    $sql = "UPDATE purchase SET product_name='$name',supplier_id='$supplier',admin_id='$admin_id',price='$price',qty='$qty',modified_date=now() WHERE purchase_id=$id";
+    $sql = "UPDATE purchase SET product_name='$name',supplier_id='$supplier',admin_id='$admin_id',total='$total',qty='$qty',modified_date=now() WHERE purchase_id=$id";
 
 
     mysqli_query($mysqli, $sql);  

@@ -11,7 +11,7 @@
      .modal-dialog{
             margin-top: 250px;
         }
-        .btn-secondary {
+     .btn-secondary {
     color: #fff;
     background-color: black;
     border-color: black;
@@ -30,6 +30,17 @@
               showConfirmButton: false,
               timer: 1800
             })            
+          </script>
+<?php } elseif($w2 == 'updated'){ ?>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Updated',
+              text: 'Supplier updated successfully'
+            })
+                     
           </script>
 <?php } ?>
 
@@ -121,7 +132,7 @@
                         <td><?= $address ?></td>
                         <td><?= $phone ?></td>
                         <td>
-                            <a href="package-edit.php?id=<?php echo $row['supplier_id']?>" class="btn btn-outline-primary">Edit</a>
+                            <a href="supplier-edit.php?id=<?php echo $row['supplier_id']?>" class="btn btn-outline-primary">Edit</a>
 
 
                             <button class='delete btn btn-outline-dark' id='del_<?= $id ?>' data-id='<?= $id ?>'>Delete</button>

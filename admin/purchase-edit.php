@@ -94,7 +94,7 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
                   <div class="col-sm-10">
-                  <input type="text" name="price"  class="form-control" id="inputEmail3" value="<?php echo $row['price'] ?>"/> 
+                  <input type="text" name="price"  class="form-control" id="inputEmail3" value="<?php echo $row['total'] ?>"/> 
                   </div>
                 </div>
                 <!-- FORM ENDS -->
@@ -113,7 +113,7 @@
 		<br><br>
 
 		<input type="submit" value="Update Purchase" class="btn btn-primary float-right">
-    <a href="purchase-list2.php" class="btn btn-outline-dark float-right" style="margin-right: 2px;">Back</a>
+    <a href="purchase_list2.php" class="btn btn-outline-dark float-right" style="margin-right: 2px;">Back</a>
 	</form>
 
 

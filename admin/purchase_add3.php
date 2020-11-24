@@ -4,21 +4,13 @@ session_start();
 include('confs/config.php');
 include('header3.php');
 
-// $id = $_GET['id'];
-//    $result = mysqli_query($mysqli,"SELECT * FROM purchase where purchase_id = $id");
-//    $row = mysqli_fetch_assoc($result);
+$id = $_GET['id'];
+   $result = mysqli_query($mysqli,"SELECT * FROM purchase where purchase_id = $id");
+   $row = mysqli_fetch_assoc($result);
 
 
 ?>
 
-  <?php
-        $sql = "SELECT * FROM purchase 
-                ORDER BY purchase_id DESC LIMIT 1";
-        $run = mysqli_query($mysqli,$sql);
-        $row = mysqli_fetch_assoc($run);
-
-        $id = $row['purchase_id'];
-      ?>
 
 
 

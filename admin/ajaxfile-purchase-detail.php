@@ -5,7 +5,7 @@ if(isset($_POST['id'])){
 	$id = $_POST['id'];
 
 	// Delete record
-	$sql = "DELETE FROM brand WHERE brand_id=".$id;
+	$sql = "DELETE FROM purchase_detail WHERE purchase_detail_id=".$id;
 	mysqli_query($mysqli,$sql);
 	echo 1;
 		exit;

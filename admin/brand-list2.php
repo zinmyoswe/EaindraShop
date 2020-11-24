@@ -1,15 +1,48 @@
 <?php 
+    error_reporting(0);
     session_start();
     include('../confs/config.php');
     include "header3.php";
+
+     $w2 = $_GET['w2'];
 ?>
 
 <style type="text/css">
-    .modal-dialog {
-    width: 330px;
-    margin: 30px auto;
+     .modal-dialog{
+            margin-top: 250px;
+        }
+     .btn-secondary {
+    color: #fff;
+    background-color: black;
+    border-color: black;
 }
 </style>
+
+<?php if($w2 == 'success'){ ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- <script type="text/javascript" src="https://adminlte.io/themes/dev/AdminLTE/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+             <script type="text/javascript">
+            
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Brand has been saved',
+              showConfirmButton: false,
+              timer: 1800
+            })            
+          </script>
+<?php } elseif($w2 == 'updated'){ ?>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       <script type="text/javascript">
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Updated',
+              text: 'Brand updated successfully'
+            })
+                     
+          </script>
+<?php } ?>
 
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -80,7 +113,9 @@
                         <td>
                             <a href="brand-edit.php?id=<?php echo $row['brand_id']?>" class="btn btn-outline-primary">Edit</a>
 
-                            <a class='delete btn btn-outline-dark' href="brand-del.php?id=<?php echo $row['brand_id']?>">Delete</a>
+                          
+
+                            <button class='delete btn btn-outline-dark' id='del_<?= $id ?>' data-id='<?= $id ?>'>Delete</button>
 
                         </td>
                         
@@ -109,22 +144,12 @@
 
   </div>
   <!-- /.content-wrapper -->
-<!doctype html>
-<html>
-    <head>
-        <title>Confirmation alert Before Delete record with jQuery AJAX</title>
-        <link href='.css' rel='stylesheet' type='text/css'>
-        <link href='bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-        <script src='jquery-3.3.1.js' type='text/javascript'></script>
-        <script src='../bootstrap/js/bootstrap.min.js'></script> 
-        <script src='bootbox.min.js'></script>
+   <!-- JS dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 4 dependency -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
         <script src='brand-script.js' type='text/javascript'></script>
-    </head>
-    <body>
-        
-       
-        
-    </body>
-</html>
 
 <?php include('footer3.php'); ?>

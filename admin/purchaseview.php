@@ -99,7 +99,7 @@ include('header3.php');
 		<th><b>ProductName</b></th>
 		<th><b>SupplierID</b></th>
 		<th><b>AdminID</b></th>
-		<th><b>Price</b></th>
+		<th><b>Total</b></th>
 		<th><b>Qty</b></th>
 		<th><b>Date</b></th>
 	</tr>
@@ -112,7 +112,7 @@ include('header3.php');
 			<td><?php echo $row['product_name'] ?></td>
 			<td><?php echo $row['supplier_name'] ?></td>
 			<td><?php echo $row['admin_name'] ?></td>
-			<td><p style="font-family: Arial;">$ <?php echo $row['price'] ?></p></td>
+			<td><p style="font-family: Arial;">$ <?php echo $row['total'] ?></p></td>
 			<td><?php echo $row['qty'] ?></td>
 			<td><?php echo $row['created_date'] ?></td>
 		

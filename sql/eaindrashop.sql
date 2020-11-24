@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 03:31 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Nov 24, 2020 at 06:20 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -42,7 +41,6 @@ CREATE TABLE `add_to_favourite` (
 INSERT INTO `add_to_favourite` (`fav_id`, `product_id`, `customer_id`, `fav_date`) VALUES
 (3, 84, 28, '2020-10-10 09:55:17'),
 (4, 85, 30, '2020-10-19 13:30:56'),
-(5, 76, 30, '2020-10-19 13:31:12'),
 (6, 76, 0, '2020-10-21 17:04:13');
 
 -- --------------------------------------------------------
@@ -71,7 +69,7 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, 
 (8, 'YIN MIN', 'yinmin@gmail.com', '12345678', 'Manager', 'yinmin.png'),
 (10, 'HLAING NADI PHYO', 'hlaingnadiphyo@acedatasystems.com', '12345678', 'Manager', 'ingyin.png'),
 (12, 'Jennie', 'jennie@gmail.com', '12345678', 'Supervisor', '654986.png'),
-(13, 'lisa2', 'lisa@gmail.com', '12345678', 'Delivery Staff', '486351.jpg');
+(13, 'Hsuyamin', 'lisa@gmail.com', '12345678', 'Delivery Staff', '166070.jpg');
 
 -- --------------------------------------------------------
 
@@ -175,7 +173,8 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`brand_id`, `brand_name`, `brand_cover`, `created_date`, `modified_date`) VALUES
-(14, 'Typo', '', '2020-09-25 15:37:22', '0000-00-00 00:00:00');
+(14, 'typo', '', '2020-11-24 08:12:03', '2020-11-24 08:12:03'),
+(16, 'eain5', 'yLHugSf1.jpeg', '2020-11-24 09:09:26', '2020-11-24 09:19:34');
 
 -- --------------------------------------------------------
 
@@ -189,13 +188,6 @@ CREATE TABLE `cart` (
   `color` varchar(50) NOT NULL,
   `size` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `product_id`, `color`, `size`) VALUES
-(1, 87, '', '');
 
 -- --------------------------------------------------------
 
@@ -348,7 +340,8 @@ CREATE TABLE `discount` (
 
 INSERT INTO `discount` (`discount_id`, `product_id`, `percentage`, `created_date`, `duration`, `end_date`) VALUES
 (2, 78, 30, '10/01/2020', '', '10/31/2020'),
-(4, 84, 30, '10/01/2020', '', '10/30/2020');
+(4, 84, 30, '10/01/2020', '', '10/30/2020'),
+(5, 86, 30, '11/01/2020', '', '11/30/2020');
 
 -- --------------------------------------------------------
 
@@ -411,7 +404,8 @@ INSERT INTO `orders` (`order_id`, `customer`, `shipping_id`, `status`, `total_am
 (73, 'zayarmyat@gmail.com', 41, 4, 23.1, 3, 'Cash', '2020-10-10 09:59:54', '2020-10-10 10:10:11'),
 (74, 'phwe@gmail.com', 51, 3, 17.85, 2, 'KBZPay', '2020-10-15 03:18:36', '2020-10-15 03:18:36'),
 (75, 'weishuo@gmail.com', 49, 2, 15.75, 3, 'Cash', '2020-10-19 13:29:34', '2020-10-19 13:29:34'),
-(76, 'weishuo@gmail.com', 49, 3, 23.1, 1, 'KBZPay', '2020-10-21 17:21:48', '2020-10-21 17:21:48');
+(76, 'weishuo@gmail.com', 49, 3, 23.1, 1, 'KBZPay', '2020-10-21 17:21:48', '2020-10-21 17:21:48'),
+(77, 'weishuo@gmail.com', 49, 3, 11.55, 2, 'WavePay', '2020-11-14 11:25:15', '2020-11-14 11:25:15');
 
 -- --------------------------------------------------------
 
@@ -452,7 +446,9 @@ INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `product_n
 (121, 74, 82, 'Daily Mug', '5', 1, '5', 'phwe@gmail.com'),
 (122, 75, 80, 'Daily Mug', '5', 2, '10', 'weishuo@gmail.com'),
 (123, 75, 83, 'A5 Fashion Activity Journal', '5', 1, '5', 'weishuo@gmail.com'),
-(124, 76, 86, 'Wireless Earbuds', '22', 1, '22', 'weishuo@gmail.com');
+(124, 76, 86, 'Wireless Earbuds', '22', 1, '22', 'weishuo@gmail.com'),
+(125, 77, 83, 'A5 Fashion Activity Journal', '5', 1, '5', 'weishuo@gmail.com'),
+(126, 77, 87, 'Noodle Bowl', '6', 1, '6', 'weishuo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -473,7 +469,7 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`package_id`, `package_name`, `package_image`, `created_date`, `modified_date`) VALUES
-(1, 'wedding', 'wedding.jpg', '2020-09-24 17:50:06', '0000-00-00 00:00:00');
+(2, 'Year End Sale 2', 'new-year-sale-discount-banner-template-promotion_7087-1017.jpg', '2020-11-24 08:16:19', '2020-11-24 09:17:24');
 
 -- --------------------------------------------------------
 
@@ -501,7 +497,8 @@ INSERT INTO `payment` (`payment_id`, `order_id`, `payment_type`, `amount`, `paya
 (32, 71, 'Credit', 11.55, 11.55, '2020-10-04 00:19:54'),
 (33, 72, 'KBZPay', 23.1, 23.1, '2020-10-10 01:41:51'),
 (34, 74, 'KBZPay', 17.85, 17.85, '2020-10-15 03:18:37'),
-(35, 76, 'KBZPay', 23.1, 23.1, '2020-10-21 17:21:49');
+(35, 76, 'KBZPay', 23.1, 23.1, '2020-10-21 17:21:49'),
+(36, 77, 'WavePay', 11.55, 11.55, '2020-11-14 11:25:15');
 
 -- --------------------------------------------------------
 
@@ -530,7 +527,8 @@ INSERT INTO `payment_detail` (`payment_detail_id`, `payment_id`, `name`, `card_n
 (3, 32, 'WeiShuo', 2147483647, 'August', '2027', '213434', '2020-10-04 00:19:54'),
 (4, 33, '', 0, '', '', '', '2020-10-10 01:41:51'),
 (5, 34, '', 0, '', '', '', '2020-10-15 03:18:37'),
-(6, 35, '', 0, '', '', '', '2020-10-21 17:21:49');
+(6, 35, '', 0, '', '', '', '2020-10-21 17:21:49'),
+(7, 36, '', 0, '', '', '', '2020-11-14 11:25:15');
 
 -- --------------------------------------------------------
 
@@ -569,11 +567,11 @@ INSERT INTO `product` (`id`, `product_name`, `categories`, `sub_cat`, `brand`, `
 (80, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a.PNG', 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (81, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (82, 'Daily Mug', '52', '42', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'a2.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(83, 'A5 Fashion Activity Journal', '75', '39', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'b1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(83, 'A5 Fashion Activity Journal', '75', '39', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '5', 'b1.PNG', 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (84, 'The Traveller Drink Bottle', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'd1.PNG', 7, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (85, 'Convertible Cushion Throw', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '12', 'c1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (86, 'Wireless Earbuds', '76', 'No Sub Category found', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '22', 'e1.PNG', 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(87, 'Noodle Bowl', '52', '40', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '6', 'f4.PNG', 7, '2020-10-21 16:18:44', '2020-10-21 16:18:44');
+(87, 'Noodle Bowl', '52', '40', '14', 'Select a Package', '9', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>', '6', 'f4.PNG', 6, '2020-10-21 16:18:44', '2020-10-21 16:18:44');
 
 -- --------------------------------------------------------
 
@@ -602,7 +600,7 @@ CREATE TABLE `purchase` (
   `supplier_id` int(11) NOT NULL,
   `admin_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `price` float NOT NULL,
+  `total` float NOT NULL,
   `qty` int(11) NOT NULL,
   `created_date` datetime NOT NULL,
   `modified_date` datetime NOT NULL
@@ -612,9 +610,44 @@ CREATE TABLE `purchase` (
 -- Dumping data for table `purchase`
 --
 
-INSERT INTO `purchase` (`purchase_id`, `product_name`, `supplier_id`, `admin_id`, `product_id`, `price`, `qty`, `created_date`, `modified_date`) VALUES
-(6, 'The Studio Tote Bag', 10, 10, 0, 10, 12, '2020-10-09 23:40:00', '2020-10-09 23:40:00'),
-(9, 'Noodle Bowl', 9, 8, 0, 6, 7, '2020-10-21 16:17:12', '2020-10-21 16:17:12');
+INSERT INTO `purchase` (`purchase_id`, `product_name`, `supplier_id`, `admin_id`, `product_id`, `total`, `qty`, `created_date`, `modified_date`) VALUES
+(6, 'The Studio Tote Bag', 17, 10, 0, 10, 12, '2020-10-09 23:40:00', '2020-10-09 23:40:00'),
+(9, 'Noodle Bowl', 9, 8, 0, 6, 7, '2020-10-21 16:17:12', '2020-10-21 16:17:12'),
+(10, 'Box Of Socks', 9, 8, 0, 16, 10, '2020-11-15 01:49:37', '2020-11-15 01:49:37'),
+(12, 'test23', 9, 8, 0, 22, 16, '2020-11-18 13:17:22', '2020-11-18 13:17:22'),
+(13, 'test67', 9, 8, 0, 168, 12, '2020-11-18 13:34:49', '2020-11-18 13:34:49'),
+(15, 'testnov', 9, 8, 0, 90, 15, '2020-11-20 00:46:26', '2020-11-20 00:46:26'),
+(16, 'testdec', 9, 8, 0, 132, 20, '2020-11-20 01:51:31', '2020-11-20 01:51:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase_detail`
+--
+
+CREATE TABLE `purchase_detail` (
+  `purchase_detail_id` int(11) NOT NULL,
+  `purchase_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `price` float NOT NULL,
+  `qty` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `color_image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `purchase_detail`
+--
+
+INSERT INTO `purchase_detail` (`purchase_detail_id`, `purchase_id`, `product_id`, `product_name`, `price`, `qty`, `total`, `color`, `color_image`) VALUES
+(7, 13, 0, 'test67', 14, 8, 112, 'black', 'a'),
+(8, 13, 0, 'test67', 14, 4, 56, 'white', 'a'),
+(9, 15, 0, 'testnov', 6, 8, 48, 'blue', 'a'),
+(10, 15, 0, 'testnov', 6, 7, 42, 'pink', 'a'),
+(11, 16, 0, 'testdec', 6, 8, 48, 'black', 'a'),
+(12, 16, 0, 'testdec', 7, 12, 84, 'grey', 'a');
 
 -- --------------------------------------------------------
 
@@ -770,7 +803,8 @@ INSERT INTO `supplier` (`supplier_id`, `supplier_name`, `email`, `address`, `pho
 (9, 'ACE Data Systems', 'acedatasystems@gmail.com', '', '', 'a (1).jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (15, 'test', 'overmidnight12@gmail.com', 'Yangon', '09772919500', '', '2020-09-25 14:21:35', '0000-00-00 00:00:00'),
 (16, 'test2', 'zayarmyat@gmail.com', 'Myanmar Plaza Condo', '09772919500', '', '2020-09-25 14:41:56', '0000-00-00 00:00:00'),
-(17, 'NCC', 'ncc@gmail.com', 'Maynigone', '01223456', '', '2020-10-10 01:21:24', '0000-00-00 00:00:00');
+(17, 'NCC', 'ncc@gmail.com', 'Maynigone', '01223456', '', '2020-10-10 01:21:24', '0000-00-00 00:00:00'),
+(18, 'Uniqlo2', 'uniqlo@gmail.com', 'aada', '09978022411', '', '2020-11-20 00:05:51', '2020-11-24 08:08:46');
 
 --
 -- Indexes for dumped tables
@@ -891,6 +925,12 @@ ALTER TABLE `purchase`
   ADD PRIMARY KEY (`purchase_id`);
 
 --
+-- Indexes for table `purchase_detail`
+--
+ALTER TABLE `purchase_detail`
+  ADD PRIMARY KEY (`purchase_detail_id`);
+
+--
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
@@ -952,13 +992,13 @@ ALTER TABLE `attribute`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -988,7 +1028,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `discount_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `image_attributes`
@@ -1000,31 +1040,31 @@ ALTER TABLE `image_attributes`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
-  MODIFY `package_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `package_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `payment_detail`
 --
 ALTER TABLE `payment_detail`
-  MODIFY `payment_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `payment_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -1042,7 +1082,13 @@ ALTER TABLE `product_attribute`
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `purchase_detail`
+--
+ALTER TABLE `purchase_detail`
+  MODIFY `purchase_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `rating`
@@ -1078,7 +1124,7 @@ ALTER TABLE `sub_category`
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

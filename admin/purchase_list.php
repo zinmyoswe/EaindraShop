@@ -54,16 +54,15 @@ include('header3.php');
             $name = $_POST['name'];
             $supplier = $_POST['supplier'];
             $product = $_POST['product'];
-            $price = $_POST['price'];
-            $qty = $_POST['qty'];
+          
   
             if($name == null){
                   echo '  <div class="alert alert-danger">
         <i class="fa fa-exclamation-triangle"> </i> Purchase Name Required!
         </div>';
                 }else{
-      $query = $mysqli->query("INSERT INTO purchase(product_name,supplier_id,admin_id,product_id,price,qty,created_date,modified_date)
-      VALUES ('$name','$supplier','$admin_id','$product','$price','$qty',NOW(),NOW())");
+      $query = $mysqli->query("INSERT INTO purchase(product_name,supplier_id,admin_id,product_id,total,qty,created_date,modified_date)
+      VALUES ('$name','$supplier','$admin_id','$product',0,0,NOW(),NOW())");
           ?>
       
 
@@ -75,7 +74,7 @@ include('header3.php');
 
                 
   
-        echo "<script>window.open('purchase_list2.php?w2=success','_self')</script>";
+        echo "<script>window.open('purchase_add2.php','_self')</script>";
                   }
                 }
                 }
@@ -131,23 +130,7 @@ include('header3.php');
 
                 <input type="hidden" name="product" value="0">
 
-                     <!-- FORM START -->
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
-                  <div class="col-sm-10">
-                  <input type="text" name="price"  class="form-control" id="inputEmail3" placeholder="Price"/> 
-                  </div>
-                </div>
-                <!-- FORM ENDS -->
-
-                 <!-- FORM START -->
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Quantity</label>
-                  <div class="col-sm-10">
-                  <input type="text" name="qty"  class="form-control" id="inputEmail3" placeholder="Qty"/> 
-                  </div>
-                </div>
-                <!-- FORM ENDS -->
+                  
 
                 
   <br><br>
