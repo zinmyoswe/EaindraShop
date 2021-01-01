@@ -63,8 +63,8 @@ include('header3.php');
                 }else{
 
 
-            $query = $mysqli->query("INSERT INTO package(package_name,package_image,created_date)
-                VALUES ('$name','$cover',NOW())");
+            $query = $mysqli->query("INSERT INTO package(package_name,package_image,created_date,modified_date)
+                VALUES ('$name','$cover',NOW(),NOW())");
 
              if($query){
 

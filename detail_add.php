@@ -42,7 +42,7 @@
      mysqli_query($mysqli,$insert_cart);
 
 
-echo "<script>window.location='update-cart.php?action=add&id=$id'</script>";
+echo "<script>window.location='update-cart-with-modal.php?action=add&id=$id'</script>";
 
 
 ?>

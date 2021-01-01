@@ -56,8 +56,8 @@ include('header3.php');
         <i class="fa fa-exclamation-triangle"> </i> Categories Name Required!
         </div>';
                 }else{
-      $query = $mysqli->query("INSERT INTO categories(cat_name,created_date)
-      VALUES ('$name',NOW())");
+      $query = $mysqli->query("INSERT INTO categories(cat_name,created_date,modified_date)
+      VALUES ('$name',NOW(),NOW())");
           ?>
       
 

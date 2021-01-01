@@ -73,8 +73,8 @@ include('header3.php');
                 else{
 
 
-            $query = $mysqli->query("INSERT INTO supplier(supplier_name,email,address,phone,supplier_cover,created_date)
-                VALUES ('$name','$email','$address','$phone','$cover',NOW())");
+            $query = $mysqli->query("INSERT INTO supplier(supplier_name,email,address,phone,supplier_cover,created_date,modified_date)
+                VALUES ('$name','$email','$address','$phone','$cover',NOW(),NOW())");
 
              if($query){
 

@@ -3,6 +3,7 @@
    error_reporting(0);
    include('confs/config.php');
    include('function/function.php');
+   $s = $_GET['s'];
 ?>
 <?php  include('001header.php'); ?>
 <?php  include('004navbar.php'); ?>
@@ -54,7 +55,23 @@
 
 ?>
 
-
+<?php if($s == 's52810gy9'){ ?>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- <script type="text/javascript" src="https://adminlte.io/themes/dev/AdminLTE/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+             <script type="text/javascript">
+            
+            Swal.fire({
+  icon: 'success',
+  title: 'Success',
+  text: 'SUCCESSFULLY ADDED TO BAG!',
+  
+}).then(function() {
+            window.location = "cart.php";
+        });
+        </script>          
+          </script>
+<?php }?>
     
      
 

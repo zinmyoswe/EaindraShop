@@ -68,7 +68,7 @@ if($result){
 
 
 
-echo "<script>window.open('cart.php','_self')</script>";
-// echo "<script>window.open('detail2.php?id=$product_id&s=s52810gy9','_self')</script>";
+// echo "<script>window.open('cart.php','_self')</script>";
+echo "<script>window.open('detail2.php?id=$product_id&s=s52810gy9','_self')</script>";
 
 ?>

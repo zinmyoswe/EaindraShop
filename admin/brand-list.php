@@ -63,8 +63,8 @@ include('header3.php');
                 }else{
 
 
-            $query = $mysqli->query("INSERT INTO brand(brand_name,brand_cover,created_date)
-                VALUES ('$name','$cover',NOW())");
+            $query = $mysqli->query("INSERT INTO brand(brand_name,brand_cover,created_date,modified_date)
+                VALUES ('$name','$cover',NOW(),NOW())");
 
              if($query){
 
