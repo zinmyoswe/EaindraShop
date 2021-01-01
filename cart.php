@@ -7,6 +7,8 @@
   include('001header.php');
   include('004navbar.php');
 
+  $d = $_GET['d'];
+
 ?>
 <style type="text/css">
   /*Badge*/
@@ -30,6 +32,34 @@
    border-bottom: 2px solid black;
 }
 </style>
+
+<?php if($d == 'x5sdd28ka'){ ?>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+             <script type="text/javascript">
+            
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: 'Cart deleted successfully'
+}).then(function() {
+            window.location = "cart.php";
+        });
+              
+          </script>
+<?php }?>
 
 
 <script src="js/vendor/modernizr.js"></script>
@@ -245,7 +275,7 @@
         }
 
         else {
-          echo "<div class='alert alert-danger'><span class='fa fa-exclamation'> </span> You have no items in your shopping cart</div><br>
+          echo "<div class='alert alert-dark'><span class='fa fa-exclamation'> </span> You have no items in your shopping cart</div><br>
           <a href='product.php' style='margin-right: 8px' class='btn btn-dark'>Continue Shopping</a>
           ";
         }

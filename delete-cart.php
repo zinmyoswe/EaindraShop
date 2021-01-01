@@ -14,6 +14,6 @@ if($run){
   echo "error";
 }
 unset($_SESSION['cart']);
-echo "<script>window.open('cart.php','_self')</script>";
+echo "<script>window.open('cart.php?d=x5sdd28ka','_self')</script>";
 
 ?>
