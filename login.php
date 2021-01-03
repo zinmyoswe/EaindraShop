@@ -1,8 +1,11 @@
 <?php
+  error_reporting(0);
 	session_start();
 	include('confs/config.php');
   include('001header.php');
   include('004navbar.php');
+
+  $s = $_GET['s'];
 
 ?>
 <!-- font -->
@@ -16,6 +19,21 @@
 <link href="style.css" rel="stylesheet" type="text/css" media="screen">
 <script type="text/javascript" src="loginscript2.js"></script>
 <!--  ==================login form ======================== -->
+
+<?php if($s == '3rdf49ak'){ ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- <script type="text/javascript" src="https://adminlte.io/themes/dev/AdminLTE/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+             <script type="text/javascript">
+            
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Successfully Register',
+              showConfirmButton: false,
+              timer: 1800
+            })            
+          </script>
+<?php } ?>
 
 <style type="text/css">
       .spring-btn-black{
@@ -74,6 +92,16 @@
     margin-top: 5px;
     font-size: 16px;
   }
+  .btn-link{
+    color: black;
+
+  }
+  .btn-link:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+    
+  }
   </style>
 
 
@@ -123,13 +151,79 @@
                 
                 <br><br>
                 
-                 Not account ?<a href="ajax-registration-script-with-php-mysql-and-jquery/index.php">Register Here!</a>
+                 Not account ?<!-- <a href="ajax-registration-script-with-php-mysql-and-jquery/index.php">Register Here!</a> -->
+                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#registerModal">
+                  Register Here!
+                </button>
                 
                 <br><br>
 
                 By clicking 'Log In' you agree to our website <a href="">Creators Club Terms & Conditions </a>,  <a href="">Spring Privacy Notice</a> and  <a href="">Terms & Conditions</a>.
 
                <!--  ----------- form end -------------- -->
+               <!-- registerModal modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- ----------modal-body start ------- -->
+      <div class="modal-body">
+        <img src="image/e.jpg" width="150" style="margin-left: 100px">
+        <h2 style="text-align: center"> Eaindra STORE</h2>
+        <script src="ajax-registration-script-with-php-mysql-and-jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="ajax-registration-script-with-php-mysql-and-jquery/script/validation.min.js"></script>
+<script type="text/javascript" src="register_modal5.js"></script>
+         <form class="form-signin" method="post" id="register-form">
+  
+      <div id="error">
+        <!-- error will be shown here ! -->
+        </div>
+
+        <div class="form-group">
+                
+                <input type="text" class="form-control" placeholder="Username" name="user_name" id="user_name">
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email address" name="user_email" id="user_email">
+              </div>
+
+              <div class="form-group">
+                 <input type="password" class="form-control" placeholder="Password" name="password" id="password2">
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword" id="cpassword"> 
+                   
+              </div>
+              
+              <button type="submit" class="spring-btn-black " name="btn-save" id="btn-submit">REGISTER <span class="fa fa-arrow-right" style="margin-left: 9px;"></span></button>
+            </form>
+
+             
+               <br>
+            <p style="text-align: center; color: grey;">
+                Already a member?
+                <a href="login.php" style="color: black; text-decoration: underline;">Sign in.</a>
+            </p>
+      </div>
+      <!-- ----------modal-body end ------- -->
+      <div class="modal-footer">
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- registerModal modal end-->
 
 
                </section>
