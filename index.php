@@ -1,10 +1,15 @@
 <?php
+  error_reporting(0);
   session_start();
   include('confs/config.php');
   include('function/function.php');
   include('001header.php');
   include('004navbar.php');
+
+  $s = $_GET['s'];
 ?>
+
+
 
 <!-- ----------------------sport-bar start--------------------- -->
 
@@ -264,6 +269,59 @@ h4{
 
 }
     </style>
+
+    <?php if($s == '4sfi2pak20'){?>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+             <script type="text/javascript">
+            
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'info',
+  title: 'Logout successfully'
+}).then(function() {
+            window.location = "index.php";
+        });
+ </script>
+<?php }elseif($s == 'gxio29ak'){ ?>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <script type="text/javascript">
+            
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'info',
+  title: 'Login successfully'
+}).then(function() {
+            window.location = "index.php";
+        });
+ </script>
+<?php }else{ ?>
+
+<?php } ?>
     <!-- Custom styles for this template -->
    <main role="main">
 
@@ -275,18 +333,8 @@ h4{
       <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
     </ol>
     <div class="carousel-inner">
-       <div class="carousel-item active">
-
-        <img src="https://surprisesgiftshop.com/files/2020/03/bride.jpg?&a=t" alt="" width="100%" height="100%" fill="#777">
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1 style="color: #fff; font-weight: 600;" >Show Your Loved Ones How Much You Care</h1>
-            <p style="color: #fff;">Shop for a special occasion at Surprises Gift Shop.<br></p>
-            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 160px">SHOPPING NOW<i class="fa fa-arrow-right"></i></a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
+       
+      <div class="carousel-item active">
 
         <div class="toy" style="background-color: whitesmoke;">
         <img src="https://ae01.alicdn.com/kf/H078158aba57d4ed2afff01d6868841d88/Brown-Bear-and-Cony-rabbit-Plush-toys-Wearing-Sweatshirt-Stuffed-toy-cute-animals-School-bag-pendant.jpg" alt="" width="50%" height="100%" fill="#777">
@@ -302,6 +350,18 @@ h4{
             <p><a class="btn btn-lg btn-light" href="product.php" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
             <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 120px">CONTACT US NOW <i class="fa fa-arrow-right"></i></a></p>
         
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+
+        <img src="https://surprisesgiftshop.com/files/2020/03/bride.jpg?&a=t" alt="" width="100%" height="100%" fill="#777">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1 style="color: #fff; font-weight: 600;" >Show Your Loved Ones How Much You Care</h1>
+            <p style="color: #fff;">Shop for a special occasion at Surprises Gift Shop.<br></p>
+            <p><a class="btn btn-lg btn-light" href="product.php" role="button" style="margin-bottom: 160px">SHOPPING NOW<i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>

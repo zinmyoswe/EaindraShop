@@ -40,13 +40,13 @@
           $_SESSION['email']=$email;
           $_SESSION['id']=$row['id'];
         // echo "<script>alert('Login successfully!!')</script>";
-        echo "<script>window.open('index.php','_self')</script>";
+        echo "<script>window.open('index.php?s=gxio29ak','_self')</script>";
         }
         else{
            $_SESSION['email']=$email;
            $_SESSION['id']=$row['id'];
         // echo "<script>alert('Login successfully!!')</script>";
-        echo "<script>window.open('checkout.php','_self')</script>";
+        echo "<script>window.open('checkout.php?s=gxio29ak','_self')</script>";
 
         }
 

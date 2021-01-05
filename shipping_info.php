@@ -6,7 +6,7 @@
   include('confs/config.php');
   $email = $_SESSION['email'];
   
-
+  $s = $_GET['s'];
 
 ?>
 
@@ -136,6 +136,32 @@ a:hover{
 }
 
     </style>
+
+    <?php if($s == 'gxio29ak'){ ?>
+<script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <script type="text/javascript">
+            
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'info',
+  title: 'Login successfully'
+}).then(function() {
+            window.location = "checkout.php";
+        });
+ </script>
+<?php } ?>
 <!-- ---------------------------------Shipping Page end -------------------------- -->
 <br>
  <div class="container">

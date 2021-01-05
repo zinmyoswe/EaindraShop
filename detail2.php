@@ -64,7 +64,10 @@
             Swal.fire({
   icon: 'success',
   title: 'Success',
+
   text: 'SUCCESSFULLY ADDED TO BAG!',
+  confirmButtonText: 'VIEW BAG',
+  confirmButtonColor: 'black',
   
 }).then(function() {
             window.location = "cart.php";
@@ -98,8 +101,20 @@
 
 
   <style>
-   
-
+ /*  .swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: .25em;
+    background: #000;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.0625em;
+}*/
+/*.swal2-confirm:hover{
+    background-color: #000000 !important;
+    border-color: 4px solid black !important;
+    color: white;
+}
+*/
   html,body{
   font-family: 'Lato', sans-serif;
 font-family: 'Open Sans', sans-serif;

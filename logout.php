@@ -15,7 +15,7 @@
 	// unset($_SESSION['HairStyleID']);
 	// unset($_SESSION['HairStyleType']);
 	// unset($_SESSION['shipping']);
-
-	header("location: index.php");
+	echo "<script>window.location='index.php?s=4sfi2pak20'</script>";
+	
 
 ?>
