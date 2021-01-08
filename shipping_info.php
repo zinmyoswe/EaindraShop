@@ -134,7 +134,9 @@ a:hover{
 
    border-bottom: 2px solid black;
 }
-
+.error{
+  color: red;
+}
     </style>
 
     <?php if($s == 'gxio29ak'){ ?>
@@ -163,10 +165,25 @@ Toast.fire({
  </script>
 <?php } ?>
 <!-- ---------------------------------Shipping Page end -------------------------- -->
+
+<!-- font -->
+
+
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script> 
+<!-- <script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script> -->
+<script type="text/javascript" src="validation.min.js"></script>
+<!-- additional method -->
+<!-- <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script> -->
+<script type="text/javascript" src="shipping_script2.js"></script>
+
+
+
+<!--  ==================login form ======================== -->
 <br>
  <div class="container">
 <span class="badge badge-pill badge-dark">1</span> <b class="tag-eain"><a href="cart.php">BAG</a></b>
-   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain tive"><a href="shipping_info.php">DELIVERY</a></b>
+   <span class="badge badge-pill badge-dark">2</span> <b class="tag-eain tive"><a href="" disabled>DELIVERY</a></b>
    <span class="badge badge-pill badge-secondary ">3</span> <b class="tag-eain text-secondary">PAYMENT</b>
    <span class="badge badge-pill badge-secondary">4</span> 
    <b class="tag-eain text-secondary ">ORDER COMPLETE</b>
@@ -185,44 +202,133 @@ Toast.fire({
     
 
         <!-- {{-- success error msg end --}} -->
+<!-- 
+		<script src="jquery.min.js" integrity "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+<?php
+        session_start();
+        include('confs/config.php');
+        $nameErr = $streetErr = $countryErr ="";
+        $stateErr = $zipErr = $cityErr= $phoneErr ="";
+        if(isset($_POST['submit'])){
 
-		<script src="jquery.min.js" integrity "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        $name = $_POST['name'];
+        $street = $_POST['street'];
+        $country = $_POST['country'];
+        $state = $_POST['state'];
+        $city = $_POST['city'];
+        $zip = $_POST['zip'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        
+  if (empty($_POST["name"])) {
 
+    $nameErr = "Please enter your name";
+  } 
+
+   if (empty($_POST["street"])) {        
+    $streetErr = "Please enter your address";
+  } 
+
+  if (empty($_POST["country"])) {        
+    $countryErr = "Please choose country";
+  } 
+
+  if (empty($_POST["state"])) {        
+    $stateErr = "Please choose state";
+  } 
+  
+   if (empty($_POST["zip"])) {
+
+    $zipErr = "Please enter zip code";
+  } 
+
+  if (empty($_POST["city"])) {
+
+    $cityErr = "Please enter your city";
+  } 
+
+  if (empty($_POST["phone"])) {
+
+    $phoneErr = "Please enter Phone No";
+  } 
+  else{
+
+        
+
+        $sql = "INSERT INTO shipping(full_name,email,store_id,phone,status,shipping_type,street_address,country,state,city,zipcode,created_date,modified_date,shipping_time)
+                VALUES('$name','$email',0,'$phone','register','home','$street','$country','$state','$city','$zip',NOW(),NOW(),NOW())";
+
+               // if($sql){
+               //  // echo "<script>alert('success')</script>";
+               //  echo "$sql";
+               // }else{
+               //  // echo "<script>alert('error')</script>";
+               // }
+
+
+              $run = mysqli_query($mysqli,$sql);
+
+       
+          if($run){
+       $query = "SELECT * FROM shipping WHERE email = '$email' ORDER BY shipping_id DESC LIMIT 0,1";
+                $result = mysqli_query($mysqli,$query);
+                  while($row = mysqli_fetch_assoc($result)){
+                    $id = $row['shipping_id'];
+    echo "<script>window.location='payment_info.php?id=$id'</script>";
+  }
+}
+}
+
+
+}
+?>
   
               <div class="panel-body">
-                        <form method="post" action="shipping_to_home.php" enctype="multipart/form-data">
+                        <form method="post" action="checkout.php">
 
                         <div class="mb-3">
                            <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" value="<?php echo $email; ?>" readonly>
+                        <input type="email" name="email" class="form-control" id="email" value="<?php echo $email; ?>" readonly>
                         </div>
                         
                         <div class="mb-3">
-                         <label for="lastName">Full Name</label>
-                        <input type="text" name="name" class="form-control" id="lastName" placeholder="" value="" required>
+                         <label for="name">Full Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="" value="" >
                         </div>
+                        
+                        <p class="error"><?php echo $nameErr;?></p>
+                        
   
                         <div class="mb-3">
-                        <label for="lastName">Address</label>
-                        <input type="text" name="street" class="form-control" id="lastName" placeholder="" value="" required>
+                        <label for="street">Address</label>
+                        <input type="text" name="street" class="form-control" id="street" placeholder="" value="" >
                         </div>
+
+                        <p class="error"><?php echo $streetErr;?></p>
                         
                       <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="country">Country</label>
-                <select name="country" class="custom-select d-block w-100" id="country" required>
+                <select name="country" class="custom-select d-block w-100" id="country">
                   <option value="">Choose...</option>
                   <option>Myanmar</option>
                   <option>Thailand</option>
+                  <option>China</option>
+                  <option>India</option>
+                  <option>Japan</option>
+                  <option>Korea</option>
                   
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid country.
                 </div>
+                 <p class="error"><?php echo $countryErr;?></p>
               </div>
+
+              
               <div class="col-md-4 mb-3">
                 <label for="state">State</label>
-                <select name="state" class="custom-select d-block w-100" id="state" required>
+                <select name="state" class="custom-select d-block w-100" id="state">
                   <option value="">Choose...</option>
                   <option>Yangon</option>
                   <option>Mandalay</option>
@@ -234,30 +340,37 @@ Toast.fire({
                 <div class="invalid-feedback">
                   Please provide a valid state.
                 </div>
+                <p class="error"><?php echo $stateErr;?></p>
               </div>
+
               <div class="col-md-3 mb-3">
                 <label for="zip">Zip</label>
-                <input type="text" name="zip" class="form-control" id="zip" placeholder="90001" required>
+                <input type="text" name="zip" class="form-control" id="zip" placeholder="90001">
                 <div class="invalid-feedback">
                   Zip code required.
                 </div>
+                <p class="error"><?php echo $zipErr;?></p>
+
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-6 mb-3">
-            <label for="zip">City</label>
-                <input type="text" name="city" class="form-control" id="zip" placeholder="" required>
+            <label for="city">City</label>
+                <input type="text" name="city" class="form-control" id="city" placeholder="">
                 <div class="invalid-feedback">
                   Zip code required.
                 </div>
+                <p class="error"><?php echo $cityErr;?></p>
+                
         </div>
                 <div class="col-md-6 mb-3">
-                <label for="zip">Phone</label>
-                <input type="text" name="phone" class="form-control" id="zip" placeholder="" required>
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="">
                 <div class="invalid-feedback">
                   Zip code required.
                 </div>
+                <p class="error"><?php echo $phoneErr;?></p>
         </div>
 </div>
                       
@@ -266,14 +379,17 @@ Toast.fire({
                         <br>
 
                         
-                        <input type="submit" name="submit" value="Save Address" class="btn btn-dark btn-lg btn-block" >
+                        <button type="submit" name="submit" id="submit" value="Save Address" class="btn btn-dark btn-lg btn-block" >Save Address</button>
                         
                         
 
                         </form>
                         </div> <!-- panel-body -->
                         <br><br>
+                       
                         <hr>
+
+
               <!-- --------------------Shipping address show start -------------- -->
                          <div class="row">
 
@@ -506,6 +622,8 @@ Toast.fire({
 <script src='bootbox.min.js'></script>
 <script src='shipping_del_script.js' type='text/javascript'></script>
 
+
 </body>
 </html>
+
 

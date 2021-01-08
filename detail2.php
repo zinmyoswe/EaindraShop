@@ -496,7 +496,7 @@ $(document).ready(function(){
             <a href="add_fav.php?id=<?php echo $row_r['id']; ?>"  style="margin-bottom: 3px;" class="btn btn-outline-dark btn-lg btn-block">  ADD TO FAVOURITE</a>
 
         <?php }else{ ?>
-            <a href="dashboard.php" class="btn btn-light btn-lg btn-block"><span class="fa fa-heart"></span> In whilist</a>
+            <a href="dashboard.php" class="btn btn-outline-dark btn-lg btn-block"> In whilist</a>
         
         <?php } ?>
 
