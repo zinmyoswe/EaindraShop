@@ -223,7 +223,12 @@ Toast.fire({
   if (empty($_POST["name"])) {
 
     $nameErr = "Please enter your name";
+
+
   } 
+  elseif (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Please enter valid name";
+    }
 
    if (empty($_POST["street"])) {        
     $streetErr = "Please enter your address";
@@ -236,21 +241,31 @@ Toast.fire({
   if (empty($_POST["state"])) {        
     $stateErr = "Please choose state";
   } 
+
   
    if (empty($_POST["zip"])) {
 
     $zipErr = "Please enter zip code";
   } 
+  elseif (!preg_match("/^[0-9]*$/",$zip)) {
+      $zipErr = "Please enter valid zipcode";
+    }
 
   if (empty($_POST["city"])) {
 
     $cityErr = "Please enter your city";
-  } 
+  }
+  elseif (!preg_match("/^[a-zA-Z-' ]*$/",$city)) {
+      $cityErr = "Please enter valid city";
+    }
 
   if (empty($_POST["phone"])) {
 
     $phoneErr = "Please enter Phone No";
   } 
+  elseif (!preg_match("/^[0-9]*$/",$phone)) {
+      $phoneErr = "Please enter valid Phone number";
+    }
   else{
 
         
@@ -274,6 +289,7 @@ Toast.fire({
                 $result = mysqli_query($mysqli,$query);
                   while($row = mysqli_fetch_assoc($result)){
                     $id = $row['shipping_id'];
+            
     echo "<script>window.location='payment_info.php?id=$id'</script>";
   }
 }
