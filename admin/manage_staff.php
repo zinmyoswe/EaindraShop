@@ -44,7 +44,9 @@ $w2 = $_GET['w2'];
               title: 'Staff Information has been saved',
               showConfirmButton: false,
               timer: 1800
-            })            
+            }).then(function() {
+            window.location = "manage_staff.php";
+        });                
           </script>
 <?php } elseif($w2 == 'updated'){ ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -54,7 +56,9 @@ $w2 = $_GET['w2'];
               icon: 'success',
               title: 'Updated',
               text: 'Staff Information updated successfully'
-            })
+            }).then(function() {
+            window.location = "manage_staff.php";
+        }); 
                      
           </script>
 <?php } ?>

@@ -30,7 +30,9 @@ $w2 = $_GET['w2'];
               icon: 'success',
               title: 'Confirm Shipping',
               text: 'Confirm Shipping Successfully'
-            })            
+            }).then(function() {
+            window.location = "all_order.php";
+        });           
           </script>
 <?php } elseif($w2 == 'success2'){ ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -40,7 +42,9 @@ $w2 = $_GET['w2'];
               icon: 'success',
               title: 'Confirm Delivered',
               text: 'Confirm Delivered to Customer Successfully!'
-            })
+            }).then(function() {
+            window.location = "all_order.php";
+        });     
                      
           </script>
 <?php } ?>

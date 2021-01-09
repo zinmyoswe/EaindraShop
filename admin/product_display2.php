@@ -47,7 +47,9 @@
               title: 'Product created successfully!',
               showConfirmButton: false,
               timer: 1800
-            })            
+            }).then(function() {
+            window.location = "product_display2.php";
+        });                
           </script>
 <?php } elseif($w2 == 'updated'){ ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -57,7 +59,9 @@
               icon: 'success',
               title: 'Updated',
               text: 'Product updated successfully'
-            })
+            }).then(function() {
+            window.location = "product_display2.php";
+        });    
                      
           </script>
 <?php } elseif($w2 == 'discount'){ ?>
@@ -68,7 +72,9 @@
               icon: 'success',
               title: 'Discount Created',
               text: 'Discount Created successfully'
-            })
+            }).then(function() {
+            window.location = "product_display2.php";
+        });    
                      
           </script>
 <?php } ?>

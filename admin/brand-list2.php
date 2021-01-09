@@ -29,7 +29,9 @@
               title: 'Brand has been saved',
               showConfirmButton: false,
               timer: 1800
-            })            
+            }).then(function() {
+            window.location = "brand-list2.php";
+        });             
           </script>
 <?php } elseif($w2 == 'updated'){ ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -39,7 +41,9 @@
               icon: 'success',
               title: 'Updated',
               text: 'Brand updated successfully'
-            })
+            }).then(function() {
+            window.location = "brand-list2.php";
+        }); 
                      
           </script>
 <?php } ?>
